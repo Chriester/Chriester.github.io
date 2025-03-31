@@ -28,12 +28,12 @@ export default {
           900: '#0c4a6e',
         },
         dark: {
-          DEFAULT: '#604652',
-          light: '#735557',
-          spacing: '#D29F80',
+          DEFAULT: '#000000',
+          light: '#14213d',
+          spacing: '#000000',
         },
-        accent: '#D29F80',
-        text: '#97866A',
+        accent: '#ffffff',
+        text: '#e5e5e5',
       },
       // Configuración del contenedor
       container: {
