@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #000000;
+  --color-dark-light: #14213d;
+  --color-dark-bars: #588157;
+  --color-accent: #ffffff;
+  --color-text: #e5e5e5;
+  --color-blue-400: #38bdf8;
+  --color-blue-500: #0ea5e9;
+  --color-blue-600: #0284c7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-text);
+}
+
+.section {
+  scroll-margin-top: 4rem;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-x-180 {
+  transform: rotateX(180deg);
+}

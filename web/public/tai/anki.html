@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Guía de Anki</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="topnav">
+<a href="index.html" class="brand">TAI · Curso completo</a>
+<div class="links">
+<a href="index.html">Inicio</a>
+<a href="plan.html">Plan</a>
+<a href="bloque2.html">Bloque II</a>
+<a href="bloque3.html">Bloque III</a>
+<a href="bloque4.html">Bloque IV</a>
+<a href="bloque1-admin.html">Bloque I</a>
+<a href="tests.html" class="destacado">Tests</a>
+<a href="simulacro.html">Simulacro</a>
+<a href="extras.html">Extras</a>
+<a href="descargas.html">Descargas</a>
+</div>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Guía de Anki</h1>
+<p class="subtitle">Configuración paso a paso + mazo de arranque incluido (Bloque II y Constitución)</p>
+<p class="date">Julio 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#por-qué-anki-es-el-pilar-del-plan">1. Por qué Anki es el pilar del plan</a></li>
+<li><a href="#instalación-y-primer-arranque-10-minutos">2. Instalación y primer arranque (10 minutos)</a></li>
+<li><a href="#importar-el-mazo-de-arranque-2-minutos">3. Importar el mazo de arranque (2 minutos)</a></li>
+<li><a href="#configuración-recomendada-5-minutos-hazla-una-vez">4. Configuración recomendada (5 minutos, hazla una vez)</a></li>
+<li><a href="#la-rutina-anki-dentro-del-plan-así-encaja-mes-a-mes">5. La rutina Anki dentro del plan (así encaja mes a mes)</a></li>
+<li><a href="#convenciones-para-crear-tus-tarjetas-los-bloques-iii-iv-y-resto-del-i">6. Convenciones para crear TUS tarjetas (los bloques III, IV y resto del I)</a></li>
+<li><a href="#resolución-de-problemas-rápidos">7. Resolución de problemas rápidos</a></li>
+<li><a href="#resumen-operativo">8. Resumen operativo</a></li>
+</ul>
+</nav>
+<h1 id="por-qué-anki-es-el-pilar-del-plan">1. Por qué Anki es el pilar del plan</h1>
+<p>El plan maestro reserva <strong>15-20 minutos diarios innegociables</strong> a Anki porque el repaso espaciado es la técnica con mayor evidencia para retener datos duros a largo plazo: el algoritmo te muestra cada tarjeta justo antes de que la olvides, de modo que 9 meses de legislación, puertos, siglas y cifras lleguen frescos al día del examen sin necesidad de atracones. En una oposición tipo test como el TAI, donde el tribunal pregunta el detalle exacto (¿5 Gbps o 480 Mbps? ¿3/5 o 2/3?), Anki es la diferencia entre «me suena» y «lo sé».</p>
+<h1 id="instalación-y-primer-arranque-10-minutos">2. Instalación y primer arranque (10 minutos)</h1>
+<ol type="1">
+<li>Descarga <strong>Anki</strong> para escritorio (gratuito) desde <strong>apps.ankiweb.net</strong> e instálalo.</li>
+<li>Crea una cuenta gratuita en <strong>AnkiWeb</strong> (ankiweb.net) y en Anki pulsa el botón <strong>Sincronizar</strong> e inicia sesión: así tendrás copia en la nube y podrás repasar desde el móvil.</li>
+<li>Móvil (recomendado, ahí vivirán tus 15 minutos diarios): <strong>AnkiDroid</strong> (Android, gratuito) o <strong>AnkiMobile</strong> (iOS, de pago; alternativa: repasar desde el navegador en ankiweb.net).</li>
+<li>En Preferencias, deja el idioma en español y activa «Mostrar tiempo restante» si te gusta ver el contador.</li>
+</ol>
+<h1 id="importar-el-mazo-de-arranque-2-minutos">3. Importar el mazo de arranque (2 minutos)</h1>
+<p>Este pack incluye dos ficheros de texto listos para importar, con las tarjetas de datos duros del módulo del mes 1:</p>
+<ul>
+<li><strong>Anki_TAI_Bloque_II.txt</strong> — 60 tarjetas del Bloque II (Tecnología Básica), etiquetadas por tema (tema10 a tema14).</li>
+<li><strong>Anki_TAI_Bloque_I.txt</strong> — 25 tarjetas del Tema 1 del Bloque I (Constitución), etiqueta tema01.</li>
+</ul>
+<p>Pasos: en Anki, <strong>Archivo → Importar</strong>, selecciona el fichero y comprueba en la vista previa que el separador detectado es «Tabulador», que el tipo de nota es <strong>Básico</strong> y que aparecen las columnas de mazo y etiquetas (los ficheros ya llevan las directivas para que Anki lo configure solo). Pulsa Importar. Se crearán automáticamente los mazos <strong>TAI::Bloque II · Tecnología básica</strong> y <strong>TAI::Bloque I · Organización del Estado</strong> colgando de un mazo padre «TAI».</p>
+<p>Verificación: en la pantalla principal debes ver el mazo TAI con dos submazos y ~85 tarjetas nuevas en total. Repasa siempre desde el mazo padre <strong>TAI</strong> (mezcla ambos bloques: práctica intercalada, como manda el plan).</p>
+<h1 id="configuración-recomendada-5-minutos-hazla-una-vez">4. Configuración recomendada (5 minutos, hazla una vez)</h1>
+<p>Pulsa el engranaje junto al mazo TAI → <strong>Opciones</strong>. Estos ajustes valen para la preconfiguración («Default») aplicada a todo el árbol TAI:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Ajuste</th>
+<th>Valor recomendado</th>
+<th>Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tarjetas nuevas/día</td>
+<td><strong>15</strong> (sube a 20-25 si vas holgado)</td>
+<td>~85 tarjetas de arranque se absorben en una semana sin saturar los repasos futuros</td>
+</tr>
+<tr class="even">
+<td>Repasos máximos/día</td>
+<td><strong>9999</strong> (sin límite)</td>
+<td>Nunca dejes repasos pendientes: es la deuda que rompe el sistema</td>
+</tr>
+<tr class="odd">
+<td>FSRS</td>
+<td><strong>Activado</strong></td>
+<td>Es el planificador moderno de Anki; optimiza los intervalos automáticamente</td>
+</tr>
+<tr class="even">
+<td>Retención deseada (FSRS)</td>
+<td><strong>0,90</strong></td>
+<td>Buen equilibrio carga/retención; súbela a 0,92-0,94 en el mes 8-9 para llegar más fino al examen</td>
+</tr>
+<tr class="odd">
+<td>Orden de nuevas</td>
+<td>Aleatorio</td>
+<td>Intercala temas dentro del bloque</td>
+</tr>
+<tr class="even">
+<td>Enterrar nuevas/repasos relacionados</td>
+<td>Activado</td>
+<td>Evita ver pregunta y «pareja» el mismo día</td>
+</tr>
+</tbody>
+</table>
+<p>Además: en <strong>Preferencias → Revisión</strong>, fija el inicio del día en una hora que respete tu horario de estudio (p. ej. las 4:00) para que los repasos no «cambien de día» a medianoche.</p>
+<h1 id="la-rutina-anki-dentro-del-plan-así-encaja-mes-a-mes">5. La rutina Anki dentro del plan (así encaja mes a mes)</h1>
+<ul>
+<li><strong>Cada día de estudio (todas las fases):</strong> los primeros 15-20 minutos de la sesión son Anki (así lo marca la semana tipo del plan maestro). Días sin sesión de estudio: haz igualmente los repasos desde el móvil; es la única tarea diaria obligatoria del plan.</li>
+<li><strong>Meses 1-6 (temario nuevo):</strong> al cerrar cada tema, crea sus tarjetas (ver §6) el mismo día. Al cerrar cada test, convierte <strong>cada fallo por «no lo sabía»</strong> en una tarjeta. Regla del plan: ningún fallo se repite dos veces sin tener tarjeta.</li>
+<li><strong>Mes 6 (decisión del supuesto):</strong> crea un submazo <strong>TAI::Supuesto</strong> con los datos operativos del bloque elegido (sintaxis SQL fina o tabla de subnetting, según elijas III o IV).</li>
+<li><strong>Meses 7-8 (vueltas de repaso):</strong> no añadas apenas tarjetas nuevas; usa <strong>Mazos filtrados</strong> (Herramientas → Crear mazo filtrado) con búsquedas como <code>deck:TAI tag:tema08 rated:30:1</code> para machacar los temas rojos de tu cuaderno de fallos.</li>
+<li><strong>Mes 9 (sprint):</strong> sube la retención FSRS a 0,92-0,94, mantén los repasos diarios y en la última semana repasa solo Anki + fichas. La víspera del examen: solo los repasos que Anki te pida, nada más.</li>
+</ul>
+<h1 id="convenciones-para-crear-tus-tarjetas-los-bloques-iii-iv-y-resto-del-i">6. Convenciones para crear TUS tarjetas (los bloques III, IV y resto del I)</h1>
+<p>El mazo de arranque marca el estilo. Cuando crees las tuyas, respeta estas reglas — son las que hacen que Anki funcione:</p>
+<ol type="1">
+<li><strong>Una tarjeta = un dato.</strong> «¿Puerto de IMAP? → 143» es una buena tarjeta; «explica los protocolos de correo» no lo es.</li>
+<li><strong>Pregunta como la formularía el tribunal.</strong> Usa el enunciado del test que fallaste como anverso siempre que puedas.</li>
+<li><strong>Mazos por bloque, etiquetas por tema:</strong> crea <code>TAI::Bloque III · Desarrollo</code> y <code>TAI::Bloque IV · Sistemas y comunicaciones</code> cuando llegues a ellos, y etiqueta cada tarjeta <code>tema17_lenguajes</code>, <code>tema30_tcpip</code>, etc. Así los mazos filtrados por tema salen gratis.</li>
+<li><strong>Para artículos de ley, usa el tipo de nota «Hueco» (cloze):</strong> «El recurso de amparo protege los arts. {{c1::14 a 29}} más el {{c2::30.2 (objeción de conciencia)}}». Una nota genera varias tarjetas y evita respuestas kilométricas.</li>
+<li><strong>Tablas grandes → varias tarjetas.</strong> La tabla de puertos no es una tarjeta; son 12 (una por puerto). Igual con RAID, USB o los plazos de la Ley 39/2015.</li>
+<li><strong>Nada de tarjetas «de comprensión».</strong> Lo que se entiende se estudia en el dossier; a Anki solo va lo que se olvida: cifras, fechas, siglas, artículos, nombres.</li>
+<li><strong>Borra sin piedad.</strong> Si una tarjeta te hace bostezar de obvia tras 5 aciertos seguidos, suspéndela (tecla <code>@</code>): el tiempo de repaso es oro.</li>
+</ol>
+<h1 id="resolución-de-problemas-rápidos">7. Resolución de problemas rápidos</h1>
+<ul>
+<li><strong>«Me he saltado varios días».</strong> No recuperes a lo bestia: Anki reparte solo. Limita a +30 minutos diarios hasta vaciar la cola y congela tarjetas nuevas (nuevas/día = 0) mientras tanto.</li>
+<li><strong>«La importación no detecta las columnas».</strong> Asegúrate de importar el fichero .txt sin abrirlo/guardarlo antes con Word o Excel (romperían los tabuladores). Si lo editaste, usa un editor plano (Bloc de notas, VS Code).</li>
+<li><strong>«Demasiados repasos diarios» (más de 25-30 min).</strong> Baja tarjetas nuevas/día a 10 y revisa si estás creando tarjetas «de comprensión» (regla 6).</li>
+<li><strong>«Quiero empezar de cero un mazo».</strong> Selecciona sus tarjetas en el Explorador y usa Olvidar (reset), no lo borres: conservarás las etiquetas.</li>
+</ul>
+<h1 id="resumen-operativo">8. Resumen operativo</h1>
+<ol type="1">
+<li>Instala Anki + cuenta AnkiWeb + app móvil. 2. Importa los dos .txt de este pack. 3. Aplica la configuración de §4 (FSRS, 15 nuevas/día, retención 0,90). 4. Repasa el mazo TAI <strong>todos los días</strong>, 15-20 min, como primera tarea. 5. Cada tema cerrado y cada fallo de test se convierten en tarjetas el mismo día, siguiendo las convenciones de §6. 6. En los meses 7-9, mazos filtrados para temas rojos y retención al alza. Con eso, la parte memorística del examen queda industrializada: tu energía libre se va al supuesto práctico, que es donde se gana la plaza.</li>
+</ol>
+</body>
+</html>

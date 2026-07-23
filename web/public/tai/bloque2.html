@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Bloque II · Tecnología Básica</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="topnav">
+<a href="index.html" class="brand">TAI · Curso completo</a>
+<div class="links">
+<a href="index.html">Inicio</a>
+<a href="plan.html">Plan</a>
+<a href="bloque2.html">Bloque II</a>
+<a href="bloque3.html">Bloque III</a>
+<a href="bloque4.html">Bloque IV</a>
+<a href="bloque1-admin.html">Bloque I</a>
+<a href="tests.html" class="destacado">Tests</a>
+<a href="simulacro.html">Simulacro</a>
+<a href="extras.html">Extras</a>
+<a href="descargas.html">Descargas</a>
+</div>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Bloque II · Tecnología Básica</h1>
+<p class="subtitle">Oposición TAI (AGE) · Módulo de arranque (Mes 1) · Teoría orientada a examen + ejercicios + test razonado</p>
+<p class="date">Julio 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#cómo-usar-este-dossier">Cómo usar este dossier</a></li>
+<li><a href="#tema-1.-informática-básica-representación-de-la-información-y-arquitectura-de-ordenadores">Tema 1. Informática básica: representación de la información y arquitectura de ordenadores</a>
+<ul>
+<li><a href="#representación-de-la-información">1.1 Representación de la información</a></li>
+<li><a href="#arquitectura-de-ordenadores">1.2 Arquitectura de ordenadores</a></li>
+</ul></li>
+<li><a href="#tema-2.-periféricos-conectividad-y-administración">Tema 2. Periféricos: conectividad y administración</a>
+<ul>
+<li><a href="#impresión">2.1 Impresión</a></li>
+<li><a href="#almacenamiento">2.2 Almacenamiento</a></li>
+<li><a href="#conectividad-de-periféricos">2.3 Conectividad de periféricos</a></li>
+<li><a href="#visualización-y-digitalización">2.4 Visualización y digitalización</a></li>
+</ul></li>
+<li><a href="#tema-3.-tipos-abstractos-y-estructuras-de-datos.-ficheros.-algoritmos.-formatos">Tema 3. Tipos abstractos y estructuras de datos. Ficheros. Algoritmos. Formatos</a>
+<ul>
+<li><a href="#estructuras-de-datos">3.1 Estructuras de datos</a></li>
+<li><a href="#algoritmos-y-complejidad">3.2 Algoritmos y complejidad</a></li>
+<li><a href="#organizaciones-de-ficheros">3.3 Organizaciones de ficheros</a></li>
+<li><a href="#formatos-de-información-y-ficheros">3.4 Formatos de información y ficheros</a></li>
+</ul></li>
+<li><a href="#tema-4.-sistemas-operativos-windows-linuxunix-y-móviles">Tema 4. Sistemas operativos: Windows, Linux/Unix y móviles</a>
+<ul>
+<li><a href="#conceptos-generales">4.1 Conceptos generales</a></li>
+<li><a href="#windows">4.2 Windows</a></li>
+<li><a href="#unixlinux">4.3 Unix/Linux</a></li>
+<li><a href="#sistemas-operativos-móviles">4.4 Sistemas operativos móviles</a></li>
+</ul></li>
+<li><a href="#tema-5.-sistemas-de-gestión-de-bases-de-datos-relacionales-orientados-a-objetos-y-nosql">Tema 5. Sistemas de gestión de bases de datos relacionales, orientados a objetos y NoSQL</a>
+<ul>
+<li><a href="#el-sgbd-y-su-arquitectura">5.1 El SGBD y su arquitectura</a></li>
+<li><a href="#modelo-relacional-esencial-para-test-se-amplía-en-bloque-iii">5.2 Modelo relacional (esencial para test; se amplía en Bloque III)</a></li>
+<li><a href="#sgbd-orientados-a-objetos-y-objeto-relacionales">5.3 SGBD orientados a objetos y objeto-relacionales</a></li>
+<li><a href="#nosql">5.4 NoSQL</a></li>
+</ul></li>
+<li><a href="#ejercicios-resueltos-hazlos-a-mano-y-con-reloj">Ejercicios resueltos (hazlos a mano y con reloj)</a></li>
+<li><a href="#test-del-bloque-ii-40-preguntas">Test del Bloque II — 40 preguntas</a>
+<ul>
+<li><a href="#soluciones-razonadas">Soluciones razonadas</a></li>
+</ul></li>
+<li><a href="#ficha-de-arranque-bloque-i-tema-1-la-constitución-española-de-1978">Ficha de arranque · Bloque I, Tema 1: La Constitución Española de 1978</a></li>
+<li><a href="#test-de-arranque-del-bloque-i-10-preguntas-constitución">Test de arranque del Bloque I — 10 preguntas (Constitución)</a>
+<ul>
+<li><a href="#soluciones-razonadas-1">Soluciones razonadas</a></li>
+</ul></li>
+<li><a href="#después-del-test-protocolo-de-cierre-del-módulo">Después del test: protocolo de cierre del módulo</a></li>
+</ul>
+</nav>
+<h1 id="cómo-usar-este-dossier">Cómo usar este dossier</h1>
+<p>Este dossier cubre los <strong>5 temas del Bloque II (Tecnología Básica)</strong> del programa oficial y añade la <strong>ficha de arranque del Bloque I (Constitución)</strong> prevista en el mes 1 del plan maestro. La secuencia de trabajo por tema es fija y no es negociable, porque reproduce el ciclo de aprendizaje con mayor evidencia (leer poco, recuperar mucho):</p>
+<ol type="1">
+<li>Lee la <strong>ficha de teoría</strong> subrayando solo datos duros (cifras, siglas, tablas).</li>
+<li>Cierra el dossier y escribe de memoria tu <strong>ficha Feynman</strong> de una página. Compara y completa.</li>
+<li>Haz los <strong>ejercicios resueltos</strong> de ese tema sin mirar la solución; corrige paso a paso.</li>
+<li>Haz la parte del <strong>test</strong> correspondiente. Corrige leyendo la explicación completa de cada pregunta, también de las acertadas.</li>
+<li>Vuelca cada fallo al <strong>cuaderno de fallos</strong> y crea una tarjeta Anki por cada dato que no supieras.</li>
+</ol>
+<p>Criterio para dar el bloque por cerrado: <strong>≥ 70 % de aciertos netos</strong> en el test completo (aciertos − fallos/3). Si no llegas, repite los temas con más fallos a los 3 días y reintenta el test una semana después.</p>
+<p><strong>Aviso de perfil.</strong> Con tu nivel de informática, la teoría de este bloque te resultará fácil de <em>entender</em>. El riesgo es no <em>memorizar el detalle</em>: el tribunal pregunta la velocidad exacta de SATA III, no si sabes montar un disco. Trata cada tabla de este dossier como material de Anki.</p>
+<h1 id="tema-1.-informática-básica-representación-de-la-información-y-arquitectura-de-ordenadores">Tema 1. Informática básica: representación de la información y arquitectura de ordenadores</h1>
+<h2 id="representación-de-la-información">1.1 Representación de la información</h2>
+<p><strong>Sistemas de numeración.</strong> Base 2 (binario), base 8 (octal), base 16 (hexadecimal: 0-9, A-F). Conversión binario↔︎hexadecimal por grupos de 4 bits; binario↔︎octal por grupos de 3. Del decimal al binario: divisiones sucesivas entre 2 (los restos, leídos del último al primero).</p>
+<p><strong>Unidades de información.</strong> bit → byte (8 bits) → múltiplos. Dos familias de prefijos que el tribunal adora confundir:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Decimal (SI)</th>
+<th>Valor</th>
+<th>Binario (IEC)</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>kB (kilo)</td>
+<td>10³</td>
+<td>KiB (kibi)</td>
+<td>2¹⁰ = 1.024</td>
+</tr>
+<tr class="even">
+<td>MB (mega)</td>
+<td>10⁶</td>
+<td>MiB (mebi)</td>
+<td>2²⁰</td>
+</tr>
+<tr class="odd">
+<td>GB (giga)</td>
+<td>10⁹</td>
+<td>GiB (gibi)</td>
+<td>2³⁰</td>
+</tr>
+<tr class="even">
+<td>TB (tera)</td>
+<td>10¹²</td>
+<td>TiB (tebi)</td>
+<td>2⁴⁰</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Enteros con signo.</strong> Tres representaciones: signo-magnitud, complemento a uno (invertir bits) y <strong>complemento a dos</strong> (invertir y sumar 1), que es la usada en la práctica porque tiene un único cero y la resta se hace sumando. Rango en complemento a dos con n bits: <strong>−2^(n−1) … +2^(n−1)−1</strong> (con 8 bits: −128 a +127).</p>
+<p><strong>Reales: IEEE 754.</strong> Simple precisión (32 bits): 1 signo + 8 exponente (sesgo 127) + 23 mantisa. Doble precisión (64 bits): 1 + 11 (sesgo 1023) + 52. Valores especiales: exponente todo unos = infinito (mantisa 0) o NaN (mantisa ≠ 0).</p>
+<p><strong>Caracteres.</strong> ASCII (7 bits, 128 caracteres); ISO 8859-1/Latin-1 (8 bits, añade ñ, tildes); <strong>Unicode</strong>: espacio de códigos universal con codificaciones UTF-8 (longitud variable 1-4 bytes, compatible con ASCII, la del mundo web), UTF-16 y UTF-32. La paridad, el checksum, el CRC y el código Hamming son mecanismos de detección (y en el caso de Hamming, corrección) de errores.</p>
+<h2 id="arquitectura-de-ordenadores">1.2 Arquitectura de ordenadores</h2>
+<p><strong>Modelo de von Neumann:</strong> CPU (unidad de control + ALU + registros), memoria única para datos e instrucciones, sistema de E/S y buses. <strong>Arquitectura Harvard:</strong> memorias separadas para datos e instrucciones (microcontroladores, DSP; las cachés L1 modernas son Harvard: L1i y L1d).</p>
+<p><strong>Registros que hay que saber nombrar:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Registro</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PC (contador de programa)</td>
+<td>Dirección de la SIGUIENTE instrucción</td>
+</tr>
+<tr class="even">
+<td>IR (registro de instrucción)</td>
+<td>Instrucción en curso</td>
+</tr>
+<tr class="odd">
+<td>MAR / RDM (direcciones)</td>
+<td>Dirección de memoria a acceder</td>
+</tr>
+<tr class="even">
+<td>MDR / RIM (datos)</td>
+<td>Dato leído/a escribir en memoria</td>
+</tr>
+<tr class="odd">
+<td>SP (puntero de pila)</td>
+<td>Cima de la pila</td>
+</tr>
+<tr class="even">
+<td>Registro de estado (flags)</td>
+<td>Cero, acarreo, signo, desbordamiento</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ciclo de instrucción:</strong> captación (fetch) → decodificación → ejecución → escritura. La <strong>segmentación (pipeline)</strong> solapa fases de varias instrucciones; los procesadores <strong>superescalares</strong> ejecutan varias instrucciones por ciclo. CISC (x86) frente a RISC (ARM, RISC-V): juego de instrucciones complejo frente a reducido.</p>
+<p><strong>Jerarquía de memoria</strong> (de más rápida/cara a más lenta/barata): registros → caché L1 → L2 → L3 → RAM → almacenamiento. La caché es <strong>SRAM</strong> (biestables, sin refresco); la memoria principal es <strong>DRAM</strong> (condensadores, refresco periódico; variantes DDR4/DDR5 SDRAM). ROM y familia (PROM, EPROM, EEPROM, flash) para firmware: <strong>BIOS/UEFI</strong>. Principio de localidad (temporal y espacial): fundamento de la caché. Políticas: correspondencia directa, asociativa, asociativa por conjuntos.</p>
+<p><strong>Buses:</strong> de datos, de direcciones y de control. El ancho del bus de direcciones determina la memoria direccionable (n líneas → 2^n direcciones). Interfaces actuales: PCI Express (líneas x1/x4/x8/x16), SATA, NVMe sobre PCIe, USB.</p>
+<p><strong>Placa base:</strong> chipset, zócalo de CPU, ranuras RAM (DIMM), ranuras de expansión PCIe, conectores de almacenamiento y panel de E/S. UEFI sustituye a la BIOS clásica y aporta arranque seguro (Secure Boot) y particionado <strong>GPT</strong> frente al clásico MBR (máx. 4 particiones primarias y 2 TB).</p>
+<p><strong>Lo que pregunta el tribunal en este tema:</strong> potencias de 2, conversiones entre bases, rango de complemento a dos, campos de IEEE 754, qué registro hace qué, SRAM/DRAM, y unidades SI/IEC. Todo dato de las tablas anteriores es una tarjeta Anki.</p>
+<h1 id="tema-2.-periféricos-conectividad-y-administración">Tema 2. Periféricos: conectividad y administración</h1>
+<h2 id="impresión">2.1 Impresión</h2>
+<ul>
+<li><strong>Láser:</strong> proceso electrofotográfico en fases: carga del tambor fotoconductor → exposición (el láser «dibuja» descargando) → revelado (el tóner se adhiere) → transferencia al papel → <strong>fusión</strong> (calor y presión). Velocidad en <strong>ppm</strong>, resolución en <strong>ppp/dpi</strong>.</li>
+<li><strong>Inyección de tinta:</strong> cabezales térmicos o piezoeléctricos; calidad fotográfica; coste por página mayor.</li>
+<li><strong>Otras:</strong> matricial (impacto, papel autocopiativo), térmica (tickets), sublimación (fotografía), <strong>impresión 3D</strong> (FDM, SLA). Lenguajes de descripción de página: <strong>PostScript y PCL</strong>. En la Administración: impresión centralizada, colas, cuotas y <strong>impresión segura</strong> (liberación con tarjeta/PIN).</li>
+</ul>
+<h2 id="almacenamiento">2.2 Almacenamiento</h2>
+<ul>
+<li><strong>HDD:</strong> platos magnéticos; parámetros: rpm (5.400/7.200/10.000), tiempo de búsqueda, latencia rotacional. Geometría: pistas, cilindros y sectores.</li>
+<li><strong>SSD:</strong> flash NAND (SLC/MLC/TLC/QLC según bits por celda; a más bits, más capacidad y menos resistencia). Controladora, TRIM, nivelación de desgaste. <strong>Formatos:</strong> 2,5" SATA y M.2 (SATA o NVMe).</li>
+<li><strong>Interfaces:</strong> SATA I/II/III = 1,5 / 3 / <strong>6 Gbps</strong>; <strong>NVMe sobre PCIe</strong> (múltiples colas, latencias mínimas); SAS en servidores.</li>
+<li><strong>RAID básicos</strong> (se amplían en Bloque IV): 0 = bandas sin redundancia; 1 = espejo; 5 = paridad distribuida (mín. 3 discos, tolera 1 fallo); 6 = doble paridad (mín. 4, tolera 2); 10 = espejo + bandas (mín. 4).</li>
+<li><strong>Ópticos:</strong> CD 700 MB, DVD 4,7 GB (capa simple), Blu-ray 25 GB (capa simple). Cintas <strong>LTO</strong> para backup masivo.</li>
+</ul>
+<h2 id="conectividad-de-periféricos">2.3 Conectividad de periféricos</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Estándar</th>
+<th>Velocidad</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>USB 1.1</td>
+<td>12 Mbps</td>
+<td>Full Speed</td>
+</tr>
+<tr class="even">
+<td>USB 2.0</td>
+<td>480 Mbps</td>
+<td>High Speed</td>
+</tr>
+<tr class="odd">
+<td>USB 3.2 Gen 1 (=3.0)</td>
+<td>5 Gbps</td>
+<td>SuperSpeed</td>
+</tr>
+<tr class="even">
+<td>USB 3.2 Gen 2</td>
+<td>10 Gbps</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>USB 3.2 Gen 2x2</td>
+<td>20 Gbps</td>
+<td>Solo USB-C</td>
+</tr>
+<tr class="even">
+<td>USB4</td>
+<td>40 Gbps</td>
+<td>Basado en Thunderbolt 3</td>
+</tr>
+</tbody>
+</table>
+<p>El conector <strong>USB-C</strong> es reversible y transporta datos, vídeo (modo alternativo DisplayPort) y energía (<strong>USB Power Delivery</strong>, hasta 100 W y 240 W en revisiones recientes). Otros: Bluetooth (WPAN, clases de alcance), Thunderbolt, y para vídeo <strong>HDMI</strong> y <strong>DisplayPort</strong> (VGA y DVI, analógico/digital heredados).</p>
+<h2 id="visualización-y-digitalización">2.4 Visualización y digitalización</h2>
+<ul>
+<li><strong>Monitores:</strong> tecnologías LCD (TN, IPS, VA), OLED. Parámetros: resolución (<strong>HD 1280×720, Full HD 1920×1080, QHD 2560×1440, UHD 4K 3840×2160, 8K 7680×4320</strong>), relación de aspecto, frecuencia de refresco (Hz), tiempo de respuesta (ms), brillo (cd/m²).</li>
+<li><strong>Escáneres:</strong> planos, de rodillo/documentales (con <strong>ADF</strong>, alimentador automático), resolución óptica en ppp frente a interpolada; profundidad de color en bits. <strong>OCR:</strong> conversión de imagen a texto editable — pieza clave de la digitalización certificada en las AAPP (enlaza con las Normas Técnicas de Interoperabilidad).</li>
+<li>Administración de periféricos: drivers, colas de impresión (<strong>CUPS</strong> en Linux, spooler en Windows), protocolo <strong>IPP</strong>, y gestión centralizada por directivas (GPO) en dominios Windows.</li>
+</ul>
+<h1 id="tema-3.-tipos-abstractos-y-estructuras-de-datos.-ficheros.-algoritmos.-formatos">Tema 3. Tipos abstractos y estructuras de datos. Ficheros. Algoritmos. Formatos</h1>
+<h2 id="estructuras-de-datos">3.1 Estructuras de datos</h2>
+<ul>
+<li><strong>Pila (stack):</strong> LIFO; operaciones push/pop/peek. Usos: llamadas a funciones, deshacer, evaluación de expresiones.</li>
+<li><strong>Cola (queue):</strong> FIFO; enqueue por el final, dequeue por el frente. Variantes: <strong>deque</strong> (doble extremo), <strong>cola de prioridad</strong> (extrae por prioridad; se implementa con montículo/heap).</li>
+<li><strong>Lista enlazada:</strong> simple, doble, circular. Inserción/borrado O(1) conocida la posición; acceso O(n).</li>
+<li><strong>Árboles:</strong> binario, <strong>ABB</strong> (izquierda menor, derecha mayor; búsqueda O(log n) si está equilibrado), <strong>AVL y rojo-negro</strong> (autoequilibrados), <strong>B y B+</strong> (multicamino, usados en índices de BBDD y sistemas de ficheros). Recorridos: preorden (raíz-izq-der), inorden (izq-raíz-der; en un ABB produce la secuencia ordenada), postorden (izq-der-raíz), amplitud/niveles.</li>
+<li><strong>Grafos:</strong> dirigidos/no dirigidos, ponderados. Representación: matriz o lista de adyacencia. Recorridos DFS (profundidad) y BFS (anchura). Dijkstra: caminos mínimos con pesos no negativos.</li>
+<li><strong>Tablas hash:</strong> acceso medio O(1); colisiones resueltas por encadenamiento o direccionamiento abierto.</li>
+</ul>
+<h2 id="algoritmos-y-complejidad">3.2 Algoritmos y complejidad</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Algoritmo</th>
+<th>Medio</th>
+<th>Peor</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Burbuja / Inserción / Selección</td>
+<td>O(n²)</td>
+<td>O(n²)</td>
+<td>Inserción es O(n) si casi ordenado</td>
+</tr>
+<tr class="even">
+<td>Quicksort</td>
+<td>O(n log n)</td>
+<td>O(n²)</td>
+<td>Pivote; el más rápido en la práctica</td>
+</tr>
+<tr class="odd">
+<td>Mergesort</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>Estable; necesita memoria extra</td>
+</tr>
+<tr class="even">
+<td>Heapsort</td>
+<td>O(n log n)</td>
+<td>O(n log n)</td>
+<td>Sobre montículo; no estable</td>
+</tr>
+<tr class="odd">
+<td>Búsqueda secuencial</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>Única opción sin orden</td>
+</tr>
+<tr class="even">
+<td>Búsqueda binaria</td>
+<td>O(log n)</td>
+<td>O(log n)</td>
+<td>EXIGE datos ordenados</td>
+</tr>
+</tbody>
+</table>
+<p>Recursividad: función que se llama a sí misma; requiere caso base; consume pila (riesgo de desbordamiento). Todo algoritmo recursivo puede reescribirse iterativo.</p>
+<h2 id="organizaciones-de-ficheros">3.3 Organizaciones de ficheros</h2>
+<ul>
+<li><strong>Secuencial:</strong> registros uno tras otro; solo lectura completa en orden. Barata, ideal para procesos por lotes.</li>
+<li><strong>Directa (hash/aleatoria):</strong> una función de dispersión calcula la posición del registro a partir de la clave; acceso inmediato, pero colisiones y mal recorrido secuencial.</li>
+<li><strong>Secuencial indexada:</strong> datos ordenados por clave + índice para acceso directo aproximado; combina ambos mundos (ISAM, VSAM como referencias clásicas).</li>
+</ul>
+<h2 id="formatos-de-información-y-ficheros">3.4 Formatos de información y ficheros</h2>
+<ul>
+<li><strong>Texto/datos:</strong> TXT, <strong>CSV</strong> (valores separados por comas), <strong>XML</strong> (marcado, derivado de SGML, con esquemas XSD y transformaciones XSLT), <strong>JSON</strong> (objetos/arrays/clave-valor; el estándar de facto de las API REST), YAML.</li>
+<li><strong>Documento:</strong> PDF y <strong>PDF/A</strong> (norma ISO 19005 de conservación a largo plazo, la exigida en el archivo electrónico administrativo), ODF (ISO 26300, formatos .odt/.ods), OOXML (.docx/.xlsx, ISO 29500).</li>
+<li><strong>Imagen:</strong> BMP (sin compresión), <strong>JPEG</strong> (con pérdida), <strong>PNG</strong> (sin pérdida, transparencia), GIF (256 colores, animación), <strong>TIFF</strong> (digitalización), SVG (vectorial), WebP.</li>
+<li><strong>Audio/vídeo:</strong> WAV/FLAC (sin pérdida) frente a MP3/AAC (con pérdida); contenedores MP4, MKV frente a códecs (H.264/H.265, VP9, AV1).</li>
+<li><strong>Compresión:</strong> sin pérdida (ZIP, GZIP, 7z; algoritmos Huffman, LZ77) frente a con pérdida (JPEG, MP3). Distinguir contenedor, formato y códec es pregunta habitual.</li>
+</ul>
+<h1 id="tema-4.-sistemas-operativos-windows-linuxunix-y-móviles">Tema 4. Sistemas operativos: Windows, Linux/Unix y móviles</h1>
+<h2 id="conceptos-generales">4.1 Conceptos generales</h2>
+<p>Funciones del SO: gestión de procesos, de memoria, de E/S, del sistema de ficheros, seguridad e interfaz. <strong>Kernel</strong> (monolítico como Linux, microkernel como Minix, híbrido como Windows NT y XNU/macOS) frente a <strong>shell</strong> (intérprete de órdenes).</p>
+<ul>
+<li><strong>Proceso:</strong> programa en ejecución con su espacio de direcciones. Estados: nuevo, listo, en ejecución, bloqueado, terminado. <strong>PCB</strong> (bloque de control de proceso).</li>
+<li><strong>Hilo:</strong> unidad de ejecución dentro del proceso; comparte memoria y recursos, tiene PC, registros y pila propios.</li>
+<li><strong>Planificación:</strong> FCFS, SJF, Round-Robin (cuanto/quantum), por prioridades; apropiativa (preemptive) frente a no apropiativa.</li>
+<li><strong>Concurrencia:</strong> condiciones de carrera, exclusión mutua, semáforos, monitores, <strong>interbloqueo (deadlock)</strong> y sus 4 condiciones (exclusión mutua, retención y espera, no apropiación, espera circular).</li>
+<li><strong>Memoria:</strong> particiones, <strong>paginación</strong> (páginas/marcos, tabla de páginas, TLB), segmentación, <strong>memoria virtual</strong> (fallo de página, algoritmos de reemplazo FIFO/LRU/óptimo, hiperpaginación o thrashing).</li>
+</ul>
+<h2 id="windows">4.2 Windows</h2>
+<p>Familia NT; actual Windows 11 y Windows Server 2022/2025. Sistema de ficheros <strong>NTFS</strong> (ACL, cifrado EFS, compresión, cuotas, journaling; ReFS en servidores), <strong>BitLocker</strong> (cifrado de volumen). <strong>Registro</strong> de Windows (HKLM, HKCU…). Consolas: CMD y <strong>PowerShell</strong> (cmdlets verbo-sustantivo: Get-Process, Set-ExecutionPolicy). En red corporativa: <strong>dominios con Active Directory</strong>, directivas de grupo (<strong>GPO</strong>), perfiles móviles. Herramientas: Administrador de tareas, Visor de eventos, services.msc.</p>
+<h2 id="unixlinux">4.3 Unix/Linux</h2>
+<p>Filosofía: todo es un fichero. Distribuciones: Debian/Ubuntu (paquetes <strong>.deb</strong>, apt), Red Hat/Fedora/Rocky (<strong>.rpm</strong>, dnf/yum), SUSE. <strong>FHS:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Directorio</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>/bin, /sbin</td>
+<td>Ejecutables esenciales (de usuario / de administración)</td>
+</tr>
+<tr class="even">
+<td>/etc</td>
+<td>Configuración</td>
+</tr>
+<tr class="odd">
+<td>/dev</td>
+<td>Ficheros de dispositivo</td>
+</tr>
+<tr class="even">
+<td>/home</td>
+<td>Directorios de usuarios (/root para root)</td>
+</tr>
+<tr class="odd">
+<td>/var</td>
+<td>Datos variables: logs (/var/log), colas</td>
+</tr>
+<tr class="even">
+<td>/tmp</td>
+<td>Temporales</td>
+</tr>
+<tr class="odd">
+<td>/usr</td>
+<td>Aplicaciones y bibliotecas de usuario</td>
+</tr>
+<tr class="even">
+<td>/proc, /sys</td>
+<td>Pseudo-sistemas de ficheros del kernel</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Permisos:</strong> rwx para propietario/grupo/otros; notación octal 4-2-1 (754 = rwxr-xr–); chmod, chown, chgrp; bits especiales SUID, SGID, sticky. <strong>Comandos básicos:</strong> ls, cd, pwd, cp, mv, rm, mkdir, cat, less, grep, find, ps, top, kill, df, du, tar, ssh, sudo. Sistemas de ficheros: <strong>ext4</strong>, XFS, Btrfs; <strong>systemd</strong> como init (systemctl start/enable/status). Editores vi/nano. Shell Bash: redirecciones (&gt;, &gt;&gt;, 2&gt;), tuberías (|).</p>
+<h2 id="sistemas-operativos-móviles">4.4 Sistemas operativos móviles</h2>
+<ul>
+<li><strong>Android:</strong> kernel Linux + runtime ART; apps en Java/Kotlin; paquetes APK/AAB; tienda Google Play; fragmentación de versiones.</li>
+<li><strong>iOS:</strong> núcleo Darwin (base Unix/BSD); apps en Swift/Objective-C; distribución exclusiva App Store; integración hardware-software cerrada.</li>
+<li>Gestión corporativa: <strong>MDM</strong> (Mobile Device Management), contenedores de trabajo, políticas BYOD. Conceptos de actualización OTA y de sandboxing de aplicaciones.</li>
+</ul>
+<h1 id="tema-5.-sistemas-de-gestión-de-bases-de-datos-relacionales-orientados-a-objetos-y-nosql">Tema 5. Sistemas de gestión de bases de datos relacionales, orientados a objetos y NoSQL</h1>
+<h2 id="el-sgbd-y-su-arquitectura">5.1 El SGBD y su arquitectura</h2>
+<p>Funciones: definición (DDL), manipulación (DML), control (DCL), seguridad, concurrencia, recuperación e integridad. <strong>Arquitectura ANSI/SPARC de tres niveles:</strong> externo (vistas), conceptual (esquema lógico global) e interno (físico). De ella derivan la <strong>independencia lógica</strong> (cambiar el esquema conceptual sin tocar las vistas) y la <strong>independencia física</strong> (cambiar el almacenamiento sin tocar el esquema conceptual). Usuarios: DBA, desarrolladores, usuarios finales.</p>
+<h2 id="modelo-relacional-esencial-para-test-se-amplía-en-bloque-iii">5.2 Modelo relacional (esencial para test; se amplía en Bloque III)</h2>
+<ul>
+<li><strong>Relación</strong> = tabla; <strong>tupla</strong> = fila; <strong>atributo</strong> = columna; <strong>dominio</strong> = conjunto de valores posibles. Grado (n.º de atributos) y cardinalidad (n.º de tuplas).</li>
+<li><strong>Claves:</strong> superclave → <strong>clave candidata</strong> (mínima) → <strong>clave primaria</strong> (elegida; única y NO nula: integridad de entidad) y claves alternativas. <strong>Clave foránea:</strong> integridad referencial (acciones ON DELETE/UPDATE: CASCADE, SET NULL, RESTRICT/NO ACTION).</li>
+<li><strong>Transacciones ACID:</strong> atomicidad, consistencia, aislamiento, durabilidad. Control de concurrencia por bloqueos (compartidos/exclusivos, bloqueo en dos fases) o multiversión (<strong>MVCC</strong>). Niveles de aislamiento SQL: READ UNCOMMITTED → SERIALIZABLE; anomalías: lectura sucia, no repetible, fantasma.</li>
+<li><strong>Índices:</strong> normalmente árboles <strong>B+</strong>; aceleran consultas, penalizan escrituras; agrupados (clustered) o no; UNIQUE impide duplicados.</li>
+<li><strong>Vistas:</strong> tablas virtuales definidas por consulta (las materializadas sí persisten datos). Uso: simplificación y seguridad.</li>
+<li>Productos de referencia: Oracle, SQL Server, <strong>PostgreSQL</strong>, MySQL/MariaDB, SQLite.</li>
+</ul>
+<h2 id="sgbd-orientados-a-objetos-y-objeto-relacionales">5.3 SGBD orientados a objetos y objeto-relacionales</h2>
+<p>Los <strong>SGBDOO</strong> almacenan objetos con identidad (OID), atributos y métodos, con herencia y polimorfismo; estándar ODMG y lenguaje OQL (ejemplos: ObjectDB, db4o). Los <strong>objeto-relacionales</strong> (PostgreSQL, Oracle) extienden el modelo relacional con tipos definidos por el usuario, herencia de tablas y atributos compuestos. Ventaja: encajan con la POO; inconveniente: menor madurez y estandarización que el relacional.</p>
+<h2 id="nosql">5.4 NoSQL</h2>
+<p>Nacen para volumen, velocidad y variedad (Big Data) renunciando a parte de ACID. <strong>Teorema CAP:</strong> en una partición de red hay que elegir entre consistencia y disponibilidad; modelo <strong>BASE</strong> (básicamente disponible, estado blando, consistencia eventual). Cuatro familias que hay que saber clasificar con ejemplos:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Familia</th>
+<th>Modelo</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Clave-valor</td>
+<td>Diccionario simple</td>
+<td>Redis, DynamoDB</td>
+</tr>
+<tr class="even">
+<td>Documental</td>
+<td>Documentos JSON/BSON</td>
+<td>MongoDB, CouchDB</td>
+</tr>
+<tr class="odd">
+<td>Columnar</td>
+<td>Familias de columnas</td>
+<td>Cassandra, HBase</td>
+</tr>
+<tr class="even">
+<td>Grafos</td>
+<td>Nodos y aristas</td>
+<td>Neo4j, ArangoDB</td>
+</tr>
+</tbody>
+</table>
+<p>Escalado <strong>horizontal</strong> (sharding, réplicas) frente al vertical típico del relacional.</p>
+<h1 id="ejercicios-resueltos-hazlos-a-mano-y-con-reloj">Ejercicios resueltos (hazlos a mano y con reloj)</h1>
+<p><strong>Serie A — Conversiones de base (objetivo: 6 ejercicios en 9 minutos).</strong></p>
+<ol type="1">
+<li>Convierte 156 (decimal) a binario. <em>Solución:</em> 156 = 128+16+8+4 → <strong>10011100</strong>. Método: restos de dividir entre 2 (156→78→39→19→9→4→2→1: restos 0,0,1,1,1,0,0,1 leídos al revés).</li>
+<li>Convierte 10011100 a hexadecimal. <em>Solución:</em> 1001|1100 → 9 y C → <strong>9C</strong>.</li>
+<li>Convierte 3F7 (hex) a binario. <em>Solución:</em> 3=0011, F=1111, 7=0111 → <strong>001111110111</strong>.</li>
+<li>Convierte 0o755 (octal) a binario. <em>Solución:</em> 7=111, 5=101, 5=101 → <strong>111101101</strong>.</li>
+<li>¿Cuántos bits necesitas como mínimo para representar 200 valores distintos? <em>Solución:</em> 2⁷=128 &lt; 200 ≤ 2⁸=256 → <strong>8 bits</strong>.</li>
+<li>Convierte 0,625 decimal a binario. <em>Solución:</em> 0,625×2=1,25 (1); 0,25×2=0,5 (0); 0,5×2=1,0 (1) → <strong>0,101</strong>.</li>
+</ol>
+<p><strong>Serie B — Complemento a dos (objetivo: 3 en 5 minutos).</strong></p>
+<ol type="1">
+<li>Representa −45 en 8 bits. <em>Solución:</em> 45=00101101 → invertir 11010010 → +1 = <strong>11010011</strong>.</li>
+<li>¿Qué valor decimal es 11110001 (complemento a dos, 8 bits)? <em>Solución:</em> bit de signo 1 → negativo. Invertir: 00001110, +1 = 00001111 = 15 → <strong>−15</strong>.</li>
+<li>Suma en 4 bits: 0110 + 0101 (complemento a dos). <em>Solución:</em> = 1011, que interpretado con signo es −5. Como 6+5=11 no cabe en el rango [−8, 7], hay <strong>desbordamiento (overflow)</strong>: dos positivos no pueden dar un resultado con bit de signo 1. Detectarlo es la gracia del ejercicio.</li>
+</ol>
+<p><strong>Serie C — Permisos Linux (objetivo: 3 en 4 minutos).</strong></p>
+<ol type="1">
+<li>¿Qué permisos otorga chmod 640 fichero? <em>Solución:</em> 6=rw-, 4=r–, 0=— → <strong>rw-r—–</strong> (propietario lee/escribe, grupo lee, resto nada).</li>
+<li>Expresa rwxr-x–x en octal. <em>Solución:</em> rwx=7, r-x=5, –x=1 → <strong>751</strong>.</li>
+<li>Un script debe ser ejecutable por todos pero editable solo por su dueño. ¿chmod? <em>Solución:</em> propietario rwx=7, grupo r-x=5, otros r-x=5 → <strong>755</strong> (si el resto no debe ni leerlo: 711).</li>
+</ol>
+<p><strong>Serie D — Complejidad y estructuras (respuesta razonada).</strong></p>
+<ol type="1">
+<li>Necesitas deshacer operaciones en un editor: ¿pila o cola? <em>Solución:</em> <strong>pila</strong> — la última operación es la primera que se deshace (LIFO).</li>
+<li>Un ABB con 1.000.000 de nodos equilibrado: ¿cuántas comparaciones máximas para buscar? <em>Solución:</em> log₂(10⁶) ≈ <strong>20</strong>.</li>
+<li>¿Por qué un índice de BBDD usa árbol B+ y no una tabla hash? <em>Solución:</em> el B+ mantiene el <strong>orden</strong> (permite rangos, BETWEEN, ORDER BY) y minimiza accesos a disco con nodos anchos; el hash solo resuelve igualdad exacta.</li>
+</ol>
+<h1 id="test-del-bloque-ii-40-preguntas">Test del Bloque II — 40 preguntas</h1>
+<p>Condiciones: 40 preguntas, <strong>48 minutos</strong> (ritmo de examen: ~72 s/pregunta), sin apuntes. Anota tus respuestas en papel aparte y corrige al final con la sección de soluciones. Puntuación neta = aciertos − fallos/3. Objetivo: ≥ 28 puntos netos (70 %).</p>
+<p><strong>Tema 1 · Informática básica</strong></p>
+<p><strong>1.</strong> ¿Cuántos valores distintos pueden representarse con 10 bits?</p>
+<p>   a) 512</p>
+<p>   b) 1.024</p>
+<p>   c) 2.048</p>
+<p>   d) 1.000</p>
+<p><strong>2.</strong> El número binario 11010110 expresado en hexadecimal es:</p>
+<p>   a) C6</p>
+<p>   b) D6</p>
+<p>   c) D5</p>
+<p>   d) E6</p>
+<p><strong>3.</strong> En complemento a dos con 8 bits, el número −18 se representa como:</p>
+<p>   a) 10010010</p>
+<p>   b) 11101101</p>
+<p>   c) 11101110</p>
+<p>   d) 00010010</p>
+<p><strong>4.</strong> El rango de enteros representable en complemento a dos con n bits es:</p>
+<p>   a) −2^n a 2^n − 1</p>
+<p>   b) −2^(n−1) a 2^(n−1) − 1</p>
+<p>   c) −2^(n−1) a 2^(n−1)</p>
+<p>   d) 0 a 2^n − 1</p>
+<p><strong>5.</strong> En el estándar IEEE 754 de simple precisión (32 bits), los campos son:</p>
+<p>   a) 1 bit de signo, 8 de exponente y 23 de mantisa</p>
+<p>   b) 1 bit de signo, 11 de exponente y 20 de mantisa</p>
+<p>   c) 8 bits de signo, 8 de exponente y 16 de mantisa</p>
+<p>   d) 1 bit de signo, 7 de exponente y 24 de mantisa</p>
+<p><strong>6.</strong> La característica que define la arquitectura de von Neumann frente a la arquitectura Harvard es:</p>
+<p>   a) Usar memorias separadas para datos e instrucciones</p>
+<p>   b) Almacenar datos e instrucciones en la misma memoria</p>
+<p>   c) Carecer de unidad de control</p>
+<p>   d) Ejecutar varias instrucciones en paralelo</p>
+<p><strong>7.</strong> El registro contador de programa (PC) de la CPU contiene:</p>
+<p>   a) La instrucción que se está ejecutando</p>
+<p>   b) El resultado de la última operación de la ALU</p>
+<p>   c) La dirección de memoria de la siguiente instrucción a ejecutar</p>
+<p>   d) Los indicadores de estado (flags)</p>
+<p><strong>8.</strong> Ordenadas de mayor a menor velocidad de acceso, la jerarquía de memoria correcta es:</p>
+<p>   a) Registros &gt; caché L1 &gt; caché L2 &gt; RAM &gt; SSD</p>
+<p>   b) Caché L1 &gt; registros &gt; RAM &gt; caché L2 &gt; SSD</p>
+<p>   c) RAM &gt; caché L2 &gt; caché L1 &gt; registros &gt; SSD</p>
+<p>   d) Registros &gt; RAM &gt; caché L1 &gt; caché L2 &gt; SSD</p>
+<p><strong>Tema 2 · Periféricos</strong></p>
+<p><strong>9.</strong> La resolución de una impresora se mide habitualmente en:</p>
+<p>   a) Píxeles por segundo</p>
+<p>   b) Puntos por pulgada (ppp/dpi)</p>
+<p>   c) Caracteres por segundo</p>
+<p>   d) Líneas por milímetro</p>
+<p><strong>10.</strong> El elemento de una impresora láser sobre el que se forma la imagen mediante cargas electrostáticas es:</p>
+<p>   a) El cabezal de inyección</p>
+<p>   b) El tambor fotoconductor</p>
+<p>   c) La banda transportadora</p>
+<p>   d) El fusor</p>
+<p><strong>11.</strong> La velocidad nominal de USB 3.2 Gen 1 (el antiguo USB 3.0) es:</p>
+<p>   a) 480 Mbps</p>
+<p>   b) 5 Gbps</p>
+<p>   c) 10 Gbps</p>
+<p>   d) 20 Gbps</p>
+<p><strong>12.</strong> NVMe es un protocolo de acceso a unidades SSD que utiliza como interfaz física habitual:</p>
+<p>   a) SATA</p>
+<p>   b) PCI Express</p>
+<p>   c) USB</p>
+<p>   d) SCSI paralelo</p>
+<p><strong>13.</strong> Un sistema RAID 1 se caracteriza por:</p>
+<p>   a) Dividir los datos en bandas sin redundancia</p>
+<p>   b) Duplicar los datos en espejo en dos o más discos</p>
+<p>   c) Distribuir paridad entre todos los discos</p>
+<p>   d) Necesitar un mínimo de cuatro discos</p>
+<p><strong>14.</strong> La tecnología OCR aplicada a un escáner permite:</p>
+<p>   a) Aumentar la resolución óptica</p>
+<p>   b) Reconocer caracteres y convertir la imagen en texto editable</p>
+<p>   c) Digitalizar negativos fotográficos</p>
+<p>   d) Comprimir la imagen sin pérdida</p>
+<p><strong>15.</strong> La resolución 4K UHD corresponde a:</p>
+<p>   a) 1920 × 1080 píxeles</p>
+<p>   b) 2560 × 1440 píxeles</p>
+<p>   c) 3840 × 2160 píxeles</p>
+<p>   d) 4096 × 3072 píxeles</p>
+<p><strong>16.</strong> La velocidad máxima teórica de la interfaz SATA III es:</p>
+<p>   a) 3 Gbps</p>
+<p>   b) 6 Gbps</p>
+<p>   c) 12 Gbps</p>
+<p>   d) 1,5 Gbps</p>
+<p><strong>Tema 3 · Estructuras de datos</strong></p>
+<p><strong>17.</strong> Una pila (stack) es una estructura de datos de tipo:</p>
+<p>   a) FIFO</p>
+<p>   b) LIFO</p>
+<p>   c) Acceso aleatorio</p>
+<p>   d) Jerárquico</p>
+<p><strong>18.</strong> En una cola (queue), los elementos se insertan y extraen respectivamente por:</p>
+<p>   a) El mismo extremo</p>
+<p>   b) El frente y el final</p>
+<p>   c) El final y el frente</p>
+<p>   d) Cualquier posición</p>
+<p><strong>19.</strong> En un árbol binario de búsqueda (ABB), para cualquier nodo se cumple que:</p>
+<p>   a) Todos los nodos del subárbol izquierdo son mayores que él</p>
+<p>   b) Todos los nodos del subárbol izquierdo son menores y los del derecho mayores</p>
+<p>   c) Ambos subárboles tienen la misma altura</p>
+<p>   d) Cada nodo tiene exactamente dos hijos</p>
+<p><strong>20.</strong> La búsqueda binaria tiene complejidad O(log n) y exige que la colección esté:</p>
+<p>   a) Indexada</p>
+<p>   b) Ordenada</p>
+<p>   c) Enlazada</p>
+<p>   d) En memoria caché</p>
+<p><strong>21.</strong> La complejidad media del algoritmo Quicksort es:</p>
+<p>   a) O(n)</p>
+<p>   b) O(n log n)</p>
+<p>   c) O(n²)</p>
+<p>   d) O(log n)</p>
+<p><strong>22.</strong> Frente a un array, una lista enlazada simple ofrece como ventaja:</p>
+<p>   a) Acceso directo por índice en O(1)</p>
+<p>   b) Inserción en cabeza en O(1) sin desplazar elementos</p>
+<p>   c) Menor consumo de memoria por elemento</p>
+<p>   d) Mejor localidad de caché</p>
+<p><strong>23.</strong> Una organización de fichero secuencial indexada se caracteriza por:</p>
+<p>   a) Permitir solo lectura secuencial completa</p>
+<p>   b) Combinar un área de datos ordenada con un índice que permite acceso directo</p>
+<p>   c) Calcular la posición de cada registro mediante una función hash</p>
+<p>   d) Almacenar los registros sin ningún orden</p>
+<p><strong>24.</strong> ¿Cuál de los siguientes NO es un lenguaje de marcado?</p>
+<p>   a) HTML</p>
+<p>   b) XML</p>
+<p>   c) JSON</p>
+<p>   d) SGML</p>
+<p><strong>Tema 4 · Sistemas operativos</strong></p>
+<p><strong>25.</strong> Los hilos (threads) de un mismo proceso comparten:</p>
+<p>   a) El contador de programa</p>
+<p>   b) La pila de ejecución</p>
+<p>   c) El espacio de direcciones de memoria del proceso</p>
+<p>   d) Los registros de la CPU</p>
+<p><strong>26.</strong> En un sistema con memoria virtual paginada, un «fallo de página» se produce cuando:</p>
+<p>   a) La página accedida no está en memoria principal</p>
+<p>   b) La página contiene un error de paridad</p>
+<p>   c) El proceso supera su prioridad</p>
+<p>   d) La TLB está llena</p>
+<p><strong>27.</strong> En Linux, el permiso octal 754 sobre un fichero equivale a:</p>
+<p>   a) rwxr-xr–</p>
+<p>   b) rwxr–r-x</p>
+<p>   c) rw-r-xr–</p>
+<p>   d) rwxrw-r–</p>
+<p><strong>28.</strong> Según el estándar de jerarquía de ficheros de Linux (FHS), el directorio /etc contiene:</p>
+<p>   a) Bibliotecas esenciales del sistema</p>
+<p>   b) Ficheros de configuración del sistema</p>
+<p>   c) Ficheros de dispositivo</p>
+<p>   d) Datos variables como logs y colas</p>
+<p><strong>29.</strong> ¿Qué comando de Linux muestra los procesos en ejecución del sistema?</p>
+<p>   a) ls</p>
+<p>   b) ps</p>
+<p>   c) pwd</p>
+<p>   d) cat</p>
+<p><strong>30.</strong> El sistema de ficheros nativo de Windows que soporta permisos, cifrado, cuotas y registro de transacciones (journaling) es:</p>
+<p>   a) FAT32</p>
+<p>   b) exFAT</p>
+<p>   c) NTFS</p>
+<p>   d) ext4</p>
+<p><strong>31.</strong> En las distribuciones Linux modernas, el sistema de inicio (init) y gestor de servicios predominante es:</p>
+<p>   a) SysV init</p>
+<p>   b) systemd</p>
+<p>   c) Upstart</p>
+<p>   d) launchd</p>
+<p><strong>32.</strong> El sistema operativo Android está construido sobre un núcleo:</p>
+<p>   a) Windows NT</p>
+<p>   b) Darwin</p>
+<p>   c) Linux</p>
+<p>   d) FreeBSD</p>
+<p><strong>Tema 5 · SGBD</strong></p>
+<p><strong>33.</strong> Las propiedades ACID de las transacciones son:</p>
+<p>   a) Atomicidad, Consistencia, Aislamiento y Durabilidad</p>
+<p>   b) Autenticación, Cifrado, Integridad y Disponibilidad</p>
+<p>   c) Atomicidad, Concurrencia, Integridad y Durabilidad</p>
+<p>   d) Aislamiento, Consistencia, Independencia y Distribución</p>
+<p><strong>34.</strong> La arquitectura ANSI/SPARC de un SGBD define los niveles:</p>
+<p>   a) Físico, lógico y de aplicación</p>
+<p>   b) Externo, conceptual e interno</p>
+<p>   c) Cliente, servidor y middleware</p>
+<p>   d) Usuario, administrador y sistema</p>
+<p><strong>35.</strong> Una clave primaria en el modelo relacional:</p>
+<p>   a) Puede contener valores nulos si es compuesta</p>
+<p>   b) Identifica unívocamente cada tupla y no admite nulos</p>
+<p>   c) Solo puede estar formada por un atributo</p>
+<p>   d) Puede repetirse si hay índices únicos</p>
+<p><strong>36.</strong> La integridad referencial se garantiza mediante:</p>
+<p>   a) Claves candidatas</p>
+<p>   b) Claves foráneas que referencian claves primarias</p>
+<p>   c) Índices agrupados</p>
+<p>   d) Disparadores de auditoría</p>
+<p><strong>37.</strong> MongoDB es un SGBD NoSQL de tipo:</p>
+<p>   a) Clave-valor</p>
+<p>   b) Documental</p>
+<p>   c) Columnar</p>
+<p>   d) Orientado a grafos</p>
+<p><strong>38.</strong> Crear un índice sobre una columna de una tabla normalmente:</p>
+<p>   a) Acelera las consultas y ralentiza las inserciones y actualizaciones</p>
+<p>   b) Acelera todas las operaciones</p>
+<p>   c) Solo afecta al espacio en disco</p>
+<p>   d) Impide los valores duplicados en cualquier caso</p>
+<p><strong>39.</strong> En el contexto de transacciones SQL, la sentencia ROLLBACK:</p>
+<p>   a) Confirma los cambios de la transacción</p>
+<p>   b) Deshace los cambios realizados desde el inicio de la transacción</p>
+<p>   c) Bloquea la tabla afectada</p>
+<p>   d) Guarda un punto de restauración</p>
+<p><strong>40.</strong> Una vista (view) en una base de datos relacional es:</p>
+<p>   a) Una copia física de una tabla</p>
+<p>   b) Una tabla virtual definida por una consulta, que no almacena datos por sí misma</p>
+<p>   c) Un índice especial de solo lectura</p>
+<p>   d) Una tabla temporal de sesión</p>
+<h2 id="soluciones-razonadas">Soluciones razonadas</h2>
+<p>Lee la justificación completa de CADA pregunta, también de las que hayas acertado: las explicaciones contienen los distractores que el tribunal reutiliza.</p>
+<p><strong>1. Respuesta correcta: b) 1.024.</strong> Con n bits se representan 2^n combinaciones. 2^10 = 1.024. Esta regla es de las más preguntadas del bloque: memoriza las potencias de 2 hasta 2^16 (65.536).</p>
+<p><strong>2. Respuesta correcta: b) D6.</strong> Se agrupa de 4 en 4 bits desde la derecha: 1101 = D y 0110 = 6, luego D6. Truco de examen: la conversión binario↔︎hexadecimal siempre se hace por grupos de 4 bits (nibbles), sin pasar por decimal.</p>
+<p><strong>3. Respuesta correcta: c) 11101110.</strong> 18 = 00010010; se invierten los bits (11101101) y se suma 1: 11101110. La opción b) es el complemento a uno (trampa clásica) y la a) es signo-magnitud, otra trampa habitual del tribunal.</p>
+<p><strong>4. Respuesta correcta: b) −2^(n−1) a 2^(n−1) − 1.</strong> Hay asimetría: el negativo llega una unidad más lejos porque el cero consume una combinación positiva. Con 8 bits: −128 a +127. La opción d) es el rango sin signo.</p>
+<p><strong>5. Respuesta correcta: a) 1 bit de signo, 8 de exponente y 23 de mantisa.</strong> Simple precisión: 1 + 8 + 23 = 32 bits (sesgo 127). Doble precisión: 1 + 11 + 52 = 64 bits (sesgo 1023). Ambas distribuciones han caído en exámenes TAI; apréndelas como pareja.</p>
+<p><strong>6. Respuesta correcta: b) Almacenar datos e instrucciones en la misma memoria.</strong> Von Neumann usa una única memoria y buses comunes para datos e instrucciones (de ahí el «cuello de botella de von Neumann»). Harvard separa físicamente ambas memorias, lo que permite acceder a instrucción y dato simultáneamente (típico en DSP y microcontroladores).</p>
+<p><strong>7. Respuesta correcta: c) La dirección de memoria de la siguiente instrucción a ejecutar.</strong> El PC apunta siempre a la siguiente instrucción. La instrucción en curso se guarda en el registro de instrucción (IR), los resultados en el acumulador/registros de propósito general y los indicadores en el registro de estado. Distinguir PC, IR, MAR y MDR es pregunta recurrente.</p>
+<p><strong>8. Respuesta correcta: a) Registros &gt; caché L1 &gt; caché L2 &gt; RAM &gt; SSD.</strong> Cuanto más cerca de la CPU, más rápida (y más cara y pequeña) es la memoria: registros → cachés (SRAM) → memoria principal (DRAM) → almacenamiento secundario. Recuerda: la caché usa SRAM (no necesita refresco) y la RAM principal es DRAM.</p>
+<p><strong>9. Respuesta correcta: b) Puntos por pulgada (ppp/dpi).</strong> La resolución de impresión y de escaneado se mide en puntos por pulgada (dpi, dots per inch; en español ppp). La velocidad de impresión se mide en ppm (páginas por minuto): no confundir ambas siglas, es una trampa habitual.</p>
+<p><strong>10. Respuesta correcta: b) El tambor fotoconductor.</strong> El láser descarga selectivamente el tambor fotoconductor; el tóner se adhiere a las zonas descargadas y se transfiere al papel, donde el fusor lo fija con calor y presión. Conocer las fases (carga, exposición, revelado, transferencia, fusión) ha sido objeto de examen.</p>
+<p><strong>11. Respuesta correcta: b) 5 Gbps.</strong> USB 2.0 = 480 Mbps; USB 3.2 Gen 1 = 5 Gbps (SuperSpeed); Gen 2 = 10 Gbps; Gen 2x2 = 20 Gbps; USB4 llega a 40 Gbps. La tabla de velocidades USB es de lo más rentable de memorizar del tema de periféricos.</p>
+<p><strong>12. Respuesta correcta: b) PCI Express.</strong> NVMe (Non-Volatile Memory Express) se diseñó para explotar el paralelismo de las memorias flash a través de PCIe (normalmente en formato M.2), superando el límite de SATA III (6 Gbps). Un SSD SATA usa el protocolo AHCI, no NVMe.</p>
+<p><strong>13. Respuesta correcta: b) Duplicar los datos en espejo en dos o más discos.</strong> RAID 1 es espejo (mirroring): capacidad útil del 50 % pero tolerancia total al fallo de un disco. RAID 0 es la opción a) (striping, sin tolerancia); RAID 5 es la c) (paridad distribuida, mínimo 3 discos); RAID 10 requiere mínimo 4.</p>
+<p><strong>14. Respuesta correcta: b) Reconocer caracteres y convertir la imagen en texto editable.</strong> OCR (Optical Character Recognition) transforma la imagen escaneada en texto procesable. Es clave en la Administración para digitalización de documentos (y enlaza con las Normas Técnicas de Interoperabilidad de digitalización del Bloque I).</p>
+<p><strong>15. Respuesta correcta: c) 3840 × 2160 píxeles.</strong> UHD 4K = 3840 × 2160 (el doble de Full HD 1920 × 1080 en cada dimensión, es decir, 4 veces más píxeles). El 4K de cine digital (DCI) es 4096 × 2160, otra trampa posible.</p>
+<p><strong>16. Respuesta correcta: b) 6 Gbps.</strong> SATA I = 1,5 Gbps; SATA II = 3 Gbps; SATA III = 6 Gbps (unos 600 MB/s efectivos por la codificación 8b/10b). Por eso los SSD rápidos migraron a PCIe/NVMe.</p>
+<p><strong>17. Respuesta correcta: b) LIFO.</strong> En una pila el último elemento en entrar es el primero en salir (Last In, First Out); operaciones push y pop. La cola es FIFO (First In, First Out). Pregunta casi garantizada en cualquier test de este tema.</p>
+<p><strong>18. Respuesta correcta: c) El final y el frente.</strong> La cola es FIFO: se inserta por el final (enqueue) y se extrae por el frente (dequeue). La variante de doble extremo se llama deque, y la cola con prioridad extrae según prioridad, no según orden de llegada.</p>
+<p><strong>19. Respuesta correcta: b) Todos los nodos del subárbol izquierdo son menores y los del derecho mayores.</strong> Esa propiedad de orden es la que permite buscar en O(log n) si el árbol está equilibrado. No confundir con árbol equilibrado (AVL), que además garantiza alturas similares, ni con árbol binario completo.</p>
+<p><strong>20. Respuesta correcta: b) Ordenada.</strong> La búsqueda binaria descarta la mitad del espacio en cada paso, pero solo funciona sobre datos ordenados con acceso directo (p. ej., un array). Sobre datos desordenados solo cabe búsqueda secuencial, O(n).</p>
+<p><strong>21. Respuesta correcta: b) O(n log n).</strong> Quicksort promedia O(n log n), aunque su peor caso (pivote pésimo sobre datos ya ordenados) es O(n²). Mergesort y Heapsort garantizan O(n log n) también en el peor caso; burbuja e inserción son O(n²). Esta tabla comparativa cae con frecuencia.</p>
+<p><strong>22. Respuesta correcta: b) Inserción en cabeza en O(1) sin desplazar elementos.</strong> Insertar en cabeza de una lista enlazada solo requiere reajustar punteros. A cambio, el acceso por posición es O(n), consume memoria extra por los punteros y su localidad de caché es peor. Las opciones a), c) y d) son precisamente ventajas del array.</p>
+<p><strong>23. Respuesta correcta: b) Combinar un área de datos ordenada con un índice que permite acceso directo.</strong> La organización secuencial indexada mantiene los registros ordenados por clave y superpone un índice para saltar directamente a la zona buscada. La opción c) describe la organización directa o hash (aleatoria), y la a) la secuencial pura.</p>
+<p><strong>24. Respuesta correcta: c) JSON.</strong> JSON es un formato ligero de intercambio de datos basado en la sintaxis de objetos de JavaScript, sin etiquetas de marcado. HTML y XML derivan de SGML, el metalenguaje de marcado original (ISO 8879).</p>
+<p><strong>25. Respuesta correcta: c) El espacio de direcciones de memoria del proceso.</strong> Los hilos comparten código, datos y recursos del proceso (memoria, ficheros abiertos), pero cada hilo tiene su propio contador de programa, registros y pila. Por eso crear hilos es más ligero que crear procesos, y por eso hay riesgos de concurrencia.</p>
+<p><strong>26. Respuesta correcta: a) La página accedida no está en memoria principal.</strong> El fallo de página (page fault) dispara una interrupción para que el SO cargue la página desde el área de intercambio (swap) a la RAM. Si los fallos son constantes, se produce hiperpaginación (thrashing), concepto que también ha aparecido en exámenes.</p>
+<p><strong>27. Respuesta correcta: a) rwxr-xr–.</strong> 7 = rwx (4+2+1) para el propietario; 5 = r-x (4+1) para el grupo; 4 = r– para el resto. El cálculo de permisos octales (chmod) es uno de los ejercicios más repetidos en los test TAI: domina la suma 4-2-1.</p>
+<p><strong>28. Respuesta correcta: b) Ficheros de configuración del sistema.</strong> /etc guarda la configuración; /lib las bibliotecas; /dev los ficheros de dispositivo; /var los datos variables (logs en /var/log); /home los directorios de usuario; /bin y /sbin los ejecutables esenciales. Esta tabla del FHS es memorización obligatoria.</p>
+<p><strong>29. Respuesta correcta: b) ps.</strong> ps lista procesos (y top/htop lo hacen de forma interactiva). ls lista ficheros, pwd muestra el directorio actual y cat concatena/muestra ficheros. En los últimos exámenes TAI han caído comandos básicos de Linux con regularidad.</p>
+<p><strong>30. Respuesta correcta: c) NTFS.</strong> NTFS incorpora ACL de seguridad, cifrado EFS, compresión, cuotas y journaling. FAT32 y exFAT carecen de permisos; ext4 es el sistema estándar de Linux. ReFS es el sistema más moderno de Microsoft para servidores, posible distractor en convocatorias recientes.</p>
+<p><strong>31. Respuesta correcta: b) systemd.</strong> systemd es el init por defecto en Debian, Ubuntu, RHEL, SUSE, etc.; se gestiona con systemctl y sus unidades (.service, .target). launchd es de macOS y Upstart quedó abandonado. Los comandos systemctl empiezan a aparecer en supuestos del Bloque IV.</p>
+<p><strong>32. Respuesta correcta: c) Linux.</strong> Android usa un kernel Linux modificado (con capas propias como ART, Binder y HAL). iOS y macOS derivan de Darwin (base BSD/Mach). La arquitectura por capas de Android e iOS entra en el epígrafe de sistemas operativos móviles.</p>
+<p><strong>33. Respuesta correcta: a) Atomicidad, Consistencia, Aislamiento y Durabilidad.</strong> ACID: la transacción se ejecuta completa o no se ejecuta (atomicidad), lleva la BD de un estado válido a otro (consistencia), no interfiere con otras transacciones (aislamiento) y sus efectos persisten ante fallos (durabilidad). Definición literal muy preguntada.</p>
+<p><strong>34. Respuesta correcta: b) Externo, conceptual e interno.</strong> Tres niveles: externo (vistas de usuario), conceptual (esquema global) e interno (almacenamiento físico). Esta separación proporciona la independencia lógica y física de los datos, otro concepto que el tribunal pregunta asociado a esta arquitectura.</p>
+<p><strong>35. Respuesta correcta: b) Identifica unívocamente cada tupla y no admite nulos.</strong> La regla de integridad de entidad exige que la clave primaria sea única y no nula (en ninguno de sus atributos, aunque sea compuesta). Puede ser compuesta (varios atributos), lo que descarta c).</p>
+<p><strong>36. Respuesta correcta: b) Claves foráneas que referencian claves primarias.</strong> Una clave foránea (foreign key) obliga a que su valor exista como clave primaria en la tabla referenciada (o sea nulo, si se permite). Las acciones ON DELETE/ON UPDATE (CASCADE, SET NULL, RESTRICT) también son material de examen.</p>
+<p><strong>37. Respuesta correcta: b) Documental.</strong> MongoDB almacena documentos BSON (JSON binario). Ejemplos por categoría: Redis (clave-valor), Cassandra/HBase (columnar), Neo4j (grafos). El temario TAI actual incluye expresamente los SGBD NoSQL, así que esta clasificación es imprescindible.</p>
+<p><strong>38. Respuesta correcta: a) Acelera las consultas y ralentiza las inserciones y actualizaciones.</strong> El índice acelera búsquedas y ordenaciones sobre la columna, pero cada INSERT/UPDATE/DELETE debe mantenerlo actualizado, con coste adicional. Solo el índice definido como UNIQUE impide duplicados; un índice normal no.</p>
+<p><strong>39. Respuesta correcta: b) Deshace los cambios realizados desde el inicio de la transacción.</strong> COMMIT confirma y hace permanentes los cambios; ROLLBACK los deshace devolviendo la BD al estado anterior; SAVEPOINT crea puntos intermedios a los que se puede retroceder con ROLLBACK TO. Tríada básica del control de transacciones.</p>
+<p><strong>40. Respuesta correcta: b) Una tabla virtual definida por una consulta, que no almacena datos por sí misma.</strong> La vista es una consulta almacenada que se ejecuta al ser invocada; no guarda datos (salvo las vistas materializadas, que sí los persisten y son el distractor típico). Se usan para simplificar consultas y como mecanismo de seguridad, mostrando solo ciertas columnas.</p>
+<h1 id="ficha-de-arranque-bloque-i-tema-1-la-constitución-española-de-1978">Ficha de arranque · Bloque I, Tema 1: La Constitución Española de 1978</h1>
+<p>Esta ficha inaugura la rutina transversal del Bloque I (1 sesión/semana + Anki diario). Contiene el esqueleto de datos duros del tema; en la sesión semanal debes leer el texto constitucional consolidado (BOE) de los artículos citados.</p>
+<p><strong>Datos de identidad.</strong> Aprobada por las Cortes el 31/10/1978, <strong>ratificada en referéndum el 6/12/1978</strong>, sancionada el 27/12/1978, <strong>publicada y en vigor el 29/12/1978</strong>. Estructura: preámbulo, título preliminar + 10 títulos, <strong>169 artículos</strong>, 4 disposiciones adicionales, 9 transitorias, 1 derogatoria, 1 final. Es rígida: dos procedimientos de reforma (arts. 167 y 168).</p>
+<p><strong>Título preliminar (arts. 1-9).</strong> Art. 1.1: Estado social y democrático de Derecho; valores superiores: <strong>libertad, justicia, igualdad y pluralismo político</strong>. Art. 1.2: soberanía nacional en el pueblo español. Art. 1.3: forma política, <strong>monarquía parlamentaria</strong>. Art. 2: unidad de la Nación, autonomía de nacionalidades y regiones. Art. 3: castellano, deber de conocerlo y derecho a usarlo. Art. 9.3: principios de legalidad, jerarquía normativa, publicidad de las normas, irretroactividad, seguridad jurídica, responsabilidad e interdicción de la arbitrariedad (no confundir con los valores del 1.1).</p>
+<p><strong>Título I (arts. 10-55): derechos y deberes.</strong></p>
+<ul>
+<li>Cap. I: españoles y extranjeros (10-13). Cap. II: art. 14 (igualdad) + Sección 1.ª «derechos fundamentales y libertades públicas» (<strong>15-29</strong>) + Sección 2.ª (30-38). Cap. III: principios rectores (39-52).</li>
+<li>Sección 1.ª imprescindible: 15 vida, 16 libertad ideológica/religiosa, 17 libertad y seguridad (detención preventiva máx. 72 h, habeas corpus), 18 honor/intimidad/inviolabilidad domicilio/secreto comunicaciones, 19 residencia y circulación, 20 expresión e información, 21 reunión, 22 asociación, 23 participación, 24 tutela judicial efectiva, 25 legalidad penal, 27 educación, 28 sindicación y huelga, 29 petición.</li>
+<li><strong>Art. 53 (tabla de garantías):</strong> 53.1 Cap. II vincula a poderes públicos, reserva de ley y contenido esencial; 53.2 <strong>amparo</strong> (y procedimiento preferente y sumario) para art. 14 + Sección 1.ª + 30.2; 53.3 principios rectores: informan la práctica, alegables solo según las leyes que los desarrollen. Desarrollo de la Sección 1.ª: <strong>ley orgánica</strong> (art. 81).</li>
+<li><strong>Art. 55:</strong> suspensión general en estados de <strong>excepción o sitio</strong> (nunca alarma); suspensión individual (55.2) en investigaciones de bandas armadas/terrorismo.</li>
+</ul>
+<p><strong>La Corona (Título II, arts. 56-65).</strong> El Rey: Jefe del Estado, símbolo de su unidad y permanencia; persona inviolable y no sujeta a responsabilidad. <strong>Sus actos carecen de validez sin refrendo</strong> (art. 56.3) del Presidente del Gobierno o ministros competentes; excepciones refrendadas por el Presidente del Congreso: propuesta y nombramiento del Presidente del Gobierno y disolución del art. 99 (art. 64). Funciones tasadas en el <strong>art. 62</strong> (sancionar y promulgar leyes; convocar y disolver Cortes; convocar referéndum; mando supremo de las Fuerzas Armadas; derecho de gracia sin indultos generales…) y art. 63 (internacionales). Sucesión: primogenitura y representación (art. 57).</p>
+<p><strong>Garantías institucionales.</strong> <strong>Defensor del Pueblo (art. 54):</strong> alto comisionado de las Cortes Generales para la defensa de los derechos del Título I; supervisa la Administración; elegido por <strong>3/5</strong> de ambas Cámaras; mandato <strong>5 años</strong> (LO 3/1981); legitimado para recursos de inconstitucionalidad y amparo. <strong>Tribunal Constitucional (Título IX):</strong> <strong>12 miembros</strong> — 4 Congreso (3/5), 4 Senado (3/5), 2 Gobierno, 2 CGPJ; mandato <strong>9 años</strong>, renovación por tercios cada 3; competencias: recurso e cuestión de inconstitucionalidad, amparo, conflictos de competencia.</p>
+<p><strong>Reforma (Título X).</strong> Art. 167 (ordinario): 3/5 de cada Cámara (o 2/3 Congreso si hay desacuerdo con mayoría absoluta del Senado); referéndum solo si lo piden 1/10 de una Cámara en 15 días. <strong>Art. 168 (agravado):</strong> revisión total o que afecte a Título preliminar, Sección 1.ª del Cap. II del Título I o Título II: <strong>2/3 de cada Cámara + disolución + 2/3 de las nuevas Cortes + referéndum obligatorio</strong>.</p>
+<h1 id="test-de-arranque-del-bloque-i-10-preguntas-constitución">Test de arranque del Bloque I — 10 preguntas (Constitución)</h1>
+<p>Condiciones: 10 preguntas, <strong>12 minutos</strong>. Este mini-test marca tu línea base en la parte jurídica: no te frustres si el resultado es bajo, es el punto de partida esperado en un perfil técnico. Objetivo orientativo: ≥ 6 netas.</p>
+<p><strong>Tema 1 · Constitución</strong></p>
+<p><strong>1.</strong> La Constitución Española fue ratificada en referéndum el:</p>
+<p>   a) 6 de diciembre de 1978</p>
+<p>   b) 27 de diciembre de 1978</p>
+<p>   c) 29 de diciembre de 1978</p>
+<p>   d) 31 de octubre de 1978</p>
+<p><strong>2.</strong> La Constitución Española de 1978 consta de:</p>
+<p>   a) 169 artículos, un título preliminar y 10 títulos</p>
+<p>   b) 168 artículos y 9 títulos</p>
+<p>   c) 169 artículos y 11 títulos numerados</p>
+<p>   d) 165 artículos, un título preliminar y 10 títulos</p>
+<p><strong>3.</strong> El recurso de amparo ante el Tribunal Constitucional protege los derechos reconocidos en:</p>
+<p>   a) Todo el Título I</p>
+<p>   b) Los artículos 14 a 29, más la objeción de conciencia del art. 30.2</p>
+<p>   c) Los artículos 15 a 29 exclusivamente</p>
+<p>   d) Los artículos 14 a 38</p>
+<p><strong>4.</strong> Según el art. 53.1 CE, los derechos del Capítulo II del Título I vinculan a todos los poderes públicos y su ejercicio se regulará:</p>
+<p>   a) Por real decreto</p>
+<p>   b) Solo por ley, que deberá respetar su contenido esencial</p>
+<p>   c) Por ley orgánica en todo caso</p>
+<p>   d) Por reglamento administrativo</p>
+<p><strong>5.</strong> Conforme al art. 55.1 CE, los derechos que pueden suspenderse de forma general requieren la declaración de:</p>
+<p>   a) Estado de alarma o de excepción</p>
+<p>   b) Estado de excepción o de sitio</p>
+<p>   c) Estado de sitio únicamente</p>
+<p>   d) Cualquiera de los tres estados</p>
+<p><strong>6.</strong> La reforma constitucional por el procedimiento agravado del art. 168 exige:</p>
+<p>   a) Mayoría de 3/5 de cada Cámara y referéndum si lo pide el 10 % de una Cámara</p>
+<p>   b) Aprobación por 2/3, disolución de las Cortes, ratificación por 2/3 de las nuevas Cámaras y referéndum obligatorio</p>
+<p>   c) Mayoría absoluta del Congreso y 2/3 del Senado</p>
+<p>   d) Unanimidad de ambas Cámaras y referéndum facultativo</p>
+<p><strong>7.</strong> Los actos del Rey serán refrendados, según el art. 64 CE, por:</p>
+<p>   a) El Presidente del Congreso en todo caso</p>
+<p>   b) El Presidente del Gobierno y, en su caso, los ministros competentes</p>
+<p>   c) El Consejo de Estado</p>
+<p>   d) No requieren refrendo</p>
+<p><strong>8.</strong> El Defensor del Pueblo es designado por las Cortes Generales para un mandato de:</p>
+<p>   a) 4 años</p>
+<p>   b) 5 años</p>
+<p>   c) 6 años</p>
+<p>   d) 9 años</p>
+<p><strong>9.</strong> El Tribunal Constitucional se compone de 12 miembros nombrados por el Rey, de los que propone el Congreso:</p>
+<p>   a) 2 por mayoría de 3/5</p>
+<p>   b) 4 por mayoría de 3/5</p>
+<p>   c) 6 por mayoría absoluta</p>
+<p>   d) 4 por mayoría de 2/3</p>
+<p><strong>10.</strong> Los valores superiores del ordenamiento jurídico proclamados en el art. 1.1 CE son:</p>
+<p>   a) Libertad, justicia, igualdad y pluralismo político</p>
+<p>   b) Libertad, democracia, igualdad y legalidad</p>
+<p>   c) Justicia, seguridad jurídica, igualdad y libertad</p>
+<p>   d) Libertad, justicia, solidaridad y pluralismo político</p>
+<h2 id="soluciones-razonadas-1">Soluciones razonadas</h2>
+<p>Lee la justificación completa de CADA pregunta, también de las que hayas acertado: las explicaciones contienen los distractores que el tribunal reutiliza.</p>
+<p><strong>1. Respuesta correcta: a) 6 de diciembre de 1978.</strong> Secuencia completa: aprobada por las Cortes el 31 de octubre, ratificada en referéndum el 6 de diciembre (por eso es fiesta nacional), sancionada por el Rey el 27 de diciembre y publicada en el BOE (entrando en vigor) el 29 de diciembre de 1978. Las cuatro fechas son preguntables.</p>
+<p><strong>2. Respuesta correcta: a) 169 artículos, un título preliminar y 10 títulos.</strong> Estructura: preámbulo, título preliminar + 10 títulos (169 artículos), 4 disposiciones adicionales, 9 transitorias, 1 derogatoria y 1 final. La numerología constitucional (169-4-9-1-1) es de lo más preguntado en la parte de Bloque I.</p>
+<p><strong>3. Respuesta correcta: b) Los artículos 14 a 29, más la objeción de conciencia del art. 30.2.</strong> El art. 53.2 CE reserva el amparo al art. 14 (igualdad), la Sección 1.ª del Capítulo II del Título I (arts. 15-29) y la objeción de conciencia (art. 30.2). El resto del Título I tiene otros niveles de protección: es la pregunta estrella del art. 53.</p>
+<p><strong>4. Respuesta correcta: b) Solo por ley, que deberá respetar su contenido esencial.</strong> Reserva de ley con garantía del contenido esencial (art. 53.1). Solo el desarrollo de los derechos fundamentales y libertades públicas de la Sección 1.ª exige ley orgánica (art. 81.1). Distinguir «ley» de «ley orgánica» aquí es una trampa recurrente.</p>
+<p><strong>5. Respuesta correcta: b) Estado de excepción o de sitio.</strong> La suspensión general de derechos solo cabe en los estados de excepción o de sitio; el estado de alarma limita pero no suspende derechos (como recordó el TC a propósito de la pandemia). El art. 55.2 regula la suspensión individual en investigaciones de bandas armadas o terrorismo.</p>
+<p><strong>6. Respuesta correcta: b) Aprobación por 2/3, disolución de las Cortes, ratificación por 2/3 de las nuevas Cámaras y referéndum obligatorio.</strong> El 168 se aplica a la revisión total o a la que afecte al Título preliminar, a la Sección 1.ª del Cap. II del Título I o al Título II (Corona): 2/3 + disolución + 2/3 de las nuevas Cortes + referéndum obligatorio. La opción a) mezcla elementos del procedimiento ordinario del art. 167.</p>
+<p><strong>7. Respuesta correcta: b) El Presidente del Gobierno y, en su caso, los ministros competentes.</strong> Regla general: refrendo del Presidente del Gobierno o ministros competentes; excepcionalmente refrenda el Presidente del Congreso (propuesta y nombramiento del Presidente del Gobierno y disolución del art. 99). De los actos del Rey son responsables las personas que los refrenden.</p>
+<p><strong>8. Respuesta correcta: b) 5 años.</strong> El Defensor del Pueblo (art. 54 CE, desarrollado por la LO 3/1981) es el alto comisionado de las Cortes para la defensa de los derechos del Título I; se elige por mayoría de 3/5 y su mandato dura 5 años. Supervisa la actividad de la Administración y puede interponer recursos de inconstitucionalidad y de amparo.</p>
+<p><strong>9. Respuesta correcta: b) 4 por mayoría de 3/5.</strong> Reparto del art. 159 CE: 4 el Congreso (3/5), 4 el Senado (3/5), 2 el Gobierno y 2 el Consejo General del Poder Judicial. Mandato de 9 años con renovación por terceras partes cada 3. Los números 4-4-2-2, 3/5 y 9 años son de memorización obligada.</p>
+<p><strong>10. Respuesta correcta: a) Libertad, justicia, igualdad y pluralismo político.</strong> «España se constituye en un Estado social y democrático de Derecho, que propugna como valores superiores de su ordenamiento jurídico la libertad, la justicia, la igualdad y el pluralismo político». Los distractores cambian un valor por principios del art. 9.3 (legalidad, seguridad jurídica): léelos siempre completos.</p>
+<h1 id="después-del-test-protocolo-de-cierre-del-módulo">Después del test: protocolo de cierre del módulo</h1>
+<ol type="1">
+<li>Calcula tu <strong>nota neta</strong> de cada test: aciertos − (fallos ÷ 3). Con 40 preguntas, ≥28 netas = módulo superado; 22-27 = repite los 2 temas con más fallos y reintenta en una semana; &lt;22 = segunda pasada completa del dossier con nueva ficha Feynman por tema.</li>
+<li>Cada fallo genera: una fila en el cuaderno de fallos (pregunta, causa, tema) y una tarjeta Anki si la causa fue «no lo sabía».</li>
+<li>Los fallos por lectura («leí mal la pregunta») no se estudian: se entrenan. En el siguiente test, subraya la palabra clave de cada enunciado (NO, SIEMPRE, EXCEPTO) antes de mirar las opciones.</li>
+<li>Reintenta el test completo a los 7 días con la app interactiva (modo aleatorio): la diferencia entre ambas notas te dice cuánto estás olvidando y calibra tu ritmo de repaso.</li>
+</ol>
+<p><strong>Siguiente entrega del plan:</strong> Dossier del Bloque III (Desarrollo de Sistemas) con su primer supuesto práctico guiado. Pídelo cuando superes este módulo.</p>
+</body>
+</html>

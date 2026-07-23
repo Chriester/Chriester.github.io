@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Bloque IV · Sistemas y Comunicaciones</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="topnav">
+<a href="index.html" class="brand">TAI · Curso completo</a>
+<div class="links">
+<a href="index.html">Inicio</a>
+<a href="plan.html">Plan</a>
+<a href="bloque2.html">Bloque II</a>
+<a href="bloque3.html">Bloque III</a>
+<a href="bloque4.html">Bloque IV</a>
+<a href="bloque1-admin.html">Bloque I</a>
+<a href="tests.html" class="destacado">Tests</a>
+<a href="simulacro.html">Simulacro</a>
+<a href="extras.html">Extras</a>
+<a href="descargas.html">Descargas</a>
+</div>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Bloque IV · Sistemas y Comunicaciones</h1>
+<p class="subtitle">Oposición TAI (AGE) · Meses 4-5 del plan · Teoría + LABORATORIO DE SUBNETTING + test razonado + supuesto práctico</p>
+<p class="date">Julio 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#cómo-usar-este-dossier">Cómo usar este dossier</a></li>
+<li><a href="#tema-1.-administración-del-sistema-operativo-y-software-de-base">Tema 1. Administración del sistema operativo y software de base</a></li>
+<li><a href="#tema-2.-administración-de-bbdd-almacenamiento-backup-y-virtualización">Tema 2. Administración de BBDD, almacenamiento, backup y virtualización</a></li>
+<li><a href="#tema-3.-correo-electrónico.-contenedores-y-microservicios">Tema 3. Correo electrónico. Contenedores y microservicios</a></li>
+<li><a href="#tema-4.-administración-de-redes-de-área-local">Tema 4. Administración de redes de área local</a></li>
+<li><a href="#tema-5.-seguridad-de-los-sistemas-de-información">Tema 5. Seguridad de los sistemas de información</a></li>
+<li><a href="#tema-6.-comunicaciones">Tema 6. Comunicaciones</a></li>
+<li><a href="#tema-7.-el-modelo-tcpip-y-el-modelo-osi">Tema 7. El modelo TCP/IP y el modelo OSI</a></li>
+<li><a href="#laboratorio-de-subnetting-la-máquina-de-puntos-del-bloque-iv">LABORATORIO DE SUBNETTING (la máquina de puntos del Bloque IV)</a></li>
+<li><a href="#tema-8.-internet-arquitectura-y-servicios">Tema 8. Internet: arquitectura y servicios</a></li>
+<li><a href="#tema-9.-seguridad-y-protección-en-redes-de-comunicaciones">Tema 9. Seguridad y protección en redes de comunicaciones</a></li>
+<li><a href="#tema-10.-redes-locales">Tema 10. Redes locales</a></li>
+<li><a href="#test-del-bloque-iv-50-preguntas">Test del Bloque IV — 50 preguntas</a>
+<ul>
+<li><a href="#soluciones-razonadas">Soluciones razonadas</a></li>
+</ul></li>
+<li><a href="#supuesto-práctico-guiado-nº-2-bloque-iv">SUPUESTO PRÁCTICO GUIADO Nº 2 — Bloque IV</a>
+<ul>
+<li><a href="#enunciado">Enunciado</a></li>
+<li><a href="#preguntas">Preguntas</a></li>
+<li><a href="#soluciones-razonadas-del-supuesto">Soluciones razonadas del supuesto</a></li>
+</ul></li>
+<li><a href="#ficha-bloque-i-fase-3-temas-4-7-ebep-transparencia-igualdad-firma-e-y-protección-de-datos">Ficha Bloque I (fase 3) · Temas 4-7: EBEP, transparencia, igualdad, firma-e y protección de datos</a></li>
+<li><a href="#test-del-bloque-i-fase-3-20-preguntas">Test del Bloque I (fase 3) — 20 preguntas</a>
+<ul>
+<li><a href="#soluciones-razonadas-1">Soluciones razonadas</a></li>
+</ul></li>
+<li><a href="#protocolo-de-cierre-y-lo-que-viene">Protocolo de cierre y lo que viene</a></li>
+</ul>
+</nav>
+<h1 id="cómo-usar-este-dossier">Cómo usar este dossier</h1>
+<p>Bloque IV: 10 temas de sistemas, redes y seguridad — el otro candidato a tu supuesto práctico. La mecánica es la conocida (ficha → Feynman → ejercicios → test → Anki + cuaderno de fallos) con una prioridad absoluta: el <strong>laboratorio de subnetting</strong>. El cálculo de subredes es el ejercicio más repetido de los supuestos del Bloque IV y debe salirte en menos de 90 segundos por ejercicio. Practícalo a diario 10 minutos hasta que sea mecánico, aunque el resto del tema vaya más despacio.</p>
+<p>Al final tienes el <strong>supuesto práctico nº 2</strong> (una red corporativa completa). Cuando lo termines, tendrás hecho un supuesto de cada bloque: guarda las puntuaciones netas de ambos porque son el primer dato de la «semana de la decisión» del mes 6.</p>
+<p>Criterio de cierre: ≥ 65 % netos en el test, ≥ 12 netas en el supuesto y <strong>10/10 en velocidad de subnetting</strong>.</p>
+<h1 id="tema-1.-administración-del-sistema-operativo-y-software-de-base">Tema 1. Administración del sistema operativo y software de base</h1>
+<p><strong>Funciones del administrador:</strong> altas/bajas de usuarios y grupos, políticas de contraseñas, instalación y actualización de software, programación de tareas, gestión de logs, monitorización de rendimiento, hardening básico.</p>
+<p><strong>Windows:</strong> dominios con <strong>Active Directory</strong> (usuarios, equipos, unidades organizativas), <strong>GPO</strong> (directivas de grupo: configuración centralizada de usuarios y equipos), <strong>WSUS</strong> para parcheo corporativo, Visor de eventos (logs de Aplicación/Seguridad/Sistema), Programador de tareas, PowerShell para automatización, servicios (services.msc). El <strong>Registro</strong> almacena la configuración (HKLM, HKCU).</p>
+<p><strong>Linux:</strong> root (UID 0) y <strong>sudo</strong> (elevación auditada); gestión de paquetes (apt/.deb, dnf/.rpm); <strong>cron/crontab</strong> (5 campos: min hora díames mes díasemana) y timers de systemd; logs en <strong>/var/log</strong> (syslog/journald: journalctl); systemctl para servicios; montajes en /etc/fstab; actualización del kernel y del software de base. <strong>Software de base:</strong> SO, controladores, utilidades del sistema, entornos de ejecución — frente al software de aplicación.</p>
+<h1 id="tema-2.-administración-de-bbdd-almacenamiento-backup-y-virtualización">Tema 2. Administración de BBDD, almacenamiento, backup y virtualización</h1>
+<p><strong>Administración de BBDD (DBA):</strong> instalación y parcheo del SGBD, gestión de usuarios/roles/permisos (mínimo privilegio), monitorización, afinamiento (tuning: índices, planes de ejecución), y sobre todo <strong>copias de seguridad y recuperación</strong>: backup lógico (export/dump) frente a físico; en caliente frente a en frío; el <strong>log de transacciones</strong> permite recuperación a un punto en el tiempo (PITR).</p>
+<p><strong>Tipos de copia:</strong> <strong>completa</strong> · <strong>incremental</strong> (cambios desde la última copia de cualquier tipo: rápida de hacer, lenta de restaurar) · <strong>diferencial</strong> (cambios desde la última completa: restaura con solo 2 piezas). <strong>RPO</strong> = pérdida máxima de datos admisible · <strong>RTO</strong> = tiempo máximo de recuperación del servicio. <strong>Regla 3-2-1:</strong> 3 copias, 2 soportes, 1 externa (hoy: + inmutable/offline frente al ransomware). Cintas <strong>LTO</strong> para archivo masivo. Verifica las copias: un backup no probado no es un backup.</p>
+<p><strong>Almacenamiento:</strong> DAS (directo) · <strong>NAS</strong> (ficheros por LAN: NFS, SMB/CIFS) · <strong>SAN</strong> (bloques por red dedicada: Fibre Channel, iSCSI). Virtualización del almacenamiento: pools, thin provisioning, snapshots.</p>
+<p><strong>Virtualización de sistemas:</strong> hipervisor <strong>tipo 1</strong> (bare-metal: VMware ESXi, Hyper-V, KVM/Proxmox) frente a <strong>tipo 2</strong> (hosted: VirtualBox). Ventajas: consolidación, aislamiento, snapshots, migración en vivo, alta disponibilidad. <strong>VDI:</strong> virtualización del puesto de usuario (escritorios en el CPD, cliente ligero).</p>
+<h1 id="tema-3.-correo-electrónico.-contenedores-y-microservicios">Tema 3. Correo electrónico. Contenedores y microservicios</h1>
+<p><strong>Protocolos de correo:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Protocolo</th>
+<th>Función</th>
+<th>Puerto (cifrado)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SMTP</td>
+<td>Envío / entre servidores</td>
+<td>25 · 587 submission · (465 TLS)</td>
+</tr>
+<tr class="even">
+<td>POP3</td>
+<td>Recepción: descarga (y suele borrar)</td>
+<td>110 (995)</td>
+</tr>
+<tr class="odd">
+<td>IMAP</td>
+<td>Recepción: sincroniza carpetas en servidor</td>
+<td>143 (993)</td>
+</tr>
+</tbody>
+</table>
+<p>Componentes: MUA (cliente) → MSA/MTA (servidores: Postfix, Exchange) → MDA (entrega). El registro <strong>MX</strong> del DNS indica el servidor de correo del dominio. <strong>Antisuplantación:</strong> SPF (servidores autorizados, TXT en DNS), DKIM (firma del mensaje), DMARC (política y reportes). Webmail, listas, cuotas, antivirus/antispam en pasarela.</p>
+<p><strong>Contenedores:</strong> empaquetan la aplicación con sus dependencias compartiendo el <strong>kernel del anfitrión</strong> (frente a la VM, que virtualiza hardware y lleva SO completo): ligeros, portables, arranque en segundos. <strong>Docker:</strong> imagen (plantilla por capas, Dockerfile, registros) → contenedor (instancia). <strong>Kubernetes:</strong> orquestador (pods, deployments, services; escalado y autorreparación). <strong>Microservicios:</strong> la aplicación como conjunto de servicios pequeños e independientes que se comunican por API (frente al monolito); casan naturalmente con contenedores y CI/CD (Bloque III).</p>
+<h1 id="tema-4.-administración-de-redes-de-área-local">Tema 4. Administración de redes de área local</h1>
+<p><strong>Gestión de usuarios:</strong> directorio centralizado — <strong>Active Directory</strong> (Kerberos para autenticación, <strong>LDAP</strong> 389/LDAPS 636 como protocolo de acceso al directorio) o LDAP abierto (OpenLDAP); grupos y perfiles; RADIUS para autenticación de acceso a red.</p>
+<p><strong>Gestión de dispositivos e IP:</strong> <strong>DHCP</strong> (UDP 67/68; proceso <strong>DORA</strong>: Discover-Offer-Request-Ack; concesiones/leases; reservas por MAC) · <strong>DNS interno</strong> · inventario y despliegue de imágenes (PXE) · MDM para móviles.</p>
+<p><strong>Segmentación:</strong> <strong>VLAN</strong> (IEEE <strong>802.1Q</strong>): redes lógicas independientes sobre el mismo switch, separan dominios de difusión (administración/usuarios/invitados/VoIP); comunicación entre VLANs = enrutamiento (switch capa 3). Puertos de acceso frente a troncales (trunk).</p>
+<p><strong>Monitorización y control de tráfico:</strong> <strong>SNMP</strong> (UDP 161, traps 162; MIB/OID; herramientas Nagios, Zabbix, PRTG) · syslog centralizado · NetFlow · <strong>port mirroring/SPAN</strong> para capturar tráfico con analizador (<strong>Wireshark</strong>) · <strong>Spanning Tree</strong> (802.1D) evita bucles de conmutación · QoS (priorizar VoIP) · NTP (123) para sincronizar relojes.</p>
+<h1 id="tema-5.-seguridad-de-los-sistemas-de-información">Tema 5. Seguridad de los sistemas de información</h1>
+<p><strong>Dimensiones:</strong> tríada <strong>CIA</strong> (confidencialidad, integridad, disponibilidad); el <strong>ENS añade autenticidad y trazabilidad</strong>. Seguridad <strong>física</strong> (control de acceso, CPD) y <strong>lógica</strong> (permisos, cifrado, autenticación). <strong>Amenazas:</strong> malware (virus, gusanos, troyanos, <strong>ransomware</strong>), <strong>phishing</strong> e ingeniería social, DoS/DDoS, insider; <strong>vulnerabilidades</strong> (CVE, parcheo). Autenticación multifactor (<strong>MFA</strong>): algo que sé + tengo + soy.</p>
+<p><strong>Criptografía:</strong></p>
+<ul>
+<li><strong>Simétrica</strong> (misma clave: <strong>AES</strong>; rápida; problema: distribuir la clave) frente a <strong>asimétrica</strong> (par pública/privada: <strong>RSA</strong>, curvas elípticas; lenta; resuelve la distribución). En la práctica, híbrida: la asimétrica acuerda una clave de sesión simétrica (así funciona TLS).</li>
+<li><strong>Hash</strong> (SHA-256; MD5/SHA-1 obsoletos): resumen de longitud fija, unidireccional, efecto avalancha; para integridad y contraseñas (con salt).</li>
+<li><strong>Firma digital:</strong> hash del documento cifrado con la clave <strong>privada</strong> del firmante → autenticidad, integridad y no repudio. <strong>PKI:</strong> certificados X.509 emitidos por autoridades de certificación (CA); en España, FNMT, DNIe (enlaza con eIDAS del Bloque I).</li>
+</ul>
+<p><strong>CPD:</strong> SAI/UPS (puentea cortes hasta el grupo electrógeno), climatización con <strong>pasillos frío/calor</strong>, detección y extinción por gas, control de acceso físico, suelo técnico, redundancia N+1/2N y clasificación <strong>TIER I-IV</strong>. <strong>Gestión de incidencias:</strong> herramientas de ticketing (ITIL como referencia: incidencia ≠ problema ≠ cambio). <strong>Control remoto de puestos:</strong> RDP (3389), VNC, herramientas corporativas con consentimiento y registro.</p>
+<h1 id="tema-6.-comunicaciones">Tema 6. Comunicaciones</h1>
+<p><strong>Medios de transmisión:</strong> guiados — par trenzado (UTP/STP, categorías; 100 m), <strong>coaxial</strong>, <strong>fibra óptica</strong> (inmune a interferencias EM; <strong>multimodo</strong> LED/distancias cortas frente a <strong>monomodo</strong> láser/km) — y no guiados: radio, microondas, satélite.</p>
+<p><strong>Modos:</strong> <strong>simplex</strong> (un sentido) · <strong>half-dúplex</strong> (ambos, alternos) · <strong>full-dúplex</strong> (ambos simultáneos). Transmisión síncrona/asíncrona; banda base frente a banda ancha; multiplexación (TDM, FDM, WDM en fibra).</p>
+<p><strong>Equipos:</strong> terminales (DTE) y de interconexión: módem, repetidor/hub (capa 1), puente/<strong>switch</strong> (capa 2), <strong>router</strong> (capa 3), pasarela (capas superiores).</p>
+<p><strong>Conmutación:</strong> de <strong>circuitos</strong> (camino dedicado reservado: telefonía clásica) frente a de <strong>paquetes</strong> (datos troceados, rutas independientes, uso eficiente del enlace: Internet). Datagramas frente a circuitos virtuales. Redes de difusión (medio compartido) frente a punto a punto.</p>
+<p><strong>Inalámbricas y móviles:</strong> <strong>WiFi = IEEE 802.11</strong> (n=WiFi 4, ac=WiFi 5, <strong>ax=WiFi 6/6E</strong>, be=WiFi 7); seguridad WEP (roto) → WPA2 → <strong>WPA3</strong>; infraestructura (AP) frente a ad-hoc. <strong>Bluetooth</strong> (802.15, WPAN). Móviles: 2G GSM → 3G UMTS → <strong>4G LTE</strong> (todo IP) → <strong>5G</strong> (baja latencia, IoT masivo, network slicing).</p>
+<h1 id="tema-7.-el-modelo-tcpip-y-el-modelo-osi">Tema 7. El modelo TCP/IP y el modelo OSI</h1>
+<p><strong>OSI (7 capas):</strong> Física → Enlace → Red → Transporte → Sesión → Presentación → Aplicación. <strong>TCP/IP (4):</strong> Acceso a red (OSI 1-2) → Internet (3) → Transporte (4) → Aplicación (5-7).</p>
+<p><strong>PDU y dispositivos por capa:</strong> bits/física/repetidor-hub · <strong>tramas</strong>/enlace/switch (direcciones <strong>MAC</strong>, 48 bits) · <strong>paquetes</strong>/red/router (direcciones <strong>IP</strong>) · <strong>segmentos</strong> TCP / <strong>datagramas</strong> UDP/transporte (puertos).</p>
+<p><strong>Protocolos clave:</strong> <strong>IP</strong> (no orientado a conexión, best-effort; TTL; fragmentación) · <strong>TCP</strong> (orientado a conexión: triple apretón SYN/SYN-ACK/ACK; entrega ordenada y fiable; control de flujo y congestión) · <strong>UDP</strong> (ligero, sin garantías: DNS, streaming, VoIP) · <strong>ICMP</strong> (control y diagnóstico: ping, traceroute; sin puertos) · <strong>ARP</strong> (IP→MAC en la LAN; en IPv6, NDP).</p>
+<p><strong>IPv4:</strong> 32 bits, clases históricas (A/B/C) sustituidas por <strong>CIDR</strong>; <strong>direcciones privadas</strong> (RFC 1918): 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16; loopback 127.0.0.1; <strong>NAT/PAT</strong> traduce privadas a públicas. <strong>IPv6:</strong> <strong>128 bits</strong>, 8 grupos hex; sin broadcast (unicast/multicast/<strong>anycast</strong>); link-local fe80::/10, loopback ::1; SLAAC para autoconfiguración; coexistencia dual-stack y túneles.</p>
+<h1 id="laboratorio-de-subnetting-la-máquina-de-puntos-del-bloque-iv">LABORATORIO DE SUBNETTING (la máquina de puntos del Bloque IV)</h1>
+<p><strong>Método rápido (número mágico).</strong> Dada una máscara /n:</p>
+<ol type="1">
+<li><strong>Bits de host</strong> h = 32 − n → <strong>direcciones por subred</strong> = 2^h → <strong>hosts útiles = 2^h − 2</strong> (se restan la dirección de red y la de difusión).</li>
+<li><strong>Número mágico</strong> = 256 − valor del octeto de máscara «interesante». Las subredes van saltando de ese valor en ese valor.</li>
+<li>La <strong>dirección de red</strong> es el múltiplo del número mágico inmediatamente inferior o igual al octeto de la IP; la <strong>difusión</strong> es la siguiente red menos 1; el rango útil, lo que queda entre ambas.</li>
+</ol>
+<p>Máscaras que debes tener memorizadas: /24=255.255.255.0 · /25=.128 · /26=.192 · /27=.224 · /28=.240 · /29=.248 · /30=.252 (2 hosts, enlaces punto a punto) · /16 y /8.</p>
+<p><strong>Ejercicios resueltos (objetivo final: cada uno en &lt;90 s).</strong></p>
+<ol type="1">
+<li><strong>¿Red, difusión y rango útil de 192.168.10.77/26?</strong> h=6 → 64 direcciones; número mágico 256−192=64 → subredes .0, .64, .128, .192. El 77 cae en la de <strong>.64</strong>: red 192.168.10.64, <strong>difusión .127</strong>, útiles <strong>.65-.126</strong> (62 hosts).</li>
+<li><strong>¿Cuántas subredes y hosts salen de dividir 192.168.1.0/24 en /27?</strong> Se toman 3 bits: <strong>8 subredes</strong> de 32 direcciones = <strong>30 hosts útiles</strong> cada una (.0, .32, .64…).</li>
+<li><strong>Necesitas subredes de al menos 100 hosts en 172.16.0.0/16. ¿Qué máscara maximiza el número de subredes?</strong> 100 ≤ 2^7−2=126 → 7 bits de host → <strong>/25</strong> (126 hosts; 512 subredes).</li>
+<li><strong>¿Están 10.1.37.20/22 y 10.1.34.200/22 en la misma subred?</strong> /22 → salto de 4 en el tercer octeto (256−252): subredes 10.1.32.0, 10.1.36.0… El 37 cae en 10.1.<strong>36</strong>.0/22 (36-39) y el 34 en 10.1.<strong>32</strong>.0/22 (32-35): <strong>NO</strong>, distintas subredes.</li>
+<li><strong>¿Qué máscara usa un enlace punto a punto entre dos routers?</strong> <strong>/30</strong> (4 direcciones, 2 útiles). (En la práctica moderna también /31, RFC 3021 — por si aparece como «matiz avanzado»).</li>
+<li><strong>Un host tiene 172.20.130.10/19. ¿Su puerta de enlace 172.20.159.254 es válida en su subred?</strong> /19 → salto de 32 en el TERCER octeto: subredes 172.20.128.0, 172.20.160.0… Red del host: 172.20.128.0-172.20.159.255. La puerta .159.254 está dentro (y justo antes de la difusión .159.255): <strong>sí, válida</strong>.</li>
+</ol>
+<p><strong>Rutina:</strong> 10 minutos diarios, 5 ejercicios generados por ti mismo (cambia IP y máscara), hasta encadenar dos semanas sin fallo. En el examen, el subnetting son puntos regalados… para quien lo automatizó.</p>
+<h1 id="tema-8.-internet-arquitectura-y-servicios">Tema 8. Internet: arquitectura y servicios</h1>
+<p><strong>Arquitectura:</strong> red de redes con sistemas autónomos interconectados (BGP como pegamento — basta saber que existe); organismos: IETF (RFC), ICANN/IANA (nombres y números), W3C (web).</p>
+<p><strong>DNS:</strong> jerarquía raíz → TLD (.es) → autoritativos; el <strong>resolver recursivo</strong> consulta por ti y cachea (TTL). <strong>Registros:</strong> <strong>A</strong> (IPv4), <strong>AAAA</strong> (IPv6), <strong>MX</strong> (correo), <strong>CNAME</strong> (alias), NS, PTR (inversa), TXT (SPF/DKIM). Puerto <strong>53</strong> (UDP consultas; TCP transferencias de zona). DNSSEC firma las respuestas.</p>
+<p><strong>Web:</strong> URL = esquema://host:puerto/ruta?consulta#fragmento (puertos implícitos 80/443). <strong>HTTP:</strong> métodos y códigos (ya dominados del Bloque III); versiones 1.1 → 2 (multiplexación) → 3 (QUIC/UDP). <strong>HTTPS = HTTP sobre TLS:</strong> el certificado X.509 (emitido por una CA) autentica al servidor; <strong>TLS 1.2/1.3</strong> vigentes (SSL obsoleto); handshake: la criptografía asimétrica acuerda la clave de sesión <strong>simétrica</strong> que cifra el tráfico. Cookies y sesiones.</p>
+<p><strong>Otros servicios:</strong> FTP/SFTP/FTPS (transferencia), SSH (22, administración remota), Telnet (23, inseguro, no usar), NTP (123).</p>
+<h1 id="tema-9.-seguridad-y-protección-en-redes-de-comunicaciones">Tema 9. Seguridad y protección en redes de comunicaciones</h1>
+<p><strong>Seguridad perimetral:</strong> <strong>cortafuegos</strong> — filtrado de paquetes (stateless) frente a <strong>inspección de estado</strong> (stateful: tabla de conexiones) frente a <strong>NGFW</strong> (aplicación, IPS integrado, identidad). <strong>DMZ:</strong> zona intermedia para servidores expuestos (web, correo, DNS público); con uno o dos firewalls. <strong>Proxy</strong> directo (representa a los clientes: filtrado de navegación) frente a <strong>proxy inverso</strong> (delante de los servidores: balanceo, caché, terminación TLS, <strong>WAF</strong> para ataques web).</p>
+<p><strong>Detección:</strong> <strong>IDS</strong> (detecta y alerta: Snort, Suricata; por firmas o anomalías) frente a <strong>IPS</strong> (en línea, bloquea). SIEM: correlación centralizada de eventos.</p>
+<p><strong>Acceso remoto seguro:</strong> <strong>VPN</strong> — <strong>IPsec</strong> (capa de red; AH autentica, <strong>ESP cifra</strong>; modos túnel/transporte; sitio-a-sitio) · <strong>SSL/TLS VPN</strong> (acceso remoto de usuarios, OpenVPN, portales) · <strong>WireGuard</strong> (moderno y ligero). <strong>802.1X/NAC:</strong> control de admisión a la red (RADIUS). Tendencia: <strong>Zero Trust</strong> («nunca confíes, verifica siempre»).</p>
+<p><strong>Puesto de usuario:</strong> antivirus/EDR, cortafuegos personal, cifrado de disco (BitLocker), bloqueo de sesión, mínimo privilegio, concienciación anti-phishing.</p>
+<h1 id="tema-10.-redes-locales">Tema 10. Redes locales</h1>
+<p><strong>Topologías:</strong> física (bus y anillo, históricas; <strong>estrella</strong> y estrella extendida, actuales; malla en backbone/WiFi mesh) frente a lógica.</p>
+<p><strong>Ethernet (IEEE 802.3):</strong> el estándar LAN universal. <strong>CSMA/CD</strong> (escuchar-transmitir-detectar colisión) en el Ethernet clásico de medio compartido; <strong>innecesario con conmutación full-dúplex</strong> actual. Trama Ethernet: MAC destino/origen, tipo, datos, FCS. Velocidades: Fast (100M), Gigabit, 10G… <strong>WiFi usa CSMA/CA</strong> (evitación, no detección).</p>
+<p><strong>Cableado estructurado:</strong> par trenzado con RJ45 (T568A/B): <strong>Cat 5e = 1 Gbps/100 m · Cat 6 = 10 G hasta ~55 m · Cat 6A = 10 G/100 m</strong>; fibra en backbone. <strong>PoE</strong> (802.3af ≈15 W / at ≈30 W / bt ≈90 W): alimenta APs, teléfonos IP y cámaras por el cable de datos.</p>
+<p><strong>Dispositivos de interconexión por capa OSI:</strong> repetidor/<strong>hub</strong> (1: replica bits a todos) · puente/<strong>switch</strong> (2: conmuta tramas por MAC, tabla CAM) · <strong>router</strong> (3: enruta paquetes por IP) · pasarela (superiores). Métodos de acceso al medio: contienda (CSMA), paso de testigo (Token Ring, histórico), reserva.</p>
+<h1 id="test-del-bloque-iv-50-preguntas">Test del Bloque IV — 50 preguntas</h1>
+<p>Condiciones: 50 preguntas, <strong>60 minutos</strong>, sin apuntes. Nota neta = aciertos − fallos/3. Objetivo primera vuelta: ≥ 33 netas (65 %). Versión con clave equilibrada.</p>
+<p><strong>Tema 1 · Administración del SO</strong></p>
+<p><strong>1.</strong> En Linux, el usuario root se caracteriza por:</p>
+<p>   a) Tener UID 1000 por defecto</p>
+<p>   b) Ser el usuario de los servicios web</p>
+<p>   c) Tener UID 0 y privilegios totales</p>
+<p>   d) No poder ejecutar comandos remotos</p>
+<p><strong>2.</strong> La herramienta corporativa de Microsoft para distribuir actualizaciones de forma centralizada es:</p>
+<p>   a) WSUS</p>
+<p>   b) Windows Defender</p>
+<p>   c) BitLocker</p>
+<p>   d) Hyper-V</p>
+<p><strong>3.</strong> Para programar la ejecución periódica de tareas en Linux se utiliza:</p>
+<p>   a) systemd-boot</p>
+<p>   b) fstab</p>
+<p>   c) GRUB</p>
+<p>   d) cron (crontab)</p>
+<p><strong>4.</strong> Los registros de sucesos de un sistema Windows se consultan principalmente en:</p>
+<p>   a) El Registro (regedit)</p>
+<p>   b) El Visor de eventos</p>
+<p>   c) El Administrador de dispositivos</p>
+<p>   d) La consola services.msc</p>
+<p><strong>5.</strong> En un dominio Windows, las GPO (directivas de grupo) sirven para:</p>
+<p>   a) Virtualizar los servidores y escritorios del dominio</p>
+<p>   b) Aplicar políticas centralizadas a usuarios y equipos</p>
+<p>   c) Programar copias de seguridad del dominio</p>
+<p>   d) Monitorizar el tráfico de la red interna</p>
+<p><strong>Tema 2 · BBDD, almacenamiento y backup</strong></p>
+<p><strong>6.</strong> La diferencia entre copia incremental y diferencial es:</p>
+<p>   a) La diferencial copia desde la última copia; la incremental, desde la última completa</p>
+<p>   b) Ambas copian siempre desde la última copia completa</p>
+<p>   c) La incremental no requiere una copia completa previa</p>
+<p>   d) La incremental copia desde la última copia; la diferencial, desde la última completa</p>
+<p><strong>7.</strong> El RPO (Recovery Point Objective) de un plan de respaldo indica:</p>
+<p>   a) La pérdida máxima de datos admisible, medida en tiempo</p>
+<p>   b) El tiempo máximo admisible para restaurar el servicio</p>
+<p>   c) La duración de la ventana nocturna de backup</p>
+<p>   d) El número de copias simultáneas admitidas</p>
+<p><strong>8.</strong> La regla 3-2-1 de copias de seguridad establece:</p>
+<p>   a) 3 copias diarias, 2 semanales y 1 mensual en rotación continua</p>
+<p>   b) 3 discos locales, 2 cintas y 1 réplica en la nube</p>
+<p>   c) 3 copias, en 2 soportes distintos, 1 fuera de las instalaciones</p>
+<p>   d) 3 administradores, 2 llaves y 1 caja fuerte ignífuga</p>
+<p><strong>9.</strong> La diferencia entre NAS y SAN es:</p>
+<p>   a) El NAS sirve ficheros por la LAN; la SAN sirve bloques por red dedicada</p>
+<p>   b) La SAN sirve ficheros por la LAN; el NAS sirve bloques dedicados</p>
+<p>   c) La SAN es siempre más barata y sencilla que el NAS</p>
+<p>   d) Son dos nombres del mismo tipo de almacenamiento</p>
+<p><strong>10.</strong> VDI hace referencia a:</p>
+<p>   a) Un nivel de RAID específico para infraestructuras de escritorio</p>
+<p>   b) Un protocolo de correo corporativo cifrado</p>
+<p>   c) El backup específico de máquinas virtuales</p>
+<p>   d) La virtualización de puestos: el escritorio se ejecuta en el CPD</p>
+<p><strong>Tema 3 · Correo, contenedores y microservicios</strong></p>
+<p><strong>11.</strong> El protocolo estándar para el ENVÍO de correo electrónico es:</p>
+<p>   a) POP3</p>
+<p>   b) SMTP</p>
+<p>   c) IMAP</p>
+<p>   d) SNMP</p>
+<p><strong>12.</strong> SPF, DKIM y DMARC son mecanismos para:</p>
+<p>   a) Cifrar de extremo a extremo los buzones corporativos</p>
+<p>   b) Comprimir automáticamente los adjuntos antes del envío</p>
+<p>   c) Combatir la suplantación del remitente validando servidores y firmas</p>
+<p>   d) Sincronizar las carpetas entre varios dispositivos</p>
+<p><strong>13.</strong> La diferencia esencial entre un contenedor y una máquina virtual es:</p>
+<p>   a) La VM comparte el kernel del anfitrión; el contenedor virtualiza hardware completo</p>
+<p>   b) El contenedor incluye siempre su propio sistema operativo completo</p>
+<p>   c) La máquina virtual arranca más rápido y ocupa menos que el contenedor</p>
+<p>   d) El contenedor comparte el kernel del anfitrión; la VM virtualiza hardware completo</p>
+<p><strong>14.</strong> En Docker, la relación entre imagen y contenedor es:</p>
+<p>   a) El contenedor es la plantilla; la imagen, la instancia en ejecución</p>
+<p>   b) La imagen es la plantilla; el contenedor, una instancia en ejecución</p>
+<p>   c) Son términos equivalentes en la documentación de Docker</p>
+<p>   d) Las imágenes solo existen dentro de un clúster Kubernetes</p>
+<p><strong>15.</strong> Kubernetes es:</p>
+<p>   a) Un orquestador de contenedores: despliegue, escalado y autorreparación</p>
+<p>   b) Un hipervisor de tipo 1 ejecutado directamente sobre el hardware</p>
+<p>   c) Una distribución Linux especializada en contenedores</p>
+<p>   d) Un servidor de correo distribuido en contenedores</p>
+<p><strong>Tema 4 · Administración de redes LAN</strong></p>
+<p><strong>16.</strong> El protocolo DHCP sirve para:</p>
+<p>   a) Resolver nombres de dominio en direcciones IP de la red</p>
+<p>   b) Cifrar el tráfico de difusión dentro de la red local</p>
+<p>   c) Asignar automáticamente la configuración IP a los equipos</p>
+<p>   d) Monitorizar el estado de switches y routers</p>
+<p><strong>17.</strong> Una VLAN permite:</p>
+<p>   a) Aumentar el ancho de banda físico disponible en cada puerto</p>
+<p>   b) Segmentar lógicamente una red física en redes independientes</p>
+<p>   c) Sustituir al router en el encaminamiento externo</p>
+<p>   d) Cifrar las tramas Ethernet entre conmutadores</p>
+<p><strong>18.</strong> El protocolo estándar para monitorizar dispositivos de red es:</p>
+<p>   a) SMTP</p>
+<p>   b) FTP</p>
+<p>   c) NTP</p>
+<p>   d) SNMP</p>
+<p><strong>19.</strong> En una red corporativa Windows, la autenticación centralizada de usuarios se apoya en:</p>
+<p>   a) Active Directory, con Kerberos y LDAP</p>
+<p>   b) El fichero hosts replicado por GPO</p>
+<p>   c) Un servidor DHCP con reservas por MAC</p>
+<p>   d) El protocolo SNMP en modo seguro</p>
+<p><strong>20.</strong> Para analizar el tráfico que atraviesa un switch desde un puerto de diagnóstico se configura:</p>
+<p>   a) Una VLAN de voz dedicada al diagnóstico</p>
+<p>   b) El espejado de puertos (SPAN) hacia el analizador</p>
+<p>   c) El protocolo Spanning Tree en modo escucha</p>
+<p>   d) La alimentación PoE del puerto de diagnóstico</p>
+<p><strong>Tema 5 · Seguridad de sistemas</strong></p>
+<p><strong>21.</strong> Las tres dimensiones clásicas de la seguridad de la información (tríada CIA) son:</p>
+<p>   a) Cifrado, integridad y autenticación mutua</p>
+<p>   b) Control, identidad y auditoría continua</p>
+<p>   c) Confidencialidad, identificación y autorización</p>
+<p>   d) Confidencialidad, integridad y disponibilidad</p>
+<p><strong>22.</strong> La diferencia entre criptografía simétrica y asimétrica es:</p>
+<p>   a) La simétrica usa una clave única; la asimétrica, un par pública/privada</p>
+<p>   b) La asimétrica usa una clave única; la simétrica, un par pública/privada</p>
+<p>   c) La asimétrica es siempre más rápida que la simétrica</p>
+<p>   d) La simétrica sirve solo para firmar, no para cifrar</p>
+<p><strong>23.</strong> Una función hash criptográfica (SHA-256) se caracteriza por:</p>
+<p>   a) Ser reversible únicamente para quien conozca la clave adecuada</p>
+<p>   b) Cifrar el mensaje completo con la clave pública</p>
+<p>   c) Producir un resumen fijo, unidireccional y sensible a cambios</p>
+<p>   d) Generar el par de claves pública y privada</p>
+<p><strong>24.</strong> Firmar digitalmente un documento consiste técnicamente en:</p>
+<p>   a) Cifrar el documento completo con la clave pública del receptor</p>
+<p>   b) Cifrar el hash del documento con la clave privada del firmante</p>
+<p>   c) Cifrar el hash del documento con la clave pública del receptor</p>
+<p>   d) Adjuntar una imagen escaneada de la firma manuscrita</p>
+<p><strong>25.</strong> En un CPD, el SAI (UPS) tiene como función:</p>
+<p>   a) Refrigerar los pasillos fríos y calientes del CPD</p>
+<p>   b) Detectar y extinguir automáticamente incendios mediante gas inerte</p>
+<p>   c) Controlar el acceso físico a las salas técnicas</p>
+<p>   d) Mantener la alimentación ante cortes hasta entrar el generador</p>
+<p><strong>Tema 6 · Comunicaciones</strong></p>
+<p><strong>26.</strong> La ventaja principal de la fibra óptica frente al par trenzado de cobre es:</p>
+<p>   a) Mayor ancho de banda y alcance, inmune a interferencias</p>
+<p>   b) Un coste de instalación y empalme mucho menor</p>
+<p>   c) La capacidad de transmitir también energía eléctrica</p>
+<p>   d) Una mayor facilidad de conectorización en campo</p>
+<p><strong>27.</strong> La diferencia entre conmutación de circuitos y de paquetes es:</p>
+<p>   a) Los paquetes reservan un camino dedicado; los circuitos comparten rutas</p>
+<p>   b) Los paquetes requieren siempre reserva previa de recursos</p>
+<p>   c) Los circuitos reservan un camino dedicado; los paquetes comparten rutas</p>
+<p>   d) Los circuitos aprovechan mejor los enlaces compartidos</p>
+<p><strong>28.</strong> Un canal full-dúplex permite transmitir:</p>
+<p>   a) En un solo sentido permanente</p>
+<p>   b) En ambos sentidos alternándose</p>
+<p>   c) En ambos sentidos simultáneamente</p>
+<p>   d) Solo mediante enlaces inalámbricos</p>
+<p><strong>29.</strong> El estándar IEEE de las redes WiFi es:</p>
+<p>   a) 802.3 (Ethernet cableado)</p>
+<p>   b) 802.1Q (etiquetado VLAN)</p>
+<p>   c) 802.15 (redes WPAN)</p>
+<p>   d) 802.11 (ax = WiFi 6)</p>
+<p><strong>30.</strong> Las generaciones móviles que introdujeron los datos de banda ancha y la baja latencia masiva son, respectivamente:</p>
+<p>   a) 3G/4G los datos de banda ancha y 5G la baja latencia</p>
+<p>   b) 2G los datos de banda ancha y 3G la baja latencia</p>
+<p>   c) 1G los datos de banda ancha y 2G la baja latencia</p>
+<p>   d) 4G la voz digital y el WiFi la baja latencia</p>
+<p><strong>Tema 7 · TCP/IP y OSI</strong></p>
+<p><strong>31.</strong> Las 7 capas del modelo OSI, de abajo arriba, son:</p>
+<p>   a) Física, Red, Enlace, Transporte, Sesión, Aplicación, Presentación</p>
+<p>   b) Física, Enlace, Red, Transporte, Sesión, Presentación, Aplicación</p>
+<p>   c) Enlace, Física, Red, Transporte, Sesión, Presentación, Aplicación</p>
+<p>   d) Física, Enlace, Transporte, Red, Sesión, Presentación, Aplicación</p>
+<p><strong>32.</strong> Las PDU de las capas de transporte, red y enlace se denominan respectivamente:</p>
+<p>   a) Paquete, segmento o datagrama y trama</p>
+<p>   b) Trama, paquete y segmento o datagrama</p>
+<p>   c) Segmento o datagrama, paquete y trama</p>
+<p>   d) Bit, byte y palabra de transmisión</p>
+<p><strong>33.</strong> El protocolo ARP sirve para:</p>
+<p>   a) Asignar direcciones IP dinámicas a los equipos</p>
+<p>   b) Encaminar los paquetes entre redes distintas</p>
+<p>   c) Resolver una dirección MAC en su dirección IP pública</p>
+<p>   d) Resolver una dirección IP en su dirección MAC en la LAN</p>
+<p><strong>34.</strong> Las direcciones IPv6 tienen una longitud de:</p>
+<p>   a) 32 bits</p>
+<p>   b) 64 bits</p>
+<p>   c) 128 bits</p>
+<p>   d) 256 bits</p>
+<p><strong>35.</strong> El protocolo ICMP se utiliza para:</p>
+<p>   a) Mensajes de control y diagnóstico como ping o traceroute</p>
+<p>   b) La transferencia fiable de ficheros pequeños</p>
+<p>   c) La resolución de nombres de dominio en direcciones</p>
+<p>   d) La asignación dinámica de puertos efímeros</p>
+<p><strong>Tema 8 · Internet y protocolos</strong></p>
+<p><strong>36.</strong> El registro DNS que asocia un nombre a una dirección IPv4 es:</p>
+<p>   a) MX (servidor de correo)</p>
+<p>   b) CNAME (alias de nombre)</p>
+<p>   c) TXT (texto libre)</p>
+<p>   d) A (IPv4; AAAA para IPv6)</p>
+<p><strong>37.</strong> HTTPS es:</p>
+<p>   a) Una versión comprimida y cacheada de HTTP</p>
+<p>   b) HTTP sobre un canal TLS con certificado del servidor</p>
+<p>   c) Un protocolo de correo electrónico seguro sobre SSL</p>
+<p>   d) HTTP con autenticación básica por contraseña</p>
+<p><strong>38.</strong> En el handshake TLS, el cifrado del tráfico de la sesión se realiza con:</p>
+<p>   a) Una clave simétrica de sesión negociada al inicio</p>
+<p>   b) La clave privada del servidor durante toda la sesión</p>
+<p>   c) El hash del certificado firmado por la CA</p>
+<p>   d) La clave pública del cliente y su certificado</p>
+<p><strong>39.</strong> En la URL https://sede.ejemplo.gob.es:8443/tramites?id=7, el número 8443 es:</p>
+<p>   a) El identificador interno del trámite</p>
+<p>   b) El puerto del servidor de destino</p>
+<p>   c) La versión del protocolo TLS usada</p>
+<p>   d) El código de la provincia del organismo</p>
+<p><strong>40.</strong> La resolución de un nombre DNS sigue típicamente esta cadena:</p>
+<p>   a) Navegador → servidor raíz → fichero hosts local</p>
+<p>   b) Autoritativo → cliente → raíz → caché local</p>
+<p>   c) Caché local → recursivo → raíz → TLD → autoritativo</p>
+<p>   d) DHCP → ARP → DNS → pasarela por defecto</p>
+<p><strong>Tema 9 · Seguridad perimetral y VPN</strong></p>
+<p><strong>41.</strong> Un cortafuegos de inspección de estado (stateful) se diferencia del filtrado simple en que:</p>
+<p>   a) Filtra únicamente por direcciones MAC de origen</p>
+<p>   b) Aplica las reglas sin considerar el contexto</p>
+<p>   c) Opera exclusivamente en la capa física del modelo</p>
+<p>   d) Rastrea las conexiones y permite su tráfico de retorno</p>
+<p><strong>42.</strong> Una DMZ es:</p>
+<p>   a) Una zona perimetral para los servidores expuestos a Internet</p>
+<p>   b) Una red interna completamente aislada físicamente de Internet</p>
+<p>   c) El segmento WiFi reservado para los invitados</p>
+<p>   d) Una modalidad de VPN entre sedes corporativas</p>
+<p><strong>43.</strong> La diferencia entre IDS e IPS es:</p>
+<p>   a) El IPS detecta y alerta; el IDS además bloquea en línea</p>
+<p>   b) El IDS detecta y alerta; el IPS además bloquea en línea</p>
+<p>   c) El IDS cifra el tráfico que atraviesa el perímetro</p>
+<p>   d) Ambos son sinónimos en la documentación técnica</p>
+<p><strong>44.</strong> Los protocolos habituales para construir VPN son:</p>
+<p>   a) SMTP, POP3 e IMAP seguros</p>
+<p>   b) SNMP, NTP y syslog cifrados</p>
+<p>   c) IPsec, TLS/SSL y WireGuard</p>
+<p>   d) ARP, STP y el etiquetado VLAN</p>
+<p><strong>45.</strong> Un proxy inverso se sitúa:</p>
+<p>   a) Integrado en el navegador de cada usuario corporativo</p>
+<p>   b) Entre el usuario e Internet, filtrando su navegación corporativa</p>
+<p>   c) Junto al servidor DNS autoritativo del dominio</p>
+<p>   d) Delante de los servidores web, recibiendo las peticiones por ellos</p>
+<p><strong>Tema 10 · Redes locales</strong></p>
+<p><strong>46.</strong> La topología física predominante en las LAN actuales es:</p>
+<p>   a) Bus compartido con cable coaxial</p>
+<p>   b) Anillo con paso de testigo</p>
+<p>   c) Malla completa entre todos los equipos</p>
+<p>   d) Estrella en torno al conmutador</p>
+<p><strong>47.</strong> CSMA/CD era el método de acceso al medio de:</p>
+<p>   a) Ethernet clásico en medio compartido</p>
+<p>   b) Las redes WiFi de infraestructura</p>
+<p>   c) Bluetooth y las redes personales WPAN</p>
+<p>   d) Las redes de fibra hasta el hogar</p>
+<p><strong>48.</strong> Hub, switch y router operan respectivamente en las capas OSI:</p>
+<p>   a) 1, 2 y 3</p>
+<p>   b) 2, 3 y 4</p>
+<p>   c) 1, 3 y 2</p>
+<p>   d) 2, 2 y 3</p>
+<p><strong>49.</strong> Para 10 Gbps sobre par trenzado hasta 100 metros se requiere como mínimo cableado de categoría:</p>
+<p>   a) Cat 5e</p>
+<p>   b) Cat 6</p>
+<p>   c) Cat 6A</p>
+<p>   d) Cat 3</p>
+<p><strong>50.</strong> PoE (Power over Ethernet, IEEE 802.3af/at/bt) permite:</p>
+<p>   a) Duplicar la velocidad efectiva del enlace</p>
+<p>   b) Alimentar dispositivos a través del propio cable de red</p>
+<p>   c) Extender el alcance máximo del cobre hasta los 500 metros</p>
+<p>   d) Cifrar el tráfico de la LAN por hardware</p>
+<h2 id="soluciones-razonadas">Soluciones razonadas</h2>
+<p><strong>1. c) Tener UID 0 y privilegios totales.</strong> root (UID 0) es el superusuario. La buena práctica es no trabajar como root sino elevar privilegios puntualmente con sudo, que además deja registro de auditoría de cada comando.</p>
+<p><strong>2. a) WSUS.</strong> WSUS (Windows Server Update Services) permite aprobar y programar parches para toda la organización. Defender es el antimalware, BitLocker cifra volúmenes y Hyper-V virtualiza.</p>
+<p><strong>3. d) cron (crontab).</strong> cron ejecuta tareas según crontab (5 campos: minuto, hora, día del mes, mes, día de la semana); en systemd también hay timers. fstab define montajes y GRUB es el gestor de arranque.</p>
+<p><strong>4. b) El Visor de eventos.</strong> El Visor de eventos agrupa los logs de Aplicación, Seguridad y Sistema. No confundir con el Registro (base de datos de configuración): «registro de eventos» frente a «Registro de Windows» es trampa habitual.</p>
+<p><strong>5. b) Aplicar políticas centralizadas a usuarios y equipos.</strong> Las Group Policy Objects se definen en Active Directory y se aplican a sitios, dominios y unidades organizativas: restricciones de escritorio, scripts, políticas de contraseñas… La herramienta central de administración de puestos Windows.</p>
+<p><strong>6. d) La incremental copia desde la última copia; la diferencial, desde la última completa.</strong> Incremental: rápida de hacer, lenta de restaurar (completa + toda la cadena). Diferencial: crece cada día, pero restaura con solo 2 piezas. La primera alternativa es la definición INVERTIDA: léela dos veces.</p>
+<p><strong>7. a) La pérdida máxima de datos admisible, medida en tiempo.</strong> RPO = cuántos datos puedes perder (backup cada 24 h → RPO 24 h). RTO = cuánto puedes tardar en recuperar el servicio. La pareja RPO/RTO es de las más rentables del tema.</p>
+<p><strong>8. c) 3 copias, en 2 soportes distintos, 1 fuera de las instalaciones.</strong> 3 copias (la original y dos más), 2 tipos de soporte diferentes, 1 externa (offsite; hoy, idealmente inmutable o desconectada frente al ransomware).</p>
+<p><strong>9. a) El NAS sirve ficheros por la LAN; la SAN sirve bloques por red dedicada.</strong> NAS: ficheros compartidos (NFS en Unix, SMB/CIFS en Windows). SAN: bloques por Fibre Channel o iSCSI que los servidores ven como discos locales. La segunda opción es la inversión exacta.</p>
+<p><strong>10. d) La virtualización de puestos: el escritorio se ejecuta en el CPD.</strong> Virtual Desktop Infrastructure (Citrix, VMware Horizon, Azure Virtual Desktop): escritorios centralizados y cliente ligero en el puesto; administración y seguridad centralizadas.</p>
+<p><strong>11. b) SMTP.</strong> SMTP envía (25 entre servidores; 587 autenticado para clientes). POP3 (110) e IMAP (143) son de RECEPCIÓN. SNMP es monitorización de red — distractor fonético clásico.</p>
+<p><strong>12. c) Combatir la suplantación del remitente validando servidores y firmas.</strong> SPF publica en DNS qué servidores pueden enviar por el dominio; DKIM firma los mensajes; DMARC define la política ante fallos. Se publican como registros TXT.</p>
+<p><strong>13. d) El contenedor comparte el kernel del anfitrión; la VM virtualiza hardware completo.</strong> Por eso los contenedores son ligeros (MB, segundos) frente a las VM (GB, minutos). La primera alternativa es la inversión exacta — el tipo de trampa que usa el tribunal.</p>
+<p><strong>14. b) La imagen es la plantilla; el contenedor, una instancia en ejecución.</strong> La imagen se construye por capas desde un Dockerfile y se distribuye por registros; de una imagen se ejecutan muchos contenedores. Analogía: clase → objeto.</p>
+<p><strong>15. a) Un orquestador de contenedores: despliegue, escalado y autorreparación.</strong> K8s gestiona clústeres de contenedores: pods, deployments, services, escalado automático y reinicio de contenedores caídos. La pieza que hace viables los microservicios en producción.</p>
+<p><strong>16. c) Asignar automáticamente la configuración IP a los equipos.</strong> DHCP (UDP 67/68) asigna IP, máscara, puerta de enlace y DNS mediante DORA (Discover, Offer, Request, Ack) con concesiones temporales. La resolución de nombres es DNS y la monitorización, SNMP.</p>
+<p><strong>17. b) Segmentar lógicamente una red física en redes independientes.</strong> Las VLAN (IEEE 802.1Q) separan dominios de difusión sin cablear redes distintas; para comunicar VLANs entre sí hace falta capa 3. No cifran ni añaden ancho de banda.</p>
+<p><strong>18. d) SNMP.</strong> SNMP (UDP 161; traps por 162) consulta y recibe alertas usando MIB/OID; en él se apoyan Nagios, Zabbix o PRTG. NTP (123) sincroniza relojes.</p>
+<p><strong>19. a) Active Directory, con Kerberos y LDAP.</strong> AD autentica con Kerberos, se consulta vía LDAP (389; LDAPS 636) y organiza usuarios y equipos en dominios y OUs. Las reservas DHCP fijan direcciones, no identidades.</p>
+<p><strong>20. b) El espejado de puertos (SPAN) hacia el analizador.</strong> El port mirroring replica el tráfico de uno o varios puertos hacia el del analizador (Wireshark). Spanning Tree evita bucles, no captura tráfico.</p>
+<p><strong>21. d) Confidencialidad, integridad y disponibilidad.</strong> Confidencialidad, integridad y disponibilidad. El ENS español añade autenticidad y trazabilidad: cinco dimensiones (ACIDT) — matiz que enlaza con el Bloque I.</p>
+<p><strong>22. a) La simétrica usa una clave única; la asimétrica, un par pública/privada.</strong> Simétrica: rápida, problema de distribución (AES). Asimétrica: lenta, resuelve la distribución (RSA). En la práctica se combinan: la asimétrica intercambia una clave de sesión simétrica (así funciona TLS). La segunda alternativa es la inversión.</p>
+<p><strong>23. c) Producir un resumen fijo, unidireccional y sensible a cambios.</strong> El hash no es cifrado: no hay vuelta atrás. Determinista, resistente a colisiones, efecto avalancha. Usos: integridad, contraseñas con salt y base de la firma digital. MD5 y SHA-1 están obsoletos.</p>
+<p><strong>24. b) Cifrar el hash del documento con la clave privada del firmante.</strong> El receptor descifra la firma con la clave PÚBLICA del firmante y compara el hash: autenticidad, integridad y no repudio. Cifrar con la pública del receptor es confidencialidad, otra operación distinta.</p>
+<p><strong>25. d) Mantener la alimentación ante cortes hasta entrar el generador.</strong> El SAI cubre con baterías el hueco entre el corte y el grupo electrógeno, y filtra fluctuaciones. Climatización, extinción y control de acceso son otros subsistemas del CPD (niveles TIER I-IV).</p>
+<p><strong>26. a) Mayor ancho de banda y alcance, inmune a interferencias.</strong> La fibra transmite luz: sin interferencias EM, distancias de km (monomodo) frente a los 100 m del cobre. No transporta alimentación (el PoE es cosa del cobre) y su empalme es más delicado.</p>
+<p><strong>27. c) Los circuitos reservan un camino dedicado; los paquetes comparten rutas.</strong> Circuitos: camino reservado toda la comunicación (telefonía clásica), recursos garantizados pero desperdiciados en silencios. Paquetes: troceo y rutas independientes (Internet). La primera alternativa es la inversión.</p>
+<p><strong>28. c) En ambos sentidos simultáneamente.</strong> Simplex: un sentido (radiodifusión). Half-dúplex: ambos, alternos (walkie-talkie). Full-dúplex: ambos a la vez (Ethernet conmutado moderno).</p>
+<p><strong>29. d) 802.11 (ax = WiFi 6).</strong> 802.11 con generaciones a/b/g/n (WiFi 4), ac (5), ax (6/6E), be (7). Seguridad: WEP (roto) → WPA2 → WPA3. Los otros estándares del enunciado existen, pero no son WiFi.</p>
+<p><strong>30. a) 3G/4G los datos de banda ancha y 5G la baja latencia.</strong> 1G analógica (voz), 2G GSM digital (SMS), 3G UMTS (datos), 4G LTE (banda ancha todo-IP), 5G (baja latencia, IoT masivo, network slicing).</p>
+<p><strong>31. b) Física, Enlace, Red, Transporte, Sesión, Presentación, Aplicación.</strong> Mnemotecnia «FERTSPA». TCP/IP las condensa en 4: Acceso a red (1-2), Internet (3), Transporte (4), Aplicación (5-7). Los distractores intercambian pares de capas: compara posición a posición.</p>
+<p><strong>32. c) Segmento o datagrama, paquete y trama.</strong> Transporte: segmentos (TCP)/datagramas (UDP); Red: paquetes (router); Enlace: tramas (switch); Física: bits. Asociar PDU-capa-dispositivo resuelve varias preguntas por examen.</p>
+<p><strong>33. d) Resolver una dirección IP en su dirección MAC en la LAN.</strong> ARP pregunta por difusión «¿quién tiene esta IP?» y cachea la respuesta. En IPv6 lo sustituye NDP. La tercera alternativa invierte el sentido de la resolución — trampa habitual.</p>
+<p><strong>34. c) 128 bits.</strong> 128 bits en 8 grupos hexadecimales con compresión de ceros (:: una sola vez). IPv6 no tiene broadcast: unicast, multicast y anycast. Link-local fe80::/10, loopback ::1.</p>
+<p><strong>35. a) Mensajes de control y diagnóstico como ping o traceroute.</strong> ICMP viaja sobre IP: echo request/reply (ping), time exceeded (traceroute vía TTL), destino inalcanzable. No usa puertos — detalle que elimina distractores.</p>
+<p><strong>36. d) A (IPv4; AAAA para IPv6).</strong> A = IPv4; AAAA = IPv6; MX = correo; CNAME = alias; NS = servidores de nombres; PTR = inversa; TXT = SPF/DKIM/DMARC. DNS usa el puerto 53.</p>
+<p><strong>37. b) HTTP sobre un canal TLS con certificado del servidor.</strong> TLS (sucesor del obsoleto SSL) cifra el canal y el certificado X.509 autentica el servidor. Vigentes TLS 1.2 y 1.3, puerto 443. El candado no garantiza web legítima, solo canal cifrado.</p>
+<p><strong>38. a) Una clave simétrica de sesión negociada al inicio.</strong> La criptografía asimétrica (certificado, Diffie-Hellman) autentica y acuerda la clave; el grueso del tráfico va con cifrado simétrico (AES), mucho más rápido.</p>
+<p><strong>39. b) El puerto del servidor de destino.</strong> Anatomía: esquema://host:puerto/ruta?consulta#fragmento. Sin puerto explícito se usa el implícito del esquema (80 HTTP, 443 HTTPS). Descomponer URLs ha caído literalmente en exámenes.</p>
+<p><strong>40. c) Caché local → recursivo → raíz → TLD → autoritativo.</strong> El cliente pregunta a su resolver recursivo; este consulta iterativamente raíz → TLD (.es) → autoritativo del dominio, y cachea según el TTL.</p>
+<p><strong>41. d) Rastrea las conexiones y permite su tráfico de retorno.</strong> El stateless evalúa cada paquete aislado; el stateful mantiene una tabla de conexiones y decide en contexto. Los NGFW añaden inspección de aplicación, IPS e identidad.</p>
+<p><strong>42. a) Una zona perimetral para los servidores expuestos a Internet.</strong> La zona desmilitarizada aloja web, correo y DNS público: si un servidor cae, el atacante sigue sin acceso directo a la red interna. Se implementa con uno o dos cortafuegos.</p>
+<p><strong>43. b) El IDS detecta y alerta; el IPS además bloquea en línea.</strong> Detection = pasivo, monitoriza y alerta (Snort, Suricata); Prevention = en línea, corta en tiempo real (riesgo: falsos positivos). La primera alternativa intercambia los papeles.</p>
+<p><strong>44. c) IPsec, TLS/SSL y WireGuard.</strong> IPsec (AH autentica, ESP cifra; modos túnel/transporte) para sitio-a-sitio; SSL-VPN (OpenVPN) para teletrabajo; WireGuard como estándar moderno ligero.</p>
+<p><strong>45. d) Delante de los servidores web, recibiendo las peticiones por ellos.</strong> Proxy directo: representa a los CLIENTES (filtrado de navegación). Proxy inverso: representa a los SERVIDORES (Nginx, HAProxy): balanceo, caché, terminación TLS y WAF. La dirección del proxy es el matiz.</p>
+<p><strong>46. d) Estrella en torno al conmutador.</strong> El cableado estructurado lleva cada roseta al armario donde está el switch: estrella (o estrella extendida entre plantas). Bus y anillo son historia, pero siguen cayendo como teoría.</p>
+<p><strong>47. a) Ethernet clásico en medio compartido.</strong> Collision Detection: escuchar, transmitir y detectar colisiones (Ethernet con hubs); innecesario con conmutación full-dúplex. WiFi usa CSMA/CA (Collision Avoidance) — la pareja CD/CA es pregunta clásica.</p>
+<p><strong>48. a) 1, 2 y 3.</strong> Hub: repetidor multipuerto (capa 1). Switch: conmuta tramas por MAC (capa 2, tabla CAM). Router: enruta paquetes por IP (capa 3). Cae todos los años de una forma u otra.</p>
+<p><strong>49. c) Cat 6A.</strong> Cat 5e: 1 Gbps/100 m · Cat 6: 10 G solo hasta ~55 m · Cat 6A: 10 G/100 m. Conector RJ45, normas T568A/B.</p>
+<p><strong>50. b) Alimentar dispositivos a través del propio cable de red.</strong> af ≈ 15 W, at (PoE+) ≈ 30 W, bt (PoE++) hasta ~90 W: teléfonos IP, puntos de acceso y cámaras sin enchufe propio. El equipo que alimenta es el PSE y el alimentado, el PD.</p>
+<h1 id="supuesto-práctico-guiado-nº-2-bloque-iv">SUPUESTO PRÁCTICO GUIADO Nº 2 — Bloque IV</h1>
+<p><strong>Instrucciones.</strong> Igual que el del Bloque III: primera vez sin cronómetro, fichas cerradas, leyendo las 20 preguntas antes que el enunciado. Puntuación: +4/−1,33/0. Objetivo: ≥ 48 (12 netas). Guarda la nota: la compararás con la del supuesto III en la semana de la decisión.</p>
+<h2 id="enunciado">Enunciado</h2>
+<p>La Gerencia de un organismo público te encarga colaborar en la renovación de la infraestructura de su <strong>sede central</strong> (edificio de 3 plantas, ~180 puestos) con estos elementos:</p>
+<ul>
+<li>Direccionamiento privado <strong>10.50.0.0/16</strong>, segmentado con <strong>VLANs</strong>: usuarios (10.50.10.0/24), VoIP (10.50.20.0/24), servidores internos (10.50.30.0/24), invitados WiFi (10.50.40.0/24). Los switches de planta se conectan por fibra al núcleo (switch capa 3).</li>
+<li>Perímetro: cortafuegos stateful con <strong>DMZ</strong> (10.50.100.0/26) donde viven el portal web y el relay de correo. Salida a Internet con <strong>NAT</strong>.</li>
+<li><strong>Teletrabajo</strong> mediante VPN SSL para 40 empleados con MFA.</li>
+<li>Dominio <strong>Active Directory</strong>; IP de los puestos por <strong>DHCP</strong>; monitorización con <strong>SNMP</strong> y syslog centralizado.</li>
+<li><strong>Backup</strong>: completa el domingo, incrementales de lunes a sábado a las 22:00, copia semanal replicada a un CPD externo. RPO comprometido: 24 h.</li>
+<li>Correo del dominio con SPF, DKIM y DMARC publicados; buzones vía <strong>IMAP</strong> y envío autenticado por <strong>587</strong>.</li>
+</ul>
+<h2 id="preguntas">Preguntas</h2>
+<p><strong>1.</strong> ¿Cuántos hosts útiles admite la DMZ 10.50.100.0/26? a) 64 · b) 62 · c) 30 · d) 126</p>
+<p><strong>2.</strong> La dirección de difusión de la VLAN de usuarios (10.50.10.0/24) es: a) 10.50.10.0 · b) 10.50.10.254 · c) 10.50.10.255 · d) 10.50.255.255</p>
+<p><strong>3.</strong> Un puesto recibe 10.50.10.37/24 con puerta de enlace 10.50.10.1. La puerta de enlace es: a) la interfaz de la VLAN de usuarios en el switch de capa 3/router · b) el servidor DHCP · c) el cortafuegos de la DMZ · d) el controlador de dominio</p>
+<p><strong>4.</strong> Para que usuarios y servidores (VLANs distintas) se comuniquen hace falta: a) nada, comparten switch · b) enrutamiento entre VLANs en el equipo de capa 3 · c) un hub común · d) ponerlos en el mismo SSID</p>
+<p><strong>5.</strong> El tráfico de invitados WiFi no debe alcanzar la red interna. La medida correcta es: a) confiar en la clave WPA3 · b) ACL/reglas de firewall que aíslen la VLAN 40 permitiéndole solo salida a Internet · c) reducir la potencia de los AP · d) NAT doble</p>
+<p><strong>6.</strong> El proceso por el que un puesto obtiene su IP del servidor DHCP es: a) ARP → ICMP · b) DORA: Discover, Offer, Request, Ack · c) SYN, SYN-ACK, ACK · d) consulta al registro MX</p>
+<p><strong>7.</strong> 10.50.0.0/16 es direccionamiento privado definido en: a) RFC 3021 · b) RFC 1918 · c) IEEE 802.1Q · d) eIDAS</p>
+<p><strong>8.</strong> Para que los equipos internos salgan a Internet con direccionamiento privado, el perímetro aplica: a) DNSSEC · b) NAT/PAT, traduciendo IPs privadas a la pública · c) STP · d) VLAN trunking</p>
+<p><strong>9.</strong> El portal web se colocó en la DMZ porque: a) mejora el SEO · b) si es comprometido, el atacante no accede directamente a la red interna · c) allí no necesita parches · d) la DMZ tiene más ancho de banda</p>
+<p><strong>10.</strong> El relay de correo saliente debería usar el puerto autenticado para clientes: a) 25 · b) 110 · c) 587 · d) 161</p>
+<p><strong>11.</strong> Los buzones por IMAP (frente a POP3) implican que: a) los mensajes se descargan y borran del servidor · b) las carpetas se mantienen sincronizadas en el servidor y accesibles desde varios dispositivos · c) no se puede usar webmail · d) el correo viaja sin cifrar siempre</p>
+<p><strong>12.</strong> SPF se publica en el DNS del dominio como registro: a) A · b) MX · c) TXT · d) CNAME</p>
+<p><strong>13.</strong> La VPN SSL con MFA protege el teletrabajo porque: a) los usuarios comparten una única contraseña robusta · b) crea un túnel cifrado y exige un segundo factor además de la contraseña · c) elimina la necesidad de firewall · d) duplica la velocidad de la conexión</p>
+<p><strong>14.</strong> El cortafuegos stateful, frente a un filtro de paquetes simple: a) solo mira direcciones MAC · b) mantiene la tabla de conexiones y admite el tráfico de retorno de sesiones legítimas · c) no necesita reglas · d) trabaja en capa 1</p>
+<p><strong>15.</strong> Con completa el domingo e incrementales diarias, restaurar un fallo total del miércoles a las 9:00 requiere: a) solo la completa · b) la completa + incrementales de lunes y martes · c) solo la incremental del martes · d) la completa + la incremental del martes únicamente</p>
+<p><strong>16.</strong> El RPO de 24 h significa que: a) el servicio debe restaurarse en 24 h · b) se admite perder como máximo las últimas 24 h de datos · c) las cintas se guardan 24 días · d) el backup dura 24 h</p>
+<p><strong>17.</strong> La réplica semanal al CPD externo responde a: a) la regla 3-2-1 (una copia fuera de las instalaciones) · b) el balanceo de carga · c) los requisitos de PoE · d) la QoS de VoIP</p>
+<p><strong>18.</strong> La monitorización SNMP de switches y servidores usa por defecto el puerto: a) UDP 161 (traps 162) · b) TCP 3389 · c) UDP 53 · d) TCP 443</p>
+<p><strong>19.</strong> Para priorizar la voz (VLAN 20) frente a la navegación se configura: a) QoS en los equipos de red · b) más SSID · c) un proxy inverso · d) jumbo frames</p>
+<p><strong>20.</strong> Los switches de planta se unen al núcleo por fibra multimodo. Frente al cobre, la razón principal es: a) es más barata · b) mayor ancho de banda/distancia e inmunidad a interferencias electromagnéticas · c) transmite PoE · d) no necesita conectores</p>
+<h2 id="soluciones-razonadas-del-supuesto">Soluciones razonadas del supuesto</h2>
+<p><strong>1 b.</strong> /26 → 6 bits de host → 64 − 2 = <strong>62</strong> útiles. El subnetting del laboratorio, tal cual: si dudaste, vuelve a la rutina diaria.</p>
+<p><strong>2 c.</strong> En una /24 la difusión es el último valor del cuarto octeto: <strong>10.50.10.255</strong>. La .0 es la red. La difusión de 10.50.0.0/16 sería 10.50.255.255 — por eso la d) es trampa: máscara equivocada.</p>
+<p><strong>3 a.</strong> La puerta de enlace es la interfaz de capa 3 de la propia subred (aquí, la SVI de la VLAN en el switch de núcleo). DHCP solo ASIGNA la configuración; no es la puerta.</p>
+<p><strong>4 b.</strong> Las VLAN separan dominios de difusión: comunicar VLANs = enrutar (switch L3 o router). Es LA pregunta de VLANs de cualquier supuesto.</p>
+<p><strong>5 b.</strong> El aislamiento se impone con política de red (ACL/firewall entre VLANs): invitados → solo Internet. La clave WiFi autentica el acceso al medio, no limita a dónde puede llegar el tráfico una vez dentro.</p>
+<p><strong>6 b.</strong> DORA = Discover (difusión del cliente), Offer, Request, Ack. La c) es el triple apretón TCP — distractor cruzado clásico entre temas 4 y 7.</p>
+<p><strong>7 b.</strong> RFC 1918: 10/8, 172.16/12, 192.168/16. La RFC 3021 es el /31 punto a punto y 802.1Q el etiquetado VLAN.</p>
+<p><strong>8 b.</strong> NAT/PAT: muchas privadas salen por una (o pocas) IP pública traduciendo puertos. Consecuencia de usar RFC 1918 con salida a Internet.</p>
+<p><strong>9 b.</strong> Razón de ser de la DMZ: contener el compromiso de los servicios expuestos. Los servidores de la DMZ se parchean igual (¡o más!): la c) es señuelo.</p>
+<p><strong>10 c.</strong> 587 = submission autenticado de clientes; 25 queda para el tráfico entre servidores (y suele bloquearse en salida a clientes); 110 es POP3 y 161 SNMP.</p>
+<p><strong>11 b.</strong> IMAP sincroniza el estado en el servidor (multi-dispositivo); POP3 descarga y suele borrar. El cifrado depende de usar 993/TLS, no del protocolo en sí — matiz de la d).</p>
+<p><strong>12 c.</strong> SPF (y DKIM/DMARC) viven en registros <strong>TXT</strong>. El MX dice QUIÉN recibe el correo; el TXT/SPF dice quién puede ENVIARLO.</p>
+<p><strong>13 b.</strong> VPN = túnel cifrado sobre red pública; MFA = segundo factor (algo que tengo) contra el robo de contraseñas. Las credenciales compartidas de la a) son justo la antipráctica.</p>
+<p><strong>14 b.</strong> Definición de inspección de estado: tabla de conexiones y contexto. Es la pregunta 41 del test aplicada al escenario.</p>
+<p><strong>15 b.</strong> Cadena incremental: completa (domingo) + TODAS las incrementales hasta el punto de fallo (lunes y martes; la del miércoles a las 22:00 aún no existía a las 9:00). Con diferenciales habrían bastado 2 piezas — la comparativa que el tribunal adora.</p>
+<p><strong>16 b.</strong> RPO = pérdida de datos admisible. El tiempo de restauración es el RTO. Con incrementales diarias a las 22:00, el RPO real puede llegar a ~24 h: coherente con lo comprometido.</p>
+<p><strong>17 a.</strong> La copia externa (offsite) es el «1» de la regla 3-2-1: protege frente a incendio, robo o ransomware que cifre también los backups locales.</p>
+<p><strong>18 a.</strong> SNMP: UDP 161 para consultas del gestor, 162 para traps (alertas asíncronas del dispositivo). 3389 es RDP, 53 DNS, 443 HTTPS.</p>
+<p><strong>19 a.</strong> QoS marca y prioriza el tráfico sensible a latencia (VoIP) en switches y router. Más SSID no prioriza nada; los jumbo frames son para almacenamiento.</p>
+<p><strong>20 b.</strong> Fibra: inmunidad electromagnética y capacidad/distancia — ideal para enlaces troncales entre plantas. No transporta alimentación (el PoE es cosa del cobre): la c) invierte los papeles.</p>
+<h1 id="ficha-bloque-i-fase-3-temas-4-7-ebep-transparencia-igualdad-firma-e-y-protección-de-datos">Ficha Bloque I (fase 3) · Temas 4-7: EBEP, transparencia, igualdad, firma-e y protección de datos</h1>
+<p><strong>Tema 4 — TREBEP (RDLeg 5/2015) y transparencia.</strong> Clases de personal: funcionarios de carrera, funcionarios interinos, laborales, eventuales. Derechos individuales y colectivos; deberes y código de conducta (arts. 52-54). <strong>Situaciones administrativas (art. 85):</strong> servicio activo, servicios especiales, servicio en otras AAPP, excedencia (voluntaria por interés particular, por cuidado de familiares —con reserva—, por violencia de género…), suspensión de funciones. <strong>Provisión de puestos:</strong> concurso (procedimiento normal) y libre designación con convocatoria pública; movilidad: comisión de servicios. Promoción interna (título del subgrupo superior + requisitos) y carrera profesional. Régimen disciplinario: faltas leves/graves/muy graves; separación del servicio solo por muy graves. <strong>Ley 19/2013:</strong> publicidad activa (Portal de la Transparencia) + <strong>derecho de acceso a la información pública</strong> (cualquier persona, sin motivar; resolución en <strong>1 mes</strong>, silencio <strong>negativo</strong>; reclamación ante el <strong>CTBG</strong>); límites (art. 14) y protección de datos (art. 15). <strong>Agenda 2030: 17 ODS, 169 metas.</strong></p>
+<p><strong>Tema 5 — Igualdad, violencia de género, dependencia y discapacidad.</strong> <strong>LO 3/2007:</strong> igualdad efectiva; <strong>composición equilibrada 40-60 %</strong>; planes de igualdad (AGE y empresas &gt;50); permisos y conciliación. <strong>LO 1/2004:</strong> violencia sobre la mujer por pareja o expareja (con o sin convivencia); juzgados especializados; derechos laborales y de las funcionarias (movilidad, excedencia con reserva). <strong>Ley 39/2006 (dependencia):</strong> grados <strong>I moderada / II severa / III gran dependencia</strong>; SAAD. <strong>Discapacidad (RDLeg 1/2013):</strong> grado mínimo <strong>33 %</strong>; cupo de reserva en OEP de la AGE: <strong>7 %</strong> (≥2 % para discapacidad intelectual); cuota del 2 % en empresas de ≥50 trabajadores; accesibilidad universal y ajustes razonables.</p>
+<p><strong>Tema 6 — Sociedad de la información, firma electrónica y DNIe.</strong> <strong>Reglamento eIDAS (UE 910/2014):</strong> identificación electrónica y servicios de confianza. <strong>Firma electrónica: simple → avanzada → cualificada</strong> (avanzada + certificado cualificado + dispositivo cualificado = equivale a la manuscrita en toda la UE). <strong>Sello electrónico</strong> = personas jurídicas; sellado de tiempo; certificados de sitio web. eIDAS 2 introduce la <strong>cartera europea de identidad digital</strong> (EUDI Wallet). <strong>Ley 6/2020</strong> regula los servicios electrónicos de confianza en España. <strong>DNIe:</strong> dos certificados — <strong>autenticación y firma</strong> (sin certificado de cifrado). Agenda España Digital (conectividad, ciberseguridad, digitalización de la Administración).</p>
+<p><strong>Tema 7 — Protección de datos: RGPD y LO 3/2018.</strong> <strong>Principios (art. 5):</strong> licitud/lealtad/transparencia, limitación de la finalidad, <strong>minimización</strong>, exactitud, limitación del plazo de conservación, integridad/confidencialidad, <strong>responsabilidad proactiva</strong>. <strong>Bases jurídicas (art. 6):</strong> consentimiento, contrato, obligación legal, interés vital, <strong>interés público</strong> (la típica de las AAPP), interés legítimo (no invocable por AAPP en sus funciones). <strong>Derechos:</strong> acceso, rectificación, <strong>supresión/olvido</strong>, limitación, <strong>portabilidad</strong>, oposición, no decisiones automatizadas (plazo de respuesta: 1 mes). <strong>DPD:</strong> obligatorio en el sector público. <strong>Brechas: 72 h</strong> a la AEPD; si alto riesgo, también a los afectados. <strong>EIPD</strong> previa en tratamientos de alto riesgo. Multas: 10 M€/2 % y <strong>20 M€/4 %</strong> — pero a las AAPP españolas <strong>no se les imponen multas</strong> (art. 77 LO 3/2018): apercibimiento + disciplinaria. <strong>Título X LO 3/2018: derechos digitales</strong> (desconexión digital, intimidad digital laboral, testamento digital…).</p>
+<h1 id="test-del-bloque-i-fase-3-20-preguntas">Test del Bloque I (fase 3) — 20 preguntas</h1>
+<p>Condiciones: 20 preguntas, <strong>24 minutos</strong>. Objetivo: ≥ 13 netas. Versión con clave equilibrada.</p>
+<p><strong>Tema 4 · EBEP y transparencia</strong></p>
+<p><strong>1.</strong> El texto refundido del Estatuto Básico del Empleado Público (TREBEP) se aprobó por:</p>
+<p>   a) Ley 7/2007, de 12 de abril</p>
+<p>   b) Ley 39/2015, de 1 de octubre</p>
+<p>   c) Real Decreto 365/1995</p>
+<p>   d) Real Decreto Legislativo 5/2015</p>
+<p><strong>2.</strong> Entre las situaciones administrativas del TREBEP se encuentran:</p>
+<p>   a) Servicio activo, servicios especiales, servicio en otras AAPP, excedencia y suspensión</p>
+<p>   b) Servicio activo, comisión de servicios, traslado forzoso y excedencia voluntaria</p>
+<p>   c) Activo, jubilación parcial, vacaciones y permiso sin sueldo retribuido</p>
+<p>   d) Solo el servicio activo y la excedencia en sus distintas modalidades</p>
+<p><strong>3.</strong> En la Ley 19/2013 de transparencia, si la solicitud de acceso no se resuelve en plazo (1 mes), el silencio es:</p>
+<p>   a) Positivo en todo caso</p>
+<p>   b) Positivo solo para los funcionarios</p>
+<p>   c) Negativo (desestimatorio)</p>
+<p>   d) No existe plazo de resolución</p>
+<p><strong>4.</strong> La publicidad activa de la Ley 19/2013 obliga a publicar de oficio, entre otros:</p>
+<p>   a) Únicamente los presupuestos anuales aprobados y su ejecución trimestral</p>
+<p>   b) Contratos, convenios, subvenciones, presupuestos y retribuciones de altos cargos</p>
+<p>   c) Los expedientes disciplinarios de los empleados públicos</p>
+<p>   d) Los datos personales y retribuciones de todos los empleados</p>
+<p><strong>5.</strong> La Agenda 2030 de Naciones Unidas contiene:</p>
+<p>   a) 17 Objetivos de Desarrollo Sostenible con 169 metas</p>
+<p>   b) 10 Objetivos de Desarrollo del Milenio con 100 metas</p>
+<p>   c) 27 objetivos climáticos con metas voluntarias</p>
+<p>   d) 12 Objetivos de Desarrollo Sostenible con 90 metas</p>
+<p><strong>Tema 5 · Igualdad, dependencia y discapacidad</strong></p>
+<p><strong>6.</strong> La LO 3/2007 define la «composición equilibrada» como aquella en que ningún sexo supera el:</p>
+<p>   a) 50 % de los miembros del órgano</p>
+<p>   b) 70 % de los miembros del órgano</p>
+<p>   c) 75 % de los miembros del órgano</p>
+<p>   d) 60 % (ni baja del 40 %)</p>
+<p><strong>7.</strong> La Ley 39/2006 de dependencia clasifica la situación de dependencia en:</p>
+<p>   a) Dos niveles: asistencial y de gran dependencia</p>
+<p>   b) Cinco categorías progresivas según la edad del solicitante</p>
+<p>   c) Tres grados: I moderada, II severa y III gran dependencia</p>
+<p>   d) Grados A, B y C según el informe médico de autonomía</p>
+<p><strong>8.</strong> En las ofertas de empleo público de la AGE, el cupo de reserva para personas con discapacidad es de al menos:</p>
+<p>   a) El 2 %, como en las empresas de cincuenta o más personas</p>
+<p>   b) El 7 %, con al menos un 2 % para discapacidad intelectual</p>
+<p>   c) El 5 %, ampliable en cada convocatoria específica</p>
+<p>   d) El 10 %, repartido por tipos de discapacidad</p>
+<p><strong>9.</strong> La LO 1/2004 se aplica a la violencia ejercida sobre las mujeres por parte de:</p>
+<p>   a) Quienes sean o hayan sido su pareja, con o sin convivencia</p>
+<p>   b) Cualquier persona de su entorno familiar o laboral</p>
+<p>   c) Solo los convivientes actuales en el domicilio común</p>
+<p>   d) Los familiares hasta el segundo grado de consanguinidad</p>
+<p><strong>Tema 6 · Firma electrónica e identidad digital</strong></p>
+<p><strong>10.</strong> El Reglamento eIDAS distingue tres tipos de firma electrónica:</p>
+<p>   a) Manuscrita, digitalizada y biométrica</p>
+<p>   b) Básica, media y alta según el riesgo</p>
+<p>   c) Simple, avanzada y cualificada</p>
+<p>   d) Personal, corporativa y notarial</p>
+<p><strong>11.</strong> La diferencia entre firma electrónica y sello electrónico en eIDAS es:</p>
+<p>   a) El sello es de personas físicas; la firma, de personas jurídicas</p>
+<p>   b) No existe diferencia práctica entre ambos instrumentos</p>
+<p>   c) El sello queda reservado a los notarios y registradores</p>
+<p>   d) La firma es de personas físicas; el sello, de personas jurídicas</p>
+<p><strong>12.</strong> Los certificados del DNI electrónico son:</p>
+<p>   a) Solo uno de identificación personal</p>
+<p>   b) Uno de firma y uno de autenticación</p>
+<p>   c) Tres: firma, cifrado y autenticación</p>
+<p>   d) Dos de firma y uno de cifrado local</p>
+<p><strong>13.</strong> Cl@ve PIN se caracteriza por ser:</p>
+<p>   a) Un código de un solo uso con validez temporal limitada</p>
+<p>   b) Un certificado permanente instalado en tarjeta criptográfica</p>
+<p>   c) Una contraseña fija renovable cada año natural</p>
+<p>   d) Un sistema exclusivo de la Agencia Tributaria</p>
+<p><strong>Tema 7 · Protección de datos</strong></p>
+<p><strong>14.</strong> Los derechos de las personas interesadas que reconoce el RGPD son:</p>
+<p>   a) Solo acceso, rectificación y cancelación (los antiguos derechos ARCO)</p>
+<p>   b) Únicamente el derecho al olvido y el de portabilidad</p>
+<p>   c) Acceso, rectificación, supresión, limitación, portabilidad y oposición</p>
+<p>   d) Acceso, bloqueo, cesión y compensación económica</p>
+<p><strong>15.</strong> Ante una violación (brecha) de seguridad de datos personales, el responsable debe notificarla a la autoridad de control:</p>
+<p>   a) En 24 horas desde su detección</p>
+<p>   b) En 10 días hábiles desde el incidente</p>
+<p>   c) Solo si afecta a más de mil personas</p>
+<p>   d) Sin dilación y, a ser posible, en 72 horas</p>
+<p><strong>16.</strong> El Delegado de Protección de Datos (DPD) en un organismo público:</p>
+<p>   a) Es opcional salvo tratamiento de datos de salud a gran escala habitual</p>
+<p>   b) Es obligatorio, con independencia funcional, y es contacto con la AEPD</p>
+<p>   c) Solo existe en los ministerios y grandes organismos</p>
+<p>   d) Es siempre el responsable del área de informática</p>
+<p><strong>17.</strong> Las multas máximas del RGPD alcanzan:</p>
+<p>   a) 20 millones o el 4 % de la facturación global, la mayor</p>
+<p>   b) 10 millones o el 2 % de la facturación, la menor cuantía</p>
+<p>   c) 600.000 euros como máximo por cada infracción grave</p>
+<p>   d) No prevé multas económicas, únicamente apercibimientos</p>
+<p><strong>18.</strong> La Evaluación de Impacto en la Protección de Datos (EIPD) es obligatoria cuando:</p>
+<p>   a) Se traten datos personales de terceros, siempre</p>
+<p>   b) Lo soliciten expresamente las personas interesadas</p>
+<p>   c) El organismo carezca de DPD designado</p>
+<p>   d) El tratamiento entrañe probablemente un alto riesgo</p>
+<p><strong>19.</strong> Entre los principios del tratamiento del art. 5 RGPD se encuentran:</p>
+<p>   a) Publicidad, gratuidad, universalidad y neutralidad del dato</p>
+<p>   b) Licitud, limitación de la finalidad, minimización y exactitud</p>
+<p>   c) Celeridad, eficacia, jerarquía y desconcentración administrativa</p>
+<p>   d) Consentimiento, pago, registro y comunicación previa a la AEPD</p>
+<p><strong>20.</strong> La LO 3/2018 (LOPDGDD) añadió al ordenamiento español:</p>
+<p>   a) El primer catálogo español completo de datos personales protegidos</p>
+<p>   b) La supresión de la AEPD y su sustitución por el CEPD</p>
+<p>   c) Un título de derechos digitales (desconexión, testamento digital…)</p>
+<p>   d) La incorporación del RGPD completo como anexo normativo</p>
+<h2 id="soluciones-razonadas-1">Soluciones razonadas</h2>
+<p><strong>1. d) Real Decreto Legislativo 5/2015.</strong> La Ley 7/2007 fue el EBEP original; el texto refundido vigente es el RDLeg 5/2015, de 30 de octubre. Clasifica al personal en funcionarios de carrera, interinos, laborales y eventuales.</p>
+<p><strong>2. a) Servicio activo, servicios especiales, servicio en otras AAPP, excedencia y suspensión.</strong> Las cinco del art. 85. La comisión de servicios y el concurso son formas de PROVISIÓN de puestos, no situaciones — la confusión entre ambas listas es la trampa típica.</p>
+<p><strong>3. c) Negativo (desestimatorio).</strong> Silencio NEGATIVO (art. 20.4): pasado el mes, la solicitud se entiende desestimada, y cabe reclamación potestativa ante el Consejo de Transparencia y Buen Gobierno en 1 mes. Plazos y silencio de esta ley caen constantemente.</p>
+<p><strong>4. b) Contratos, convenios, subvenciones, presupuestos y retribuciones de altos cargos.</strong> Publicidad activa = publicar sin que nadie lo pida (Portal de la Transparencia); derecho de acceso = a solicitud. También información institucional y organizativa. Límites: seguridad, defensa, datos personales con ponderación.</p>
+<p><strong>5. a) 17 Objetivos de Desarrollo Sostenible con 169 metas.</strong> Aprobada en 2015: 17 ODS y 169 metas para 2030. El dato «17/169» es exactamente el tipo de cifra que pregunta el tribunal.</p>
+<p><strong>6. d) 60 % (ni baja del 40 %).</strong> Disposición adicional primera: presencia de cada sexo entre el 40 % y el 60 %. Aplica a órganos de selección y comisiones de valoración de la AGE. Planes de igualdad: obligatorios en la AGE y en empresas de más de 50 personas.</p>
+<p><strong>7. c) Tres grados: I moderada, II severa y III gran dependencia.</strong> Grado I (ayuda al menos una vez al día), Grado II (dos o tres veces), Grado III (apoyo continuo). El SAAD articula las prestaciones.</p>
+<p><strong>8. b) El 7 %, con al menos un 2 % para discapacidad intelectual.</strong> Art. 59 TREBEP. El grado mínimo para el cupo es el 33 %. No confundir con la cuota del 2 % de trabajadores con discapacidad exigida a las EMPRESAS de 50 o más empleados (RDLeg 1/2013).</p>
+<p><strong>9. a) Quienes sean o hayan sido su pareja, con o sin convivencia.</strong> Definición del art. 1: la relación de pareja actual o pasada, con o sin convivencia, es el elemento delimitador. Creó los Juzgados de Violencia sobre la Mujer y medidas laborales y funcionariales para las víctimas.</p>
+<p><strong>10. c) Simple, avanzada y cualificada.</strong> Simple, avanzada (vinculada únicamente al firmante, detecta cambios) y CUALIFICADA (avanzada + certificado y dispositivo cualificados): solo esta equivale a la manuscrita en toda la UE. Reglamento (UE) 910/2014 + Ley 6/2020.</p>
+<p><strong>11. d) La firma es de personas físicas; el sello, de personas jurídicas.</strong> El sello garantiza origen e integridad para personas jurídicas y AAPP (p. ej., actuación administrativa automatizada). La primera alternativa es la inversión exacta — léela dos veces.</p>
+<p><strong>12. b) Uno de firma y uno de autenticación.</strong> El chip contiene el certificado de AUTENTICACIÓN (acreditar identidad) y el de FIRMA (cualificada); no incluye certificado de cifrado. La vigencia de los certificados es distinta de la del soporte físico.</p>
+<p><strong>13. a) Un código de un solo uso con validez temporal limitada.</strong> Cl@ve PIN: código temporal por app/SMS para accesos esporádicos. Cl@ve Permanente: usuario + contraseña reforzada con OTP para uso frecuente. El sistema Cl@ve integra además certificado y DNIe.</p>
+<p><strong>14. c) Acceso, rectificación, supresión, limitación, portabilidad y oposición.</strong> Más el derecho a no ser objeto de decisiones automatizadas. Supresión/olvido, limitación y portabilidad son las novedades frente a los ARCO de 1999. Plazo de respuesta del responsable: 1 mes.</p>
+<p><strong>15. d) Sin dilación y, a ser posible, en 72 horas.</strong> Art. 33 RGPD: 72 horas a la AEPD (salvo improbable riesgo); si el riesgo es ALTO, además comunicación a los afectados (art. 34). El «72 horas» es de los datos más preguntados de todo el Bloque I.</p>
+<p><strong>16. b) Es obligatorio, con independencia funcional, y es contacto con la AEPD.</strong> Art. 37 RGPD: obligatorio en autoridades y organismos públicos. Informa, asesora y supervisa; no recibe instrucciones sobre sus funciones ni puede ser removido por ejercerlas. Puede ser interno o externo.</p>
+<p><strong>17. a) 20 millones o el 4 % de la facturación global, la mayor.</strong> Dos escalones: 10 M€/2 % (infracciones «técnicas») y 20 M€/4 % (principios, derechos, transferencias). Matiz español: a las AAPP no se les imponen multas (art. 77 LO 3/2018): apercibimiento y disciplinaria — MUY preguntado.</p>
+<p><strong>18. d) El tratamiento entrañe probablemente un alto riesgo.</strong> Art. 35 RGPD: se hace ANTES del tratamiento de alto riesgo (gran escala de categorías especiales, observación sistemática…); si el riesgo residual sigue alto, consulta previa a la AEPD (art. 36). Núcleo de la responsabilidad proactiva.</p>
+<p><strong>19. b) Licitud, limitación de la finalidad, minimización y exactitud.</strong> Los 7 completos: licitud/lealtad/transparencia, limitación de la finalidad, minimización, exactitud, limitación del plazo de conservación, integridad/confidencialidad y responsabilidad proactiva. Las bases jurídicas (art. 6) son cosa distinta: la típica de las AAPP es el interés público.</p>
+<p><strong>20. c) Un título de derechos digitales (desconexión, testamento digital…).</strong> El Título X (arts. 79-97): intimidad digital laboral, desconexión digital, geolocalización, testamento digital… El epígrafe del temario cita expresamente «derechos digitales»: pregunta moderna y frecuente.</p>
+<h1 id="protocolo-de-cierre-y-lo-que-viene">Protocolo de cierre y lo que viene</h1>
+<ol type="1">
+<li>Test Bloque IV: ≥ 33 netas sobre 50 (65 %). Supuesto: ≥ 12 netas sobre 20. Test Bloque I fase 3: ≥ 13 netas sobre 20. Laboratorio: dos semanas seguidas de subnetting sin fallo.</li>
+<li><strong>Ya tienes un supuesto de cada bloque.</strong> Anota ambas notas netas. En la semana de la decisión (mes 6) las contrastarás con los supuestos oficiales del INAP (2023 y 2024) para elegir bloque con datos, no con sensaciones.</li>
+<li>Al cerrar este módulo te queda por cubrir del temario: <strong>Bloque I temas 8-9</strong> (administración electrónica, ENS/ENI e infraestructuras comunes) — la última entrega de contenido — y después las fases de repaso y simulacros del plan (meses 6-9).</li>
+<li>Todos los fallos → cuaderno + Anki, como siempre. Los mazos de esta entrega traen los datos duros del bloque (puertos, RAID de backup, OSI, WCAG ya no: eso era el III…) y del jurídico nuevo.</li>
+</ol>
+</body>
+</html>

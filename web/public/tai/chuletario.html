@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Chuletario</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="topnav">
+<a href="index.html" class="brand">TAI · Curso completo</a>
+<div class="links">
+<a href="index.html">Inicio</a>
+<a href="plan.html">Plan</a>
+<a href="bloque2.html">Bloque II</a>
+<a href="bloque3.html">Bloque III</a>
+<a href="bloque4.html">Bloque IV</a>
+<a href="bloque1-admin.html">Bloque I</a>
+<a href="tests.html" class="destacado">Tests</a>
+<a href="simulacro.html">Simulacro</a>
+<a href="extras.html">Extras</a>
+<a href="descargas.html">Descargas</a>
+</div>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Chuletario</h1>
+<p class="subtitle">Todos los datos duros del temario en tablas · Para la semana final y los repasos exprés</p>
+<p class="date">Julio 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#numeración-y-unidades-bloque-ii">1. Numeración y unidades (Bloque II)</a></li>
+<li><a href="#hardware-e-interfaces-bloque-ii">2. Hardware e interfaces (Bloque II)</a></li>
+<li><a href="#algoritmos-y-so-bloque-ii">3. Algoritmos y SO (Bloque II)</a></li>
+<li><a href="#desarrollo-bloque-iii">4. Desarrollo (Bloque III)</a></li>
+<li><a href="#redes-bloque-iv">5. Redes (Bloque IV)</a></li>
+<li><a href="#constitución-y-organización-bloque-i">6. Constitución y organización (Bloque I)</a></li>
+<li><a href="#empleo-público-y-leyes-transversales-bloque-i">7. Empleo público y leyes transversales (Bloque I)</a></li>
+<li><a href="#administración-electrónica-bloque-i">8. Administración electrónica (Bloque I)</a></li>
+<li><a href="#los-diez-errores-que-más-plazas-cuestan-repaso-de-la-víspera">9. Los diez errores que más plazas cuestan (repaso de la víspera)</a></li>
+</ul>
+</nav>
+<p><strong>Uso:</strong> este documento NO sustituye a las fichas: es el destilado final. Imprímelo y úsalo en los repasos de 15 minutos, en la semana 3 del mes 9 y la víspera del examen. Si un dato de aquí te sorprende, tienes un agujero: ve a la ficha y a Anki.</p>
+<h1 id="numeración-y-unidades-bloque-ii">1. Numeración y unidades (Bloque II)</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Potencias</th>
+<th>Valor</th>
+<th></th>
+<th>Prefijos</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2^8</td>
+<td>256</td>
+<td></td>
+<td>kB / KiB</td>
+<td>10³ / 2¹⁰</td>
+</tr>
+<tr class="even">
+<td>2^10</td>
+<td>1.024</td>
+<td></td>
+<td>MB / MiB</td>
+<td>10⁶ / 2²⁰</td>
+</tr>
+<tr class="odd">
+<td>2^16</td>
+<td>65.536</td>
+<td></td>
+<td>GB / GiB</td>
+<td>10⁹ / 2³⁰</td>
+</tr>
+<tr class="even">
+<td>2^20</td>
+<td>1.048.576</td>
+<td></td>
+<td>TB / TiB</td>
+<td>10¹² / 2⁴⁰</td>
+</tr>
+</tbody>
+</table>
+<p>Complemento a dos (n bits): rango <strong>−2^(n−1) … +2^(n−1)−1</strong> (8 bits: −128…+127); se calcula invirtiendo bits y sumando 1. IEEE 754: simple <strong>1+8+23</strong> (sesgo 127) · doble <strong>1+11+52</strong> (sesgo 1023). Binario↔︎hex: grupos de 4 bits; binario↔︎octal: de 3.</p>
+<h1 id="hardware-e-interfaces-bloque-ii">2. Hardware e interfaces (Bloque II)</h1>
+<table>
+<thead>
+<tr class="header">
+<th>USB</th>
+<th>Velocidad</th>
+<th></th>
+<th>SATA</th>
+<th>Velocidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2.0</td>
+<td>480 Mbps</td>
+<td></td>
+<td>I</td>
+<td>1,5 Gbps</td>
+</tr>
+<tr class="even">
+<td>3.2 Gen 1 (=3.0)</td>
+<td>5 Gbps</td>
+<td></td>
+<td>II</td>
+<td>3 Gbps</td>
+</tr>
+<tr class="odd">
+<td>3.2 Gen 2</td>
+<td>10 Gbps</td>
+<td></td>
+<td>III</td>
+<td>6 Gbps</td>
+</tr>
+<tr class="even">
+<td>3.2 Gen 2x2</td>
+<td>20 Gbps</td>
+<td></td>
+<td>NVMe</td>
+<td>sobre PCIe</td>
+</tr>
+<tr class="odd">
+<td>USB4</td>
+<td>40 Gbps</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>RAID</th>
+<th>Esquema</th>
+<th>Mín. discos</th>
+<th>Tolera</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Bandas sin redundancia</td>
+<td>2</td>
+<td>0 fallos</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Espejo</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Paridad distribuida</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Doble paridad</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>Espejo + bandas</td>
+<td>4</td>
+<td>1 por espejo</td>
+</tr>
+</tbody>
+</table>
+<p>Resoluciones: HD 1280×720 · FHD 1920×1080 · QHD 2560×1440 · 4K UHD 3840×2160 · 8K 7680×4320. Ópticos: CD 700 MB · DVD 4,7/8,5 GB · BD 25/50 GB. Caché = SRAM · principal = DRAM. Registros: PC (siguiente instrucción), IR (actual), MAR (dirección), MDR (dato), SP (pila). MBR: 4 particiones/2 TB · GPT+UEFI: Secure Boot.</p>
+<h1 id="algoritmos-y-so-bloque-ii">3. Algoritmos y SO (Bloque II)</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Algoritmo</th>
+<th>Medio / Peor</th>
+<th></th>
+<th>chmod</th>
+<th>rwx</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Burbuja/Inserción</td>
+<td>O(n²)</td>
+<td></td>
+<td>7</td>
+<td>rwx</td>
+</tr>
+<tr class="even">
+<td>Quicksort</td>
+<td>O(n log n) / O(n²)</td>
+<td></td>
+<td>6</td>
+<td>rw-</td>
+</tr>
+<tr class="odd">
+<td>Merge/Heapsort</td>
+<td>O(n log n) siempre</td>
+<td></td>
+<td>5</td>
+<td>r-x</td>
+</tr>
+<tr class="even">
+<td>B. secuencial</td>
+<td>O(n)</td>
+<td></td>
+<td>4</td>
+<td>r–</td>
+</tr>
+<tr class="odd">
+<td>B. binaria (ordenados)</td>
+<td>O(log n)</td>
+<td></td>
+<td>1</td>
+<td>–x</td>
+</tr>
+</tbody>
+</table>
+<p>Pila LIFO · cola FIFO · heap→cola de prioridad · inorden en ABB = ordenado · índices BBDD = B+. FHS: /etc config · /var/log logs · /dev dispositivos · /home usuarios · /bin esenciales. kill -9 = SIGKILL · cron: min hora díames mes díasemana · systemd/systemctl · Deadlock: 4 condiciones (exclusión mutua, retención y espera, no apropiación, espera circular). Formas normales: 1FN atómicos · 2FN sin parciales · 3FN sin transitivas · FNBC determinante=clave. ACID · ANSI/SPARC: externo/conceptual/interno. NoSQL: Redis KV · MongoDB doc · Cassandra columnar · Neo4j grafos.</p>
+<h1 id="desarrollo-bloque-iii">4. Desarrollo (Bloque III)</h1>
+<p>SQL: DDL (CREATE/ALTER/DROP/TRUNCATE) · DML (SELECT/INSERT/UPDATE/DELETE) · DCL (GRANT/REVOKE) · TCL (COMMIT/ROLLBACK). Orden: FROM→WHERE→GROUP BY→HAVING→SELECT→ORDER BY. «Los que NO»: LEFT JOIN + IS NULL. POO: sobrecarga = misma clase/distinta firma (compilación) · sobreescritura = subclase/misma firma (ejecución). UML: herencia triángulo hueco · agregación rombo blanco · composición rombo negro. Patrones: Singleton/Factory/Builder (creacionales) · Adapter/Decorator/Facade (estructurales) · Observer/Strategy/Iterator (comportamiento). Java↔︎.NET: JVM↔︎CLR · bytecode↔︎CIL · JPA↔︎Entity Framework · Maven↔︎NuGet.</p>
+<table>
+<thead>
+<tr class="header">
+<th>HTTP</th>
+<th>Significado</th>
+<th></th>
+<th>Método</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>200/201/204</td>
+<td>OK / Creado / Sin contenido</td>
+<td></td>
+<td>GET</td>
+<td>Leer (seguro)</td>
+</tr>
+<tr class="even">
+<td>301/302/304</td>
+<td>Redirecciones / caché</td>
+<td></td>
+<td>POST</td>
+<td>Crear</td>
+</tr>
+<tr class="odd">
+<td>400</td>
+<td>Petición incorrecta</td>
+<td></td>
+<td>PUT</td>
+<td>Reemplazar (idempotente)</td>
+</tr>
+<tr class="even">
+<td>401 / 403</td>
+<td>Sin autenticar / sin permiso</td>
+<td></td>
+<td>PATCH</td>
+<td>Parcial</td>
+</tr>
+<tr class="odd">
+<td>404 / 500 / 503</td>
+<td>No existe / error servidor / no disponible</td>
+<td></td>
+<td>DELETE</td>
+<td>Borrar</td>
+</tr>
+</tbody>
+</table>
+<p>WCAG: POUR · niveles A/AA/AAA · sector público: <strong>RD 1112/2018 → EN 301 549 → AA</strong> · contraste 4,5:1 (AA normal), 3:1 (grande), 7:1 (AAA). OWASP: inyección→consultas parametrizadas · XSS→escapar salidas. Git: add→commit→push · pull=fetch+merge. Scrum: sprint ≤1 mes · daily 15 min · PO/SM/Developers. Pruebas: unitarias→integración→sistema→aceptación; regresión = que nada se rompa.</p>
+<h1 id="redes-bloque-iv">5. Redes (Bloque IV)</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Puerto</th>
+<th>Servicio</th>
+<th></th>
+<th>Puerto</th>
+<th>Servicio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20/21</td>
+<td>FTP</td>
+<td></td>
+<td>143 (993)</td>
+<td>IMAP(S)</td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>SSH</td>
+<td></td>
+<td>161/162</td>
+<td>SNMP</td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td>Telnet</td>
+<td></td>
+<td>389 (636)</td>
+<td>LDAP(S)</td>
+</tr>
+<tr class="even">
+<td>25 / 587 / 465</td>
+<td>SMTP</td>
+<td></td>
+<td>443</td>
+<td>HTTPS</td>
+</tr>
+<tr class="odd">
+<td>53</td>
+<td>DNS</td>
+<td></td>
+<td>514</td>
+<td>syslog</td>
+</tr>
+<tr class="even">
+<td>67/68</td>
+<td>DHCP</td>
+<td></td>
+<td>993/995</td>
+<td>IMAPS/POP3S</td>
+</tr>
+<tr class="odd">
+<td>80</td>
+<td>HTTP</td>
+<td></td>
+<td>3389</td>
+<td>RDP</td>
+</tr>
+<tr class="even">
+<td>110 (995)</td>
+<td>POP3(S)</td>
+<td></td>
+<td>123</td>
+<td>NTP</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Máscara</th>
+<th>Hosts útiles</th>
+<th>Salto</th>
+<th></th>
+<th>OSI</th>
+<th>PDU / Equipo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>/24</td>
+<td>254</td>
+<td>1</td>
+<td></td>
+<td>7-5 App/Pres/Ses</td>
+<td>datos</td>
+</tr>
+<tr class="even">
+<td>/25</td>
+<td>126</td>
+<td>128</td>
+<td></td>
+<td>4 Transporte</td>
+<td>segmento/datagrama</td>
+</tr>
+<tr class="odd">
+<td>/26</td>
+<td>62</td>
+<td>64</td>
+<td></td>
+<td>3 Red</td>
+<td>paquete / router</td>
+</tr>
+<tr class="even">
+<td>/27</td>
+<td>30</td>
+<td>32</td>
+<td></td>
+<td>2 Enlace</td>
+<td>trama / switch</td>
+</tr>
+<tr class="odd">
+<td>/28</td>
+<td>14</td>
+<td>16</td>
+<td></td>
+<td>1 Física</td>
+<td>bit / hub</td>
+</tr>
+<tr class="even">
+<td>/29</td>
+<td>6</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>/30</td>
+<td>2</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Número mágico = 256 − octeto de máscara. Privadas RFC 1918: 10/8 · 172.16/12 · 192.168/16. IPv6: 128 bits · ::1 loopback · fe80::/10 link-local · sin broadcast. TCP: SYN/SYN-ACK/ACK · DHCP: DORA. DNS: A/AAAA/MX/CNAME/PTR/TXT/NS. WiFi 802.11: n=4, ac=5, ax=6, be=7 · WPA3 · CSMA/CA (WiFi) vs CSMA/CD (Ethernet clásico). Cables: 5e=1G · 6=10G@55m · 6A=10G@100m · PoE af 15 W/at 30 W/bt 90 W. Backup: incremental (cadena) vs diferencial (2 piezas) · RPO datos/RTO tiempo · 3-2-1. Cripto: AES simétrica · RSA asimétrica · SHA-256 hash · firma = hash cifrado con privada. IPsec: ESP cifra, AH autentica. IDS alerta / IPS bloquea. Hub 1 · switch 2 · router 3.</p>
+<h1 id="constitución-y-organización-bloque-i">6. Constitución y organización (Bloque I)</h1>
+<p>Fechas CE: aprobada 31/10 · <strong>referéndum 6/12</strong> · sanción 27/12 · <strong>BOE y vigor 29/12/1978</strong>. Estructura: <strong>169 arts.</strong>, preliminar + 10 títulos, 4+9+1+1 disposiciones. Valores (1.1): libertad, justicia, igualdad, pluralismo. Amparo (53.2): <strong>14 + 15-29 + 30.2</strong>. Suspensión (55.1): excepción y sitio. Detención: 72 h. Reforma: 167 (3/5; referéndum si 1/10 lo pide) · <strong>168</strong> (2/3 + disolución + 2/3 + referéndum obligatorio; preliminar, 15-29, Corona). TC: <strong>12</strong> (4-4-2-2), 9 años, tercios cada 3. Defensor: 3/5, 5 años. CGPJ: 20+1, 5 años. Estados (116): alarma Gobierno 15 días · excepción Gobierno+autorización Congreso 30 · sitio Congreso mayoría absoluta.</p>
+<p>Congreso: 300-400 (LOREG: 350), D’Hondt · Senado: 4/provincia, 3 isla mayor, 1 menor, 2+2 Ceuta/Melilla, CCAA 1+1/millón. Sesiones: sep-dic y feb-jun · Diputación Permanente: 21 mín. Veto Senado: levanta mayoría absoluta (o simple a los 2 meses). Decreto-ley: convalida Congreso 30 días · Decreto legislativo: delegación previa (bases→articulado; ordinaria→refundido). ILP: 500.000 firmas. Investidura (99): absoluta → simple 48 h → 2 meses disolución. Censura (113): constructiva, 1/10, 5 días, absoluta. Confianza (112): simple. Gobierno responde solidariamente ante el Congreso (108). Art. 155: mayoría absoluta del Senado.</p>
+<h1 id="empleo-público-y-leyes-transversales-bloque-i">7. Empleo público y leyes transversales (Bloque I)</h1>
+<p>TREBEP (RDLeg 5/2015): funcionarios carrera/interinos/laborales/eventuales · situaciones (85): activo, servicios especiales, otras AAPP, excedencia, suspensión · provisión: concurso y libre designación · faltas: muy graves 3 años/graves 2/leves 6 meses · grupos: A1 A2 B <strong>C1 (TAI)</strong> C2. Transparencia 19/2013: acceso 1 mes, <strong>silencio negativo</strong>, reclamación CTBG 1 mes. Agenda 2030: <strong>17 ODS, 169 metas</strong>. Igualdad LO 3/2007: equilibrada <strong>40-60 %</strong>. Dependencia 39/2006: grados I/II/III. Discapacidad: 33 % grado · <strong>7 % cupo OEP</strong> (2 % intelectual) · 2 % empresas ≥50. eIDAS: firma simple/avanzada/<strong>cualificada</strong> (=manuscrita) · sello = persona jurídica · certificados ≤5 años (Ley 6/2020) · DNIe: autenticación + firma. RGPD: principios art. 5 (7) · derechos ARSLPO + 1 mes · <strong>brechas 72 h</strong> · DPD obligatorio sector público · multas 10M/2 % y 20M/4 % (AAPP españolas: sin multa, art. 77 LO 3/2018) · menores: 14 años · categorías especiales art. 9.</p>
+<h1 id="administración-electrónica-bloque-i">8. Administración electrónica (Bloque I)</h1>
+<p>Obligados (art. 14 · 39/2015): personas jurídicas, entidades sin personalidad, colegiados obligatorios, empleados públicos, representantes. Notificación: rechazo <strong>10 días naturales</strong> · registro en inhábil → primer hábil · plazos en días = hábiles. Cuarteto de RD: <strong>203/2021</strong> medios electrónicos · <strong>311/2022</strong> ENS · <strong>4/2010</strong> ENI · <strong>1112/2018</strong> accesibilidad. ENS: básica/media/alta · dimensiones <strong>ACIDT</strong> · básica autodeclara, media/alta certifican · CCN-STIC, MAGERIT. ENI: organizativa/semántica/técnica · NTI (documento-e, expediente-e con índice firmado, digitalización, copiado auténtico). Plataformas: <strong>SARA</strong> (red) · <strong>PID</strong> (no aportar documentos, art. 28) · <strong>SIR</strong> (registros; GEISER/ORVE) · <strong>Notific@→DEHú</strong> (notificaciones) · Carpeta Ciudadana · PAGe (administracion.gob.es) · FACe (facturas) · PLACSP (contratación) · Autofirma/<span class="citation" data-cites="firma">@firma</span> (firmar/validar) · Inside/Archive (expediente-e/archivo) · Cl@ve PIN (ocasional)/Permanente (frecuente). SGAD provee los servicios compartidos.</p>
+<h1 id="los-diez-errores-que-más-plazas-cuestan-repaso-de-la-víspera">9. Los diez errores que más plazas cuestan (repaso de la víspera)</h1>
+<ol type="1">
+<li>Confundir 401 (sin autenticar) con 403 (sin permiso). 2. HAVING sin GROUP BY o condiciones de grupo en WHERE. 3. Sobrecarga ↔︎ sobreescritura. 4. Días naturales ↔︎ hábiles (el rechazo de notificación es NATURALES). 5. Valores del 1.1 ↔︎ principios del 9.3. 6. Mayoría de la censura (absoluta) ↔︎ confianza (simple). 7. Restar mal el −2 de hosts útiles o saltarse la dirección de red. 8. Incremental ↔︎ diferencial en la restauración. 9. IDS (alerta) ↔︎ IPS (bloquea) y AH (autentica) ↔︎ ESP (cifra). 10. Dejar la plantilla de respuestas desplazada una fila: reserva SIEMPRE los últimos 10 minutos.</li>
+</ol>
+</body>
+</html>

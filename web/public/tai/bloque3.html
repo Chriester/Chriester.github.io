@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Bloque III · Desarrollo</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="topnav">
+<a href="index.html" class="brand">TAI · Curso completo</a>
+<div class="links">
+<a href="index.html">Inicio</a>
+<a href="plan.html">Plan</a>
+<a href="bloque2.html">Bloque II</a>
+<a href="bloque3.html">Bloque III</a>
+<a href="bloque4.html">Bloque IV</a>
+<a href="bloque1-admin.html">Bloque I</a>
+<a href="tests.html" class="destacado">Tests</a>
+<a href="simulacro.html">Simulacro</a>
+<a href="extras.html">Extras</a>
+<a href="descargas.html">Descargas</a>
+</div>
+</nav>
+<header id="title-block-header">
+<h1 class="title">Bloque III · Desarrollo</h1>
+<p class="subtitle">Oposición TAI (AGE) · Meses 2-3 del plan · Teoría + ejercicios + test razonado + PRIMER SUPUESTO PRÁCTICO</p>
+<p class="date">Julio 2026</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#cómo-usar-este-dossier">Cómo usar este dossier</a></li>
+<li><a href="#tema-1.-modelado-de-datos-y-diseño-de-bases-de-datos">Tema 1. Modelado de datos y diseño de bases de datos</a></li>
+<li><a href="#tema-2.-lenguajes-de-programación-fundamentos">Tema 2. Lenguajes de programación: fundamentos</a></li>
+<li><a href="#tema-3.-sql-lenguaje-de-interrogación-de-bases-de-datos">Tema 3. SQL: lenguaje de interrogación de bases de datos</a></li>
+<li><a href="#tema-4.-programación-orientada-a-objetos.-patrones-y-uml">Tema 4. Programación orientada a objetos. Patrones y UML</a></li>
+<li><a href="#tema-5.-arquitecturas-java-eejakarta-ee-y-.net">Tema 5. Arquitecturas Java EE/Jakarta EE y .NET</a></li>
+<li><a href="#tema-6.-clienteservidor-multicapa-y-servicios-web">Tema 6. Cliente/servidor, multicapa y servicios web</a></li>
+<li><a href="#tema-7.-aplicaciones-web-html-css-y-javascript">Tema 7. Aplicaciones web: HTML, CSS y JavaScript</a></li>
+<li><a href="#tema-8.-accesibilidad-diseño-universal-y-usabilidad.-seguridad-en-el-desarrollo">Tema 8. Accesibilidad, diseño universal y usabilidad. Seguridad en el desarrollo</a></li>
+<li><a href="#tema-9.-repositorios-control-de-versiones-metodologías-y-pruebas">Tema 9. Repositorios, control de versiones, metodologías y pruebas</a></li>
+<li><a href="#ejercicios-resueltos-a-mano-y-con-reloj">Ejercicios resueltos (a mano y con reloj)</a></li>
+<li><a href="#test-del-bloque-iii-45-preguntas">Test del Bloque III — 45 preguntas</a>
+<ul>
+<li><a href="#soluciones-razonadas">Soluciones razonadas</a></li>
+</ul></li>
+<li><a href="#supuesto-práctico-guiado-nº-1-bloque-iii">SUPUESTO PRÁCTICO GUIADO Nº 1 — Bloque III</a>
+<ul>
+<li><a href="#enunciado">Enunciado</a></li>
+<li><a href="#preguntas">Preguntas</a></li>
+<li><a href="#soluciones-razonadas-del-supuesto">Soluciones razonadas del supuesto</a></li>
+</ul></li>
+<li><a href="#ficha-bloque-i-fase-2-temas-2-3-las-cortes-generales-y-el-gobierno">Ficha Bloque I (fase 2) · Temas 2-3: Las Cortes Generales y el Gobierno</a></li>
+<li><a href="#test-del-bloque-i-fase-2-15-preguntas-cortes-y-gobierno">Test del Bloque I (fase 2) — 15 preguntas (Cortes y Gobierno)</a>
+<ul>
+<li><a href="#soluciones-razonadas-1">Soluciones razonadas</a></li>
+</ul></li>
+<li><a href="#protocolo-de-cierre-y-siguiente-paso">Protocolo de cierre y siguiente paso</a></li>
+</ul>
+</nav>
+<h1 id="cómo-usar-este-dossier">Cómo usar este dossier</h1>
+<p>Este es el bloque más extenso del temario (9 temas) y uno de los dos candidatos a tu supuesto práctico, así que trae una pieza nueva: tu <strong>primer supuesto práctico completo</strong>, con enunciado, 20 preguntas y corrección razonada. La mecánica por tema es la misma del Bloque II (ficha → ficha Feynman de memoria → ejercicios → test → Anki + cuaderno de fallos), con dos novedades:</p>
+<ul>
+<li><strong>SQL y trazas de código se hacen a mano, en papel.</strong> En el examen no hay IDE ni autocompletado. Escribir SQL a mano es una habilidad distinta de escribirlo en un editor: entrénala así desde hoy.</li>
+<li>El supuesto se hace <strong>al final del dossier, sin cronómetro</strong> la primera vez. En el mes 3 lo repetirás con reloj (45 min) desde la app o el papel.</li>
+</ul>
+<p>Con tu perfil de programador, gran parte de este bloque te sonará. El peligro es el de siempre: el tribunal no pregunta si sabes programar, pregunta la definición de FNBC, el símbolo UML de la composición o el nivel WCAG del RD 1112/2018. Ficha y Anki, sin excepciones.</p>
+<p>Criterio de cierre: <strong>≥ 65 % de aciertos netos</strong> en el test (objetivo del plan para este bloque en primera vuelta) y ≥ 12 netas sobre 20 en el supuesto.</p>
+<h1 id="tema-1.-modelado-de-datos-y-diseño-de-bases-de-datos">Tema 1. Modelado de datos y diseño de bases de datos</h1>
+<p><strong>Fases del diseño:</strong> conceptual (modelo E/R, independiente de la tecnología) → lógico (modelo relacional normalizado) → físico (índices, particiones, específico del SGBD).</p>
+<p><strong>Modelo entidad-relación:</strong> entidades (fuertes y <strong>débiles</strong>, que dependen de otra para identificarse), atributos (simples, compuestos, multivaluados, derivados; el identificador se subraya), relaciones con <strong>cardinalidad</strong> (1:1, 1:N, N:M) y participación (total/parcial). Generalización/especialización (jerarquías es-un).</p>
+<p><strong>Paso al modelo relacional:</strong> entidad → tabla; 1:N → clave foránea en el lado N; <strong>N:M → tabla intermedia</strong> con las claves de ambas; atributo multivaluado → tabla aparte; entidad débil → hereda la clave de la fuerte en su clave primaria.</p>
+<p><strong>Normalización</strong> (elimina redundancias y anomalías de inserción/borrado/actualización):</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Forma</th>
+<th>Exige</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1FN</td>
+<td>Atributos atómicos (sin grupos repetitivos)</td>
+</tr>
+<tr class="even">
+<td>2FN</td>
+<td>1FN + sin dependencias <strong>parciales</strong> de la clave (solo aplica con clave compuesta)</td>
+</tr>
+<tr class="odd">
+<td>3FN</td>
+<td>2FN + sin dependencias <strong>transitivas</strong> de atributos no clave</td>
+</tr>
+<tr class="even">
+<td>FNBC</td>
+<td>Toda determinante es <strong>clave candidata</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Mnemotecnia clásica: «la clave, toda la clave y nada más que la clave». Desnormalizar es una decisión consciente de rendimiento del diseño físico.</p>
+<h1 id="tema-2.-lenguajes-de-programación-fundamentos">Tema 2. Lenguajes de programación: fundamentos</h1>
+<p><strong>Tipos de datos:</strong> primitivos (entero, real, carácter, booleano) frente a estructurados (<strong>vectores/arrays</strong>: homogéneos, acceso por índice; <strong>registros/structs</strong>: heterogéneos, acceso por campo). Constantes y variables; <strong>ámbito</strong> local frente a global; vida de la variable.</p>
+<p><strong>Operadores:</strong> aritméticos, relacionales, lógicos (AND/OR/NOT, con <strong>cortocircuito</strong> en la mayoría de lenguajes), de asignación; precedencia y asociatividad.</p>
+<p><strong>Control de flujo:</strong> secuencia, selección (if-else, switch) e iteración (while: 0 o más veces; do-while/repeat: al menos 1; for: contador). <strong>Recursividad:</strong> la función se llama a sí misma; requiere <strong>caso base</strong>; consume pila (cada llamada apila su contexto); todo recursivo tiene equivalente iterativo.</p>
+<p><strong>Subprogramas:</strong> procedimientos (no devuelven valor) frente a funciones. <strong>Paso de parámetros:</strong> por <strong>valor</strong> (copia; los cambios no salen) frente a por <strong>referencia</strong> (dirección; los cambios afectan al original). Java pasa siempre por valor — pero en objetos lo copiado es la referencia.</p>
+<p><strong>Traducción:</strong> compilador (todo el programa → código objeto; C) frente a intérprete (línea a línea; Python clásico) frente a <strong>híbrido</strong> (Java: bytecode + JVM con JIT). <strong>Tipado:</strong> estático (se comprueba al compilar: Java, C#) frente a dinámico (en ejecución: Python, JavaScript); fuerte frente a débil.</p>
+<p><strong>Estructura de un programa:</strong> declaraciones, punto de entrada (main), modularización, bibliotecas. Paradigmas: imperativo/estructurado, orientado a objetos, funcional, lógico.</p>
+<h1 id="tema-3.-sql-lenguaje-de-interrogación-de-bases-de-datos">Tema 3. SQL: lenguaje de interrogación de bases de datos</h1>
+<p><strong>Familias de sentencias</strong> (clasificación infalible en test): <strong>DDL</strong> (CREATE, ALTER, DROP, TRUNCATE) · <strong>DML</strong> (SELECT, INSERT, UPDATE, DELETE) · <strong>DCL</strong> (GRANT, REVOKE) · <strong>TCL</strong> (COMMIT, ROLLBACK, SAVEPOINT).</p>
+<p><strong>SELECT — orden lógico de evaluación:</strong> FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY. WHERE filtra filas; <strong>HAVING filtra grupos</strong> (admite agregadas). Agregadas: COUNT, SUM, AVG, MIN, MAX — <strong>ignoran NULL</strong> (salvo COUNT(*)). DISTINCT elimina duplicados. NULL nunca se compara con <code>=</code>: se usa <strong>IS [NOT] NULL</strong>.</p>
+<p><strong>JOIN:</strong> INNER (solo coincidencias), <strong>LEFT/RIGHT OUTER</strong> (conserva toda una tabla, NULL donde no casa), FULL OUTER, CROSS (producto cartesiano). Patrón «los que no tienen»: LEFT JOIN + IS NULL. Subconsultas: en WHERE (IN, EXISTS, comparación), en FROM; <strong>correlacionadas</strong> (referencian la consulta externa, se evalúan por fila).</p>
+<p><strong>Objetos de servidor:</strong> <strong>procedimientos almacenados</strong> (lógica en el servidor, se invocan con CALL), <strong>funciones</strong>, <strong>disparadores/triggers</strong> (se ejecutan automáticamente BEFORE/AFTER de INSERT/UPDATE/DELETE), eventos (programados), cursores. <strong>Conectividad estándar: ODBC</strong> (API genérica) y <strong>JDBC</strong> (Java).</p>
+<h1 id="tema-4.-programación-orientada-a-objetos.-patrones-y-uml">Tema 4. Programación orientada a objetos. Patrones y UML</h1>
+<p><strong>Pilares:</strong> <strong>encapsulación</strong> (estado privado + métodos de acceso), <strong>abstracción</strong>, <strong>herencia</strong> (extends; reutilización es-un) y <strong>polimorfismo</strong> (referencia de superclase ejecuta el método de la subclase real; enlace dinámico).</p>
+<p><strong>Sobrecarga vs sobreescritura</strong> (la pregunta eterna): sobrecarga = mismo nombre, <strong>distinta firma</strong>, misma clase, resuelta en compilación · sobreescritura = <strong>misma firma</strong> redefinida en la subclase, resuelta en ejecución. Clases abstractas (no instanciables, pueden tener implementación) frente a <strong>interfaces</strong> (contrato; Java permite implementar varias — su vía para la herencia múltiple que extends prohíbe). Constructores, this/super, static, final.</p>
+<p><strong>Patrones GoF, tres familias:</strong> creacionales (<strong>Singleton</strong>, Factory Method, Abstract Factory, Builder, Prototype) · estructurales (Adapter, <strong>Decorator</strong>, Facade, Composite, Proxy) · de comportamiento (<strong>Observer</strong>, Strategy, Iterator, Command, Template Method). <strong>MVC</strong> (modelo-vista-controlador): patrón de arquitectura que separa datos, presentación y control.</p>
+<p><strong>UML:</strong> estructurales — <strong>clases</strong> (relaciones: herencia = triángulo hueco; <strong>agregación = rombo blanco</strong>; <strong>composición = rombo negro</strong>; dependencia = flecha discontinua), componentes, despliegue, objetos · de comportamiento — <strong>casos de uso</strong> (actores y funcionalidad), <strong>secuencia</strong> (interacción temporal), actividad, estados.</p>
+<h1 id="tema-5.-arquitecturas-java-eejakarta-ee-y-.net">Tema 5. Arquitecturas Java EE/Jakarta EE y .NET</h1>
+<p><strong>Java:</strong> JDK ⊃ JRE ⊃ <strong>JVM</strong>; javac compila a <strong>bytecode</strong> (.class) multiplataforma; JIT lo optimiza en ejecución; recolector de basura. Java EE se llama <strong>Jakarta EE</strong> desde su cesión a Eclipse Foundation.</p>
+<p><strong>Componentes Jakarta EE:</strong> <strong>servlets</strong> (procesan HTTP en el servidor), <strong>JSP</strong> (plantillas que se compilan a servlets), EJB (lógica de negocio), <strong>JPA</strong> (persistencia ORM: <span class="citation" data-cites="Entity">@Entity</span>, EntityManager, JPQL; implementación de referencia: Hibernate), JAX-RS (REST) y JAX-WS (SOAP), JMS (mensajería). Se despliegan (WAR/EAR) en <strong>servidores de aplicaciones</strong>: Tomcat (contenedor web), WildFly, WebLogic, WebSphere. Seguridad: autenticación/autorización declarativa por roles. <strong>Spring/Spring Boot</strong>: el framework de facto que simplifica todo lo anterior.</p>
+<p><strong>.NET:</strong> plataforma Microsoft, hoy multiplataforma (.NET Core → .NET 5+). <strong>CLR</strong> = máquina virtual (equivale a la JVM); los lenguajes (<strong>C#</strong>, VB.NET, F#) compilan a <strong>CIL/MSIL</strong> (equivale al bytecode); ASP.NET Core para web; <strong>Entity Framework</strong> para ORM (equivale a JPA); NuGet para paquetes (equivale a Maven). La tabla de equivalencias Java ↔︎ .NET es oro para el test.</p>
+<h1 id="tema-6.-clienteservidor-multicapa-y-servicios-web">Tema 6. Cliente/servidor, multicapa y servicios web</h1>
+<p><strong>Arquitecturas:</strong> cliente/servidor de 2 niveles → <strong>3 capas</strong>: presentación, <strong>lógica de negocio</strong>, datos (mantenibilidad y escalado independientes; capas lógicas frente a niveles físicos/tiers). Cliente ligero (navegador) frente a pesado. Middleware. Tendencia actual: <strong>microservicios</strong> frente al monolito (servicios pequeños, independientes, desplegables por separado — enlaza con contenedores del Bloque IV).</p>
+<p><strong>Servicios web — los dos estilos:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>SOAP</th>
+<th>REST</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Formato</td>
+<td>XML (envelope)</td>
+<td>JSON habitualmente (también XML)</td>
+</tr>
+<tr class="even">
+<td>Contrato</td>
+<td><strong>WSDL</strong> obligatorio</td>
+<td>Ninguno (OpenAPI/Swagger como descripción)</td>
+</tr>
+<tr class="odd">
+<td>Transporte</td>
+<td>HTTP, SMTP…</td>
+<td>HTTP exclusivamente</td>
+</tr>
+<tr class="even">
+<td>Seguridad</td>
+<td>WS-Security</td>
+<td>HTTPS, OAuth 2.0, JWT</td>
+</tr>
+<tr class="odd">
+<td>Estilo</td>
+<td>Operaciones/RPC</td>
+<td><strong>Recursos</strong> identificados por URI</td>
+</tr>
+</tbody>
+</table>
+<p><strong>REST:</strong> sin estado (<strong>stateless</strong>), cacheable, interfaz uniforme; métodos con semántica: GET (leer, seguro), POST (crear), <strong>PUT</strong> (reemplazar, idempotente), PATCH (parcial), DELETE. <strong>Códigos HTTP:</strong> 200 OK, <strong>201 Created</strong>, 204 No Content, 301/302 redirección, 400 Bad Request, <strong>401 Unauthorized</strong>, 403 Forbidden, <strong>404 Not Found</strong>, 500 Internal Server Error, 503 Service Unavailable. Cabeceras: Content-Type (<strong>application/json</strong>), Accept, Authorization.</p>
+<h1 id="tema-7.-aplicaciones-web-html-css-y-javascript">Tema 7. Aplicaciones web: HTML, CSS y JavaScript</h1>
+<p><strong>HTML5:</strong> estructura semántica (<strong>header, nav, main, article, section, aside, footer</strong>), formularios (input types: email, date, number; validación nativa), audio/vídeo sin plugins, canvas. XML: marcado estricto de propósito general (XSD para validar, XSLT para transformar, XPath para consultar); derivados: XHTML, SVG, RSS.</p>
+<p><strong>CSS:</strong> <strong>modelo de caja</strong> — contenido → <strong>padding</strong> → border → <strong>margin</strong>. Selectores y especificidad: en línea &gt; #id &gt; .clase &gt; etiqueta. Posicionamiento (static, relative, absolute, fixed), <strong>Flexbox y Grid</strong>. <strong>Responsive:</strong> media queries (<span class="citation" data-cites="media">@media</span> max-width…), viewport, unidades relativas (em, rem, %). Preprocesadores: Sass, LESS.</p>
+<p><strong>JavaScript</strong> (estándar <strong>ECMAScript</strong>; sin relación con Java): se ejecuta en el navegador — manipula el <strong>DOM</strong>, gestiona eventos, peticiones asíncronas (<strong>AJAX/fetch</strong>, promesas, async/await); en servidor con <strong>Node.js</strong>. Frameworks front-end: Angular, React, Vue. <strong>TypeScript</strong>: superconjunto tipado. Front-end (lo que corre en el navegador) frente a back-end (servidor: Java, .NET, PHP, Python, Node).</p>
+<h1 id="tema-8.-accesibilidad-diseño-universal-y-usabilidad.-seguridad-en-el-desarrollo">Tema 8. Accesibilidad, diseño universal y usabilidad. Seguridad en el desarrollo</h1>
+<p><strong>WCAG (W3C/WAI):</strong> 4 principios <strong>POUR</strong> — <strong>P</strong>erceptible, <strong>O</strong>perable, <strong>U</strong>nderstandable (comprensible), <strong>R</strong>obusto — con criterios de conformidad en niveles <strong>A / AA / AAA</strong>. Datos duros: texto alternativo en imágenes (1.1.1, nivel A); <strong>contraste 4,5:1</strong> texto normal AA (3:1 texto grande; 7:1 en AAA); todo operable por teclado; no depender solo del color.</p>
+<p><strong>Normativa española:</strong> <strong>RD 1112/2018</strong> (accesibilidad de sitios web y apps móviles del <strong>sector público</strong>; traspone la Directiva 2016/2102): exige cumplir la norma <strong>EN 301 549</strong> (alineada con WCAG <strong>nivel AA</strong>), publicar <strong>declaración de accesibilidad</strong>, mecanismo de comunicación de quejas y revisiones periódicas. El <strong>diseño universal</strong> (diseño para todos): concebir productos utilizables por el mayor número de personas sin adaptación posterior.</p>
+<p><strong>Usabilidad</strong> (ISO 9241): eficacia, eficiencia y satisfacción en un contexto de uso; heurísticas de Nielsen (visibilidad del estado, prevención de errores, consistencia…). Accesibilidad ≠ usabilidad: la primera es para personas con discapacidad y es obligación legal en el sector público.</p>
+<p><strong>Seguridad en el desarrollo (conceptos):</strong> el referente es el <strong>OWASP Top 10</strong> — <strong>inyección SQL</strong> (prevención: <strong>consultas parametrizadas</strong> + validación de entradas), <strong>XSS</strong> (escapar/sanear salidas), autenticación rota, exposición de datos sensibles. Principios: validar toda entrada, mínimo privilegio, defensa en profundidad, no confiar nunca en el cliente. Confidencialidad y disponibilidad en el puesto final: bloqueo de sesión, cifrado, copias.</p>
+<h1 id="tema-9.-repositorios-control-de-versiones-metodologías-y-pruebas">Tema 9. Repositorios, control de versiones, metodologías y pruebas</h1>
+<p><strong>Git</strong> (distribuido: cada clon lleva el historial completo; frente a Subversion, centralizado): áreas working directory → staging (<strong>add</strong>) → repositorio local (<strong>commit</strong>) → remoto (<strong>push</strong>); <strong>fetch</strong> (baja sin integrar) frente a <strong>pull</strong> (fetch+merge); ramas (<strong>branch</strong>), fusión (<strong>merge</strong>) frente a <strong>rebase</strong> (reescribe historia); etiquetas (tag). <strong>Plataformas colaborativas:</strong> GitHub, GitLab, Bitbucket — <strong>fork</strong>, <strong>pull/merge request</strong> (revisión de código antes de fusionar), issues.</p>
+<p><strong>Metodologías:</strong> en cascada (fases secuenciales: requisitos → diseño → implementación → pruebas → mantenimiento; rígida) frente a <strong>ágiles</strong> (iterativas e incrementales, Manifiesto Ágil 2001). <strong>Scrum:</strong> roles — <strong>Product Owner</strong> (valor y Product Backlog), <strong>Scrum Master</strong> (facilita, elimina impedimentos), Developers; eventos — <strong>Sprint</strong> (≤1 mes), Planning, <strong>Daily</strong> (15 min), Review, Retrospectiva; artefactos — Product Backlog, Sprint Backlog, Incremento. Kanban (flujo visual, límites WIP), XP (programación en parejas, TDD). En la AGE convive con <strong>Métrica v3</strong> (metodología clásica de la Administración, aún citada).</p>
+<p><strong>Pruebas</strong> (pirámide): <strong>unitarias</strong> (componente aislado; JUnit, automatizadas) → <strong>integración</strong> → <strong>sistema</strong> → <strong>aceptación</strong> (usuario). <strong>Regresión</strong>: verificar que lo que funcionaba sigue funcionando. TDD: la prueba antes que el código. Caja blanca (conoce el código) frente a caja negra (solo entradas/salidas).</p>
+<p><strong>CI/CD:</strong> <strong>integración continua</strong> (cada cambio se integra, compila y prueba automáticamente: Jenkins, GitHub Actions, GitLab CI) → <strong>entrega continua</strong> (artefacto siempre desplegable, paso a producción manual) → <strong>despliegue continuo</strong> (a producción sin intervención). Generación de documentación: Javadoc; gestión de dependencias: Maven/Gradle/npm.</p>
+<h1 id="ejercicios-resueltos-a-mano-y-con-reloj">Ejercicios resueltos (a mano y con reloj)</h1>
+<p>Esquema para las series A y B (léelo bien, lo reutiliza el supuesto):</p>
+<pre><code>EMPLEADO(dni PK, nombre, salario, dep_id FK→DEPARTAMENTO)
+DEPARTAMENTO(dep_id PK, nombre, provincia)
+PROYECTO(proy_id PK, titulo, presupuesto)
+ASIGNACION(dni FK, proy_id FK, horas)  -- PK compuesta (dni, proy_id)</code></pre>
+<p><strong>Serie A — SQL (objetivo: 5 consultas en 20 minutos).</strong></p>
+<ol type="1">
+<li>Empleados del departamento 3 con salario superior a 30.000, ordenados por salario descendente. <em>Solución:</em> <code>SELECT nombre, salario FROM EMPLEADO WHERE dep_id = 3 AND salario &gt; 30000 ORDER BY salario DESC;</code></li>
+<li>Número de empleados y salario medio por departamento, solo para departamentos con más de 5 empleados. <em>Solución:</em> <code>SELECT dep_id, COUNT(*), AVG(salario) FROM EMPLEADO GROUP BY dep_id HAVING COUNT(*) &gt; 5;</code> — la condición sobre el grupo va en HAVING, no en WHERE.</li>
+<li>Nombre de los empleados y el de su departamento, incluyendo empleados sin departamento asignado. <em>Solución:</em> <code>SELECT e.nombre, d.nombre FROM EMPLEADO e LEFT JOIN DEPARTAMENTO d ON e.dep_id = d.dep_id;</code> — LEFT JOIN para conservar los empleados con dep_id NULL.</li>
+<li>Empleados que no tienen ninguna asignación a proyectos. <em>Solución:</em> <code>SELECT e.nombre FROM EMPLEADO e LEFT JOIN ASIGNACION a ON e.dni = a.dni WHERE a.dni IS NULL;</code> (equivalente: <code>WHERE NOT EXISTS (SELECT 1 FROM ASIGNACION a WHERE a.dni = e.dni)</code>). Patrón «los que NO»: LEFT JOIN + IS NULL.</li>
+<li>Título de los proyectos con más de 500 horas asignadas en total. <em>Solución:</em> <code>SELECT p.titulo FROM PROYECTO p JOIN ASIGNACION a ON p.proy_id = a.proy_id GROUP BY p.proy_id, p.titulo HAVING SUM(a.horas) &gt; 500;</code></li>
+</ol>
+<p><strong>Serie B — Normalización (objetivo: 10 minutos).</strong></p>
+<p>Tabla: <code>PEDIDO(num_pedido, fecha, dni_cliente, nombre_cliente, cod_articulo, descripcion_articulo, cantidad, precio_unitario)</code> con PK compuesta (num_pedido, cod_articulo). ¿En qué forma normal está y cómo llegar a 3FN?</p>
+<p><em>Solución razonada:</em> Está en 1FN (atributos atómicos). No está en 2FN: <code>descripcion_articulo</code> depende solo de <code>cod_articulo</code> y <code>fecha</code>/<code>dni_cliente</code> dependen solo de <code>num_pedido</code> — <strong>dependencias parciales</strong> de una clave compuesta. Además <code>nombre_cliente</code> depende de <code>dni_cliente</code>, que no es clave: <strong>dependencia transitiva</strong> (vía num_pedido → dni_cliente → nombre_cliente). Descomposición en 3FN: <code>CLIENTE(dni_cliente PK, nombre_cliente)</code> · <code>ARTICULO(cod_articulo PK, descripcion, precio_unitario)</code> · <code>PEDIDO(num_pedido PK, fecha, dni_cliente FK)</code> · <code>LINEA_PEDIDO(num_pedido FK, cod_articulo FK, cantidad)</code> con PK compuesta. Este ejercicio, con otros nombres, ha caído en supuestos reales.</p>
+<p><strong>Serie C — Traza de código (objetivo: 3 en 12 minutos).</strong></p>
+<ol type="1">
+<li>¿Qué devuelve <code>f(4)</code> si <code>f(n) = (n &lt;= 1) ? 1 : n * f(n-1)</code>? <em>Solución:</em> factorial: f(4)=4·f(3)=4·3·f(2)=4·3·2·f(1)=4·3·2·1 = <strong>24</strong>. Identifica siempre primero el caso base.</li>
+<li>En Java: <code>int a = 5; cambiar(a);</code> donde <code>void cambiar(int x){ x = 10; }</code>. ¿Cuánto vale <code>a</code> después? <em>Solución:</em> <strong>5</strong> — paso por valor: la función modifica una copia. Si el parámetro fuera un objeto y se modificara un atributo, el cambio SÍ se vería (se copia la referencia).</li>
+<li>¿Qué imprime este bucle? <code>for(int i=0; i&lt;3; i++){ for(int j=i; j&lt;3; j++){ print(i+""+j+" "); } }</code> <em>Solución:</em> <code>00 01 02 11 12 22</code> — el bucle interno arranca en i. Traza SIEMPRE con tabla de variables; en el examen los bucles anidados y los ++ prefijo/sufijo son los que provocan fallos por exceso de confianza.</li>
+</ol>
+<h1 id="test-del-bloque-iii-45-preguntas">Test del Bloque III — 45 preguntas</h1>
+<p>Condiciones: 45 preguntas, <strong>54 minutos</strong>, sin apuntes. Nota neta = aciertos − fallos/3. Objetivo primera vuelta: ≥ 29 netas (65 %).</p>
+<p><strong>Tema 1 · Modelado de datos</strong></p>
+<p><strong>1.</strong> En el modelo entidad-relación, una entidad débil es aquella que:</p>
+<p>   a) No tiene atributos propios</p>
+<p>   b) No puede identificarse solo con sus atributos y depende de una entidad fuerte</p>
+<p>   c) Participa en relaciones N:M</p>
+<p>   d) No tiene clave foránea</p>
+<p><strong>2.</strong> Al pasar al modelo relacional una relación N:M entre dos entidades, se crea:</p>
+<p>   a) Una clave foránea en una de las dos tablas</p>
+<p>   b) Una tabla intermedia con las claves de ambas entidades</p>
+<p>   c) Un atributo multivaluado</p>
+<p>   d) Una vista materializada</p>
+<p><strong>3.</strong> Una relación está en Segunda Forma Normal (2FN) cuando está en 1FN y además:</p>
+<p>   a) No existen dependencias funcionales transitivas</p>
+<p>   b) Ningún atributo no clave depende parcialmente de la clave primaria</p>
+<p>   c) Toda determinante es clave candidata</p>
+<p>   d) No tiene atributos derivados</p>
+<p><strong>4.</strong> La Forma Normal de Boyce-Codd (FNBC) exige que:</p>
+<p>   a) Todo atributo sea atómico</p>
+<p>   b) Toda dependencia funcional tenga como determinante una clave candidata</p>
+<p>   c) No haya atributos multivaluados</p>
+<p>   d) Toda tabla tenga clave primaria simple</p>
+<p><strong>5.</strong> El diseño físico de una base de datos comprende decisiones sobre:</p>
+<p>   a) Entidades y relaciones del dominio</p>
+<p>   b) Índices, almacenamiento y particionamiento</p>
+<p>   c) Las vistas de cada grupo de usuarios</p>
+<p>   d) La normalización del esquema</p>
+<p><strong>Tema 2 · Lenguajes de programación</strong></p>
+<p><strong>6.</strong> En el paso de parámetros por valor:</p>
+<p>   a) La función recibe una copia y sus cambios no afectan a la variable original</p>
+<p>   b) La función puede modificar la variable original</p>
+<p>   c) Solo pueden pasarse tipos numéricos</p>
+<p>   d) El parámetro debe declararse constante</p>
+<p><strong>7.</strong> Toda función recursiva necesita obligatoriamente:</p>
+<p>   a) Un bucle interno</p>
+<p>   b) Un caso base que detenga las llamadas</p>
+<p>   c) Variables globales</p>
+<p>   d) Devolver un valor numérico</p>
+<p><strong>8.</strong> Java se considera un lenguaje compilado e interpretado a la vez porque:</p>
+<p>   a) Su código se interpreta línea a línea directamente</p>
+<p>   b) Se compila a bytecode que ejecuta la JVM (con compilación JIT)</p>
+<p>   c) Genera ejecutables nativos del sistema operativo</p>
+<p>   d) Requiere un navegador para ejecutarse</p>
+<p><strong>9.</strong> Una variable local se caracteriza por:</p>
+<p>   a) Ser visible en todo el programa</p>
+<p>   b) Existir solo dentro del bloque o función donde se declara</p>
+<p>   c) Mantener su valor entre llamadas</p>
+<p>   d) Declararse fuera de cualquier función</p>
+<p><strong>10.</strong> Un lenguaje de tipado estático es aquel en que:</p>
+<p>   a) Las variables no pueden cambiar de valor</p>
+<p>   b) El tipo de las variables se comprueba en tiempo de compilación</p>
+<p>   c) No existen tipos de datos</p>
+<p>   d) El tipo se decide en tiempo de ejecución</p>
+<p><strong>Tema 3 · SQL</strong></p>
+<p><strong>11.</strong> ¿Cuál de estas sentencias pertenece al DDL (lenguaje de definición de datos)?</p>
+<p>   a) INSERT</p>
+<p>   b) SELECT</p>
+<p>   c) ALTER TABLE</p>
+<p>   d) GRANT</p>
+<p><strong>12.</strong> La diferencia entre WHERE y HAVING es que HAVING:</p>
+<p>   a) Es más rápido</p>
+<p>   b) Filtra los grupos resultantes de GROUP BY</p>
+<p>   c) Solo admite una condición</p>
+<p>   d) Filtra antes de agrupar</p>
+<p><strong>13.</strong> Un LEFT JOIN entre A y B devuelve:</p>
+<p>   a) Solo las filas con coincidencia en ambas</p>
+<p>   b) Todas las filas de A y, para las que no casan con B, NULL en las columnas de B</p>
+<p>   c) Todas las filas de B</p>
+<p>   d) El producto cartesiano</p>
+<p><strong>14.</strong> ¿Qué devuelve SELECT COUNT(*) frente a COUNT(columna)?</p>
+<p>   a) Son siempre idénticos</p>
+<p>   b) COUNT(*) cuenta todas las filas; COUNT(columna) excluye los NULL de esa columna</p>
+<p>   c) COUNT(*) excluye duplicados</p>
+<p>   d) COUNT(columna) cuenta también los NULL</p>
+<p><strong>15.</strong> Un disparador (trigger) se diferencia de un procedimiento almacenado en que:</p>
+<p>   a) Se ejecuta automáticamente ante eventos INSERT/UPDATE/DELETE, sin invocación explícita</p>
+<p>   b) Solo puede consultar datos</p>
+<p>   c) Se ejecuta en el cliente</p>
+<p>   d) No puede contener SQL</p>
+<p><strong>Tema 4 · POO y UML</strong></p>
+<p><strong>16.</strong> La sobrecarga (overloading) de un método consiste en:</p>
+<p>   a) Redefinirlo en una subclase con la misma firma</p>
+<p>   b) Definir varios métodos con el mismo nombre y distinta lista de parámetros</p>
+<p>   c) Hacerlo estático</p>
+<p>   d) Ocultarlo con private</p>
+<p><strong>17.</strong> La encapsulación en POO consiste en:</p>
+<p>   a) Heredar de varias clases</p>
+<p>   b) Ocultar el estado interno del objeto y exponer su manipulación mediante métodos</p>
+<p>   c) Crear objetos sin clase</p>
+<p>   d) Dividir el programa en ficheros</p>
+<p><strong>18.</strong> El polimorfismo permite:</p>
+<p>   a) Que una clase tenga varios constructores</p>
+<p>   b) Tratar objetos de distintas subclases a través de una referencia de la superclase, ejecutándose el método propio de cada uno</p>
+<p>   c) Copiar objetos</p>
+<p>   d) Evitar la herencia</p>
+<p><strong>19.</strong> El patrón de diseño Singleton garantiza:</p>
+<p>   a) Que una clase tenga una única instancia con acceso global a ella</p>
+<p>   b) La creación de familias de objetos</p>
+<p>   c) La separación modelo-vista-controlador</p>
+<p>   d) La notificación automática a observadores</p>
+<p><strong>20.</strong> En un diagrama de clases UML, la composición se representa con:</p>
+<p>   a) Un triángulo hueco hacia la superclase</p>
+<p>   b) Un rombo relleno (negro) en el lado del todo</p>
+<p>   c) Un rombo hueco (blanco) en el lado del todo</p>
+<p>   d) Una flecha discontinua</p>
+<p><strong>Tema 5 · Java EE y .NET</strong></p>
+<p><strong>21.</strong> En la plataforma Java, el bytecode es:</p>
+<p>   a) Código máquina nativo de x86</p>
+<p>   b) Código intermedio (.class) ejecutado por la JVM en cualquier plataforma</p>
+<p>   c) El código fuente cifrado</p>
+<p>   d) Un formato exclusivo de Android</p>
+<p><strong>22.</strong> Un servlet es:</p>
+<p>   a) Una página HTML estática</p>
+<p>   b) Un componente Java que se ejecuta en el servidor para procesar peticiones HTTP y generar respuestas</p>
+<p>   c) Un applet moderno del navegador</p>
+<p>   d) Un fichero de configuración</p>
+<p><strong>23.</strong> JPA (Jakarta/Java Persistence API) es:</p>
+<p>   a) Un servidor de aplicaciones</p>
+<p>   b) La especificación estándar de mapeo objeto-relacional (ORM) en Java</p>
+<p>   c) Un protocolo de red</p>
+<p>   d) El sistema de plantillas de JSP</p>
+<p><strong>24.</strong> En la plataforma .NET, el CLR es:</p>
+<p>   a) El lenguaje principal de la plataforma</p>
+<p>   b) El entorno de ejecución (máquina virtual) que ejecuta el código intermedio CIL/MSIL</p>
+<p>   c) Un servidor web</p>
+<p>   d) La biblioteca de interfaz gráfica</p>
+<p><strong>25.</strong> Maven y Gradle son herramientas de:</p>
+<p>   a) Control de versiones</p>
+<p>   b) Gestión de dependencias y construcción (build) de proyectos</p>
+<p>   c) Monitorización de servidores</p>
+<p>   d) Modelado UML</p>
+<p><strong>Tema 6 · Cliente/servidor y servicios web</strong></p>
+<p><strong>26.</strong> En una arquitectura de tres capas, las capas son:</p>
+<p>   a) Cliente, red y servidor</p>
+<p>   b) Presentación, lógica de negocio y datos</p>
+<p>   c) Frontend, middleware y backup</p>
+<p>   d) Web, aplicación y correo</p>
+<p><strong>27.</strong> Los servicios web SOAP se caracterizan por:</p>
+<p>   a) Usar siempre JSON</p>
+<p>   b) Mensajería XML con contrato formal descrito en WSDL</p>
+<p>   c) No poder atravesar HTTP</p>
+<p>   d) Carecer de estándares de seguridad</p>
+<p><strong>28.</strong> Que una API REST sea «sin estado» (stateless) significa que:</p>
+<p>   a) No usa base de datos</p>
+<p>   b) Cada petición contiene toda la información necesaria; el servidor no guarda contexto de sesión entre peticiones</p>
+<p>   c) Solo admite lecturas</p>
+<p>   d) No devuelve códigos de error</p>
+<p><strong>29.</strong> ¿Qué indica el código de estado HTTP 201?</p>
+<p>   a) Petición incorrecta</p>
+<p>   b) Recurso creado correctamente</p>
+<p>   c) No autorizado</p>
+<p>   d) Error interno del servidor</p>
+<p><strong>30.</strong> El tipo MIME estándar de una respuesta JSON es:</p>
+<p>   a) text/html</p>
+<p>   b) application/json</p>
+<p>   c) text/json-data</p>
+<p>   d) application/xml</p>
+<p><strong>Tema 7 · Aplicaciones web</strong></p>
+<p><strong>31.</strong> ¿Cuál de estas es una etiqueta semántica introducida por HTML5?</p>
+   a)
+<div>
+
+   b)
+<article>
+<p>   c) <span></p>
+   d)
+<table>
+<p><strong>32.</strong> En el modelo de caja CSS, el orden desde el contenido hacia fuera es:</p>
+<p>   a) margin → border → padding</p>
+<p>   b) padding → border → margin</p>
+<p>   c) border → padding → margin</p>
+<p>   d) padding → margin → border</p>
+<p><strong>33.</strong> JavaScript es:</p>
+<p>   a) La versión interpretada de Java</p>
+<p>   b) Un lenguaje de script que se ejecuta en el navegador y manipula el DOM (y en servidor con Node.js)</p>
+<p>   c) Un lenguaje de marcado</p>
+<p>   d) Un preprocesador de CSS</p>
+<p><strong>34.</strong> El atributo alt de la etiqueta <img> sirve para:</p>
+<p>   a) Definir el tamaño de la imagen</p>
+<p>   b) Proporcionar un texto alternativo que describen la imagen (accesibilidad y carga fallida)</p>
+<p>   c) Enlazar la imagen a otra página</p>
+<p>   d) Aplicar estilos</p>
+<p><strong>35.</strong> Las media queries de CSS permiten:</p>
+<p>   a) Reproducir vídeo y audio</p>
+<p>   b) Aplicar estilos distintos según características del dispositivo (ancho de pantalla, orientación…)</p>
+<p>   c) Consultar bases de datos desde CSS</p>
+<p>   d) Cargar JavaScript condicionalmente</p>
+<p><strong>Tema 8 · Accesibilidad y usabilidad</strong></p>
+<p><strong>36.</strong> Los cuatro principios de las WCAG son:</p>
+<p>   a) Perceptible, Operable, Comprensible y Robusto</p>
+<p>   b) Visible, Rápido, Simple y Seguro</p>
+<p>   c) Público, Abierto, Común y Reutilizable</p>
+<p>   d) Perceptible, Ordenado, Claro y Rápido</p>
+<p><strong>37.</strong> El nivel de conformidad WCAG exigido con carácter general a los sitios web del sector público español es:</p>
+<p>   a) A</p>
+<p>   b) AA</p>
+<p>   c) AAA</p>
+<p>   d) No hay obligación legal</p>
+<p><strong>38.</strong> El contraste mínimo exigido por WCAG nivel AA para texto normal es:</p>
+<p>   a) 3:1</p>
+<p>   b) 4,5:1</p>
+<p>   c) 7:1</p>
+<p>   d) 2:1</p>
+<p><strong>39.</strong> La diferencia entre accesibilidad y usabilidad es:</p>
+<p>   a) Son sinónimos</p>
+<p>   b) Accesibilidad: que personas con discapacidad puedan usar el sistema; usabilidad: que cualquier usuario lo use con eficacia, eficiencia y satisfacción</p>
+<p>   c) La usabilidad es un requisito legal y la accesibilidad no</p>
+<p>   d) La accesibilidad solo afecta al color</p>
+<p><strong>40.</strong> En seguridad del desarrollo, una inyección SQL se previene principalmente con:</p>
+<p>   a) Ocultar los mensajes de error</p>
+<p>   b) Consultas parametrizadas (prepared statements) y validación de entradas</p>
+<p>   c) Cifrar la base de datos</p>
+<p>   d) Usar HTTPS</p>
+<p><strong>Tema 9 · Repositorios y metodologías</strong></p>
+<p><strong>41.</strong> En Git, la diferencia entre commit y push es:</p>
+<p>   a) Ninguna, son sinónimos</p>
+<p>   b) commit guarda los cambios en el repositorio local; push los envía al repositorio remoto</p>
+<p>   c) push guarda en local y commit en remoto</p>
+<p>   d) commit borra el historial</p>
+<p><strong>42.</strong> En Scrum, el Product Owner es responsable de:</p>
+<p>   a) Eliminar impedimentos del equipo</p>
+<p>   b) Maximizar el valor del producto y gestionar y priorizar el Product Backlog</p>
+<p>   c) Escribir todo el código</p>
+<p>   d) Dirigir la reunión diaria</p>
+<p><strong>43.</strong> Las pruebas unitarias se caracterizan por:</p>
+<p>   a) Probar el sistema completo desplegado</p>
+<p>   b) Verificar de forma aislada el componente más pequeño (función, clase), habitualmente automatizadas (JUnit)</p>
+<p>   c) Ser realizadas por los usuarios finales</p>
+<p>   d) Ejecutarse solo en producción</p>
+<p><strong>44.</strong> La integración continua (CI) consiste en:</p>
+<p>   a) Desplegar manualmente cada semana</p>
+<p>   b) Integrar los cambios con frecuencia en el repositorio, compilando y ejecutando las pruebas automáticamente en cada integración</p>
+<p>   c) Trabajar sin control de versiones</p>
+<p>   d) Revisar el código una vez al año</p>
+<p><strong>45.</strong> Una pull request (o merge request) en plataformas como GitHub/GitLab es:</p>
+<p>   a) Una descarga del repositorio</p>
+<p>   b) Una propuesta de integración de una rama que permite revisión de código antes de fusionar</p>
+<p>   c) Un backup automático</p>
+<p>   d) Un despliegue a producción</p>
+<h2 id="soluciones-razonadas">Soluciones razonadas</h2>
+<p>Lee la justificación completa de CADA pregunta, también de las acertadas.</p>
+<p><strong>1. Respuesta correcta: b) No puede identificarse solo con sus atributos y depende de una entidad fuerte.</strong> La entidad débil necesita la clave de la entidad fuerte de la que depende (más un discriminante propio) para identificarse; se une a ella mediante una relación identificativa. Ejemplo clásico: LÍNEA_PEDIDO respecto de PEDIDO.</p>
+<p><strong>2. Respuesta correcta: b) Una tabla intermedia con las claves de ambas entidades.</strong> Las relaciones N:M no pueden representarse con una sola clave foránea: se transforma en una tabla asociativa cuya clave primaria suele ser la combinación de las claves foráneas de ambas entidades (más atributos propios de la relación si los hay). Las 1:N sí se resuelven con clave foránea en el lado N.</p>
+<p><strong>3. Respuesta correcta: b) Ningún atributo no clave depende parcialmente de la clave primaria.</strong> La 2FN elimina las dependencias PARCIALES: solo tiene sentido con claves primarias compuestas (si la clave es simple, estar en 1FN implica 2FN). Las transitivas se eliminan en 3FN y la condición de la opción c) es la Forma Normal de Boyce-Codd.</p>
+<p><strong>4. Respuesta correcta: b) Toda dependencia funcional tenga como determinante una clave candidata.</strong> FNBC es una 3FN reforzada: en toda dependencia X→Y no trivial, X debe ser superclave. Los casos donde 3FN y FNBC difieren implican varias claves candidatas compuestas y solapadas — matiz que el tribunal usa como distractor.</p>
+<p><strong>5. Respuesta correcta: b) Índices, almacenamiento y particionamiento.</strong> Secuencia de diseño: conceptual (E/R, independiente del SGBD) → lógico (relacional normalizado) → físico (índices, tablespaces, particiones, ajustado al SGBD concreto). Corresponde al nivel interno de ANSI/SPARC, que ya conoces del Bloque II.</p>
+<p><strong>6. Respuesta correcta: a) La función recibe una copia y sus cambios no afectan a la variable original.</strong> Por valor se copia el contenido; por referencia se pasa la dirección y los cambios SÍ afectan al original. Matiz de examen: Java pasa siempre por valor, pero en los objetos lo copiado es la referencia, por lo que se puede modificar el objeto apuntado (no reasignarlo).</p>
+<p><strong>7. Respuesta correcta: b) Un caso base que detenga las llamadas.</strong> Sin caso base la recursión no termina y desborda la pila de llamadas (stack overflow). Recuerda del Bloque II que cada llamada apila su contexto: por eso todo algoritmo recursivo puede reescribirse iterativo, a menudo con menor consumo de memoria.</p>
+<p><strong>8. Respuesta correcta: b) Se compila a bytecode que ejecuta la JVM (con compilación JIT).</strong> El compilador javac produce bytecode (.class), independiente de la plataforma («write once, run anywhere»), y la Java Virtual Machine lo ejecuta, optimizando en caliente con el compilador JIT. C se compila a nativo; Python y JavaScript se interpretan (con JIT en los motores modernos).</p>
+<p><strong>9. Respuesta correcta: b) Existir solo dentro del bloque o función donde se declara.</strong> El ámbito (scope) de la variable local es su bloque/función y su vida termina al salir de él (salvo modificadores como static en C). Las globales viven todo el programa; abusar de ellas es mala práctica por acoplamiento — argumento que también aparece en preguntas.</p>
+<p><strong>10. Respuesta correcta: b) El tipo de las variables se comprueba en tiempo de compilación.</strong> Estático: los tipos se verifican al compilar (Java, C, C#); dinámico: se resuelven en ejecución (Python, JavaScript, PHP). No confundir con tipado fuerte/débil, que mide cuánto permite el lenguaje mezclar tipos implícitamente — pareja de conceptos típica de test.</p>
+<p><strong>11. Respuesta correcta: c) ALTER TABLE.</strong> DDL define estructuras: CREATE, ALTER, DROP, TRUNCATE. DML manipula datos: SELECT, INSERT, UPDATE, DELETE. DCL controla permisos: GRANT, REVOKE. TCL gestiona transacciones: COMMIT, ROLLBACK. Clasificar sentencias en estas familias es pregunta recurrente año tras año.</p>
+<p><strong>12. Respuesta correcta: b) Filtra los grupos resultantes de GROUP BY.</strong> WHERE filtra filas ANTES de agrupar; HAVING filtra los grupos DESPUÉS, y por eso puede usar funciones de agregación (HAVING COUNT(*) &gt; 5). Orden lógico de evaluación: FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY.</p>
+<p><strong>13. Respuesta correcta: b) Todas las filas de A y, para las que no casan con B, NULL en las columnas de B.</strong> LEFT (OUTER) JOIN conserva íntegra la tabla izquierda. Patrón de examen: encontrar «los que NO tienen» (clientes sin pedidos) = LEFT JOIN + WHERE b.clave IS NULL. RIGHT JOIN es el simétrico y FULL OUTER conserva ambas.</p>
+<p>**14. Respuesta correcta: b) COUNT(*) cuenta todas las filas; COUNT(columna) excluye los NULL de esa columna.** COUNT(*) cuenta filas del grupo; COUNT(col) cuenta valores NO nulos; COUNT(DISTINCT col) cuenta valores distintos no nulos. El tratamiento de NULL en agregaciones (y en comparaciones: NULL = NULL no es verdadero, hay que usar IS NULL) es fuente inagotable de preguntas.</p>
+<p><strong>15. Respuesta correcta: a) Se ejecuta automáticamente ante eventos INSERT/UPDATE/DELETE, sin invocación explícita.</strong> El trigger se dispara solo (BEFORE/AFTER del evento, por fila o por sentencia); el procedimiento almacenado se invoca expresamente (CALL). Ambos residen en el servidor. Usos típicos del trigger: auditoría e integridad compleja — y su abuso complica el mantenimiento, matiz también preguntado.</p>
+<p><strong>16. Respuesta correcta: b) Definir varios métodos con el mismo nombre y distinta lista de parámetros.</strong> Sobrecarga: mismo nombre, distinta firma (número/tipo de parámetros), en la misma clase, resuelta en compilación. Sobreescritura (overriding): la subclase redefine un método heredado con LA MISMA firma, resuelta en ejecución (polimorfismo). Confundirlas es el error número uno en los test de POO.</p>
+<p><strong>17. Respuesta correcta: b) Ocultar el estado interno del objeto y exponer su manipulación mediante métodos.</strong> Atributos privados + métodos de acceso controlado (getters/setters): el objeto protege sus invariantes. Modificadores Java de menos a más restrictivo: public → protected → (por defecto/package) → private. Los otros pilares: abstracción, herencia y polimorfismo.</p>
+<p><strong>18. Respuesta correcta: b) Tratar objetos de distintas subclases a través de una referencia de la superclase, ejecutándose el método propio de cada uno.</strong> Con Figura f = new Circulo(), la llamada f.area() ejecuta el método de Circulo: enlace dinámico en tiempo de ejecución. Es la esencia del «programar contra la interfaz». La opción a) describe la sobrecarga de constructores, que es polimorfismo estático — distractor fino.</p>
+<p><strong>19. Respuesta correcta: a) Que una clase tenga una única instancia con acceso global a ella.</strong> Singleton: constructor privado + método estático getInstance(). Es un patrón CREACIONAL (como Factory Method, Abstract Factory, Builder, Prototype). Los estructurales incluyen Adapter, Decorator, Facade; los de comportamiento, Observer, Strategy, Iterator. La clasificación GoF en 3 familias es materia de test.</p>
+<p><strong>20. Respuesta correcta: b) Un rombo relleno (negro) en el lado del todo.</strong> Rombo NEGRO = composición (el todo posee las partes; si muere el todo, mueren: casa-habitaciones). Rombo BLANCO = agregación (relación débil: equipo-jugadores). Triángulo hueco = herencia/generalización. Flecha discontinua = dependencia. Los símbolos UML caen dibujados o descritos.</p>
+<p><strong>21. Respuesta correcta: b) Código intermedio (.class) ejecutado por la JVM en cualquier plataforma.</strong> El bytecode independiente de plataforma es la clave de la portabilidad Java. Kit de siglas obligatorio: JDK (desarrollo) ⊃ JRE (ejecución) ⊃ JVM (máquina virtual). Desde la cesión a Eclipse Foundation, Java EE pasó a llamarse Jakarta EE — actualización que el temario vigente ya recoge.</p>
+<p><strong>22. Respuesta correcta: b) Un componente Java que se ejecuta en el servidor para procesar peticiones HTTP y generar respuestas.</strong> El servlet vive en un contenedor web (Tomcat, Jetty) y atiende peticiones (doGet, doPost). Las JSP son plantillas HTML con código Java que el contenedor traduce a servlets. No confundir con los applets, que corrían en el navegador y están extintos — distractor habitual.</p>
+<p><strong>23. Respuesta correcta: b) La especificación estándar de mapeo objeto-relacional (ORM) en Java.</strong> JPA define el estándar ORM (entidades anotadas con <span class="citation" data-cites="Entity">@Entity</span>, gestor EntityManager, lenguaje JPQL); Hibernate es su implementación más conocida. El ORM traduce automáticamente entre objetos y tablas relacionales — el puente entre tus temas de POO y de SQL.</p>
+<p><strong>24. Respuesta correcta: b) El entorno de ejecución (máquina virtual) que ejecuta el código intermedio CIL/MSIL.</strong> Common Language Runtime = el equivalente .NET de la JVM: los lenguajes .NET (C#, VB.NET, F#) compilan a código intermedio CIL que el CLR ejecuta con JIT y recolector de basura. Para web, ASP.NET Core; para ORM, Entity Framework. Los paralelismos Java↔︎.NET son un clásico del test TAI: JVM↔︎CLR, bytecode↔︎CIL, JPA↔︎Entity Framework.</p>
+<p><strong>25. Respuesta correcta: b) Gestión de dependencias y construcción (build) de proyectos.</strong> Declaran las bibliotecas que necesita el proyecto (pom.xml en Maven, build.gradle en Gradle), las descargan de repositorios centrales y automatizan compilación, pruebas y empaquetado. En .NET el equivalente es NuGet; en JavaScript, npm. Enlaza con el tema 9 (repositorios y CI/CD).</p>
+<p><strong>26. Respuesta correcta: b) Presentación, lógica de negocio y datos.</strong> Presentación (interfaz), negocio (reglas y procesos) y datos (persistencia). Separar capas permite escalar y mantener cada una por separado; físicamente pueden desplegarse en distintos niveles (tiers). El cliente ligero (navegador) frente a cliente pesado también aparece en este tema.</p>
+<p><strong>27. Respuesta correcta: b) Mensajería XML con contrato formal descrito en WSDL.</strong> SOAP: sobre XML (envelope, header, body), contrato WSDL, extensiones WS-Security; formal y pesado, típico de integraciones entre administraciones. REST: recursos + verbos HTTP + JSON habitualmente, sin contrato obligatorio (OpenAPI/Swagger como descripción). La comparativa SOAP/REST es pregunta segura.</p>
+<p><strong>28. Respuesta correcta: b) Cada petición contiene toda la información necesaria; el servidor no guarda contexto de sesión entre peticiones.</strong> Es una de las restricciones definitorias de REST (Fielding): sin estado de sesión en servidor, mejor escalabilidad. Las demás: cliente-servidor, cacheable, interfaz uniforme, sistema en capas. Los recursos se identifican por URI y se manipulan con los métodos HTTP cuya semántica ya practicaste en el diagnóstico (GET/POST/PUT/PATCH/DELETE).</p>
+<p><strong>29. Respuesta correcta: b) Recurso creado correctamente.</strong> Familias: 2xx éxito (200 OK, 201 Created, 204 No Content), 3xx redirección (301, 302, 304), 4xx error del cliente (400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found), 5xx error del servidor (500, 503). Los códigos HTTP caen en el test Y en el supuesto: tabla directa a Anki.</p>
+<p><strong>30. Respuesta correcta: b) application/json.</strong> Se declara en la cabecera Content-Type. Otros habituales: text/html, text/css, application/xml, multipart/form-data (subida de ficheros), application/x-www-form-urlencoded (formularios). Las cabeceras HTTP (Content-Type, Authorization, Accept) aparecen en los supuestos del Bloque III.</p>
+**31. Respuesta correcta: b)
+<article>
+.** HTML5 añadió etiquetas con significado estructural:
+<header>
+,
+<nav>
+,
+<main>
+,
+<article>
+,
+<section>
+,
+<aside>
+,
+<footer>
+,
+<figure>
+. Mejoran la accesibilidad (los lectores de pantalla entienden la estructura) y el SEO, frente a los
+<div>
+<p>genéricos. Conexión directa con el tema de accesibilidad.</p>
+<p><strong>32. Respuesta correcta: b) padding → border → margin.</strong> Contenido → padding (relleno interior) → border (borde) → margin (margen exterior, separa de otros elementos). En selectores: #id (especificidad alta), .clase, etiqueta. Preguntas típicas: qué selector gana, y qué propiedad separa dos cajas (margin, no padding).</p>
+<p><strong>33. Respuesta correcta: b) Un lenguaje de script que se ejecuta en el navegador y manipula el DOM (y en servidor con Node.js).</strong> Pese al nombre, NO tiene relación con Java (estándar real: ECMAScript). Manipula el árbol DOM del documento, gestiona eventos y hace peticiones asíncronas (AJAX/fetch). Node.js lo lleva al servidor. TypeScript es su superconjunto tipado; Sass/LESS son los preprocesadores CSS de la opción d).</p>
+<p><strong>34. Respuesta correcta: b) Proporcionar un texto alternativo que describen la imagen (accesibilidad y carga fallida).</strong> El texto alternativo es lo que leen los lectores de pantalla y lo que se muestra si la imagen no carga: es EL ejemplo canónico de accesibilidad web y criterio WCAG 1.1.1 (nivel A). Las imágenes decorativas llevan alt="" vacío para que el lector las ignore. Pregunta puente entre los temas 7 y 8.</p>
+<strong>35. Respuesta correcta: b) Aplicar estilos distintos según características del dispositivo (ancho de pantalla, orientación…).</strong> <span class="citation" data-cites="media">@media</span> (max-width: 768px) { … } es la base del diseño web adaptable (responsive), requisito de «multiplataforma y multidispositivo» que cita literalmente el epígrafe del temario. Se complementa con la etiqueta
+<meta name="viewport">
+<p>y unidades relativas (%, em, rem).</p>
+<p><strong>36. Respuesta correcta: a) Perceptible, Operable, Comprensible y Robusto.</strong> Principios POUR de las Pautas de Accesibilidad para el Contenido Web del W3C: el contenido debe poder percibirse, operarse, comprenderse y ser robusto ante tecnologías de apoyo. De ellos cuelgan pautas y criterios de conformidad con niveles A, AA y AAA.</p>
+<p><strong>37. Respuesta correcta: b) AA.</strong> El RD 1112/2018 (que traspone la Directiva 2016/2102) obliga a los sitios y apps del sector público a cumplir la norma EN 301 549, alineada con WCAG nivel AA. Cada sitio debe publicar una declaración de accesibilidad y ofrecer vía de quejas. Trío de datos muy preguntado: RD 1112/2018 + EN 301 549 + nivel AA.</p>
+<p><strong>38. Respuesta correcta: b) 4,5:1.</strong> Criterio 1.4.3: 4,5:1 para texto normal y 3:1 para texto grande (≥18 pt o 14 pt negrita). El nivel AAA sube a 7:1. Estas ratios numéricas son el tipo de dato exacto que distingue al opositor entrenado.</p>
+<p><strong>39. Respuesta correcta: b) Accesibilidad: que personas con discapacidad puedan usar el sistema; usabilidad: que cualquier usuario lo use con eficacia, eficiencia y satisfacción.</strong> La usabilidad (ISO 9241: eficacia, eficiencia y satisfacción en un contexto de uso) aplica a todos los usuarios; la accesibilidad garantiza el acceso a personas con discapacidad y es obligación legal en el sector público. El «diseño universal» del epígrafe: diseñar desde el inicio para el máximo rango de personas sin adaptaciones posteriores.</p>
+<p><strong>40. Respuesta correcta: b) Consultas parametrizadas (prepared statements) y validación de entradas.</strong> La inyección explota la concatenación de entradas del usuario en el SQL; las consultas preparadas separan código de datos y la neutralizan. El epígrafe «conceptos de seguridad en el desarrollo» apunta al OWASP Top 10: inyección, XSS (se previene escapando salidas), autenticación rota… Vocabulario que ya asoma en exámenes recientes.</p>
+<p><strong>41. Respuesta correcta: b) commit guarda los cambios en el repositorio local; push los envía al repositorio remoto.</strong> Flujo básico: git add (área de preparación/staging) → git commit (histórico local) → git push (remoto). En sentido inverso: git fetch descarga sin integrar y git pull = fetch + merge. Git es DISTRIBUIDO (cada clon tiene el historial completo), frente al centralizado Subversion — comparación preguntada.</p>
+<p><strong>42. Respuesta correcta: b) Maximizar el valor del producto y gestionar y priorizar el Product Backlog.</strong> Roles: Product Owner (valor y backlog), Scrum Master (facilita el proceso y quita impedimentos), Developers (autoorganizados). Eventos: Sprint (≤1 mes), Sprint Planning, Daily (15 min), Review y Retrospectiva. Artefactos: Product Backlog, Sprint Backlog, Incremento. La terminología Scrum entra con fuerza desde que el temario incluyó metodologías.</p>
+<p><strong>43. Respuesta correcta: b) Verificar de forma aislada el componente más pequeño (función, clase), habitualmente automatizadas (JUnit).</strong> Pirámide de pruebas: unitarias (base, muchas y rápidas) → integración (interacción entre módulos) → sistema (extremo a extremo) → aceptación (usuario/negocio, las de la opción c). Las de regresión verifican que lo que funcionaba sigue funcionando tras un cambio. TDD: escribir la prueba antes que el código.</p>
+<p><strong>44. Respuesta correcta: b) Integrar los cambios con frecuencia en el repositorio, compilando y ejecutando las pruebas automáticamente en cada integración.</strong> CI detecta errores de integración cuanto antes mediante pipelines automáticos (Jenkins, GitHub Actions, GitLab CI). Escalones siguientes: entrega continua (CD: artefacto siempre listo para desplegar con aprobación manual) y despliegue continuo (a producción sin intervención). La tríada CI/CD es materia de examen actual.</p>
+<p><strong>45. Respuesta correcta: b) Una propuesta de integración de una rama que permite revisión de código antes de fusionar.</strong> Es el mecanismo central del desarrollo colaborativo: se desarrolla en una rama (feature branch), se abre la PR, otros revisan y comentan el código, el pipeline de CI lo valida y finalmente se fusiona (merge). El «fork» es la copia de un repositorio ajeno para contribuir desde fuera — ambos términos figuran en el epígrafe de plataformas colaborativas.</p>
+<h1 id="supuesto-práctico-guiado-nº-1-bloque-iii">SUPUESTO PRÁCTICO GUIADO Nº 1 — Bloque III</h1>
+<p><strong>Instrucciones.</strong> Primera vez: sin cronómetro, con las fichas cerradas. Reglas de examen: 20 preguntas, 4 opciones, acierto +4, error −1,33, blanco 0; mínimo real 25/80 → tu objetivo: ≥ 48 (12 netas). Lee primero las 20 preguntas y después el enunciado a fondo: verás que varias se responden sin volver al texto.</p>
+<h2 id="enunciado">Enunciado</h2>
+<p>La Subdirección de Tecnologías de un organismo de la AGE va a desarrollar <strong>CITA-NET</strong>, una aplicación web de cita previa. Decisiones del proyecto:</p>
+<ul>
+<li>Aplicación en <strong>arquitectura de tres capas</strong>, back-end <strong>Java 17 con Spring Boot</strong> desplegado en Tomcat, persistencia mediante <strong>JPA/Hibernate</strong> sobre PostgreSQL, y front-end HTML5/CSS3/JavaScript adaptable a móvil.</li>
+<li>La API es <strong>REST</strong> con JSON. Recursos principales: <code>/api/citas</code>, <code>/api/oficinas</code>, <code>/api/ciudadanos</code>.</li>
+<li>Esquema de base de datos:</li>
+</ul>
+<pre><code>CIUDADANO(dni PK, nombre, email)
+OFICINA(ofi_id PK, nombre, provincia)
+CITA(cita_id PK, dni FK→CIUDADANO, ofi_id FK→OFICINA,
+     fecha_hora, estado)   -- estado: &#39;P&#39; pendiente, &#39;A&#39; atendida, &#39;C&#39; cancelada</code></pre>
+<ul>
+<li>El código se aloja en un <strong>GitLab</strong> corporativo con ramas por funcionalidad, merge requests con revisión obligatoria y un <strong>pipeline de CI</strong> que compila y ejecuta las pruebas JUnit en cada push.</li>
+<li>Por ser sector público, el portal debe cumplir el <strong>RD 1112/2018</strong>.</li>
+</ul>
+<h2 id="preguntas">Preguntas</h2>
+<p><strong>1.</strong> La capa de la arquitectura donde deben residir las reglas de negocio (p. ej., «un ciudadano no puede tener dos citas pendientes en la misma oficina») es: a) presentación · b) lógica de negocio · c) datos · d) el navegador</p>
+<p><strong>2.</strong> Para que la relación CITA→CIUDADANO sea válida, el valor de CITA.dni debe cumplir: a) ser único en CITA · b) existir como PK en CIUDADANO (integridad referencial) · c) no ser nulo en ningún caso del modelo · d) ser numérico</p>
+<p><strong>3.</strong> SQL: citas pendientes de la oficina 12 ordenadas por fecha: a) <code>SELECT * FROM CITA WHERE ofi_id=12 AND estado='P' ORDER BY fecha_hora;</code> · b) <code>SELECT * FROM CITA HAVING ofi_id=12;</code> · c) <code>SELECT * FROM CITA WHERE estado='P' GROUP BY fecha_hora;</code> · d) <code>SELECT * FROM OFICINA WHERE cita='P';</code></p>
+<p><strong>4.</strong> SQL: número de citas por provincia: a) requiere JOIN de CITA con OFICINA y GROUP BY provincia · b) basta GROUP BY ofi_id sobre CITA · c) requiere un trigger · d) no puede hacerse en SQL estándar</p>
+<p><strong>5.</strong> SQL: ciudadanos SIN ninguna cita: a) INNER JOIN + COUNT · b) <code>LEFT JOIN CITA ... WHERE CITA.dni IS NULL</code> · c) <code>WHERE dni &lt;&gt; ALL</code> sin subconsulta · d) DELETE con cursor</p>
+<p><strong>6.</strong> La tabla CITA con estado como texto libre se cambia a un catálogo ESTADO(cod PK, descripcion) y CITA.estado pasa a FK. Esto es un ejemplo de: a) desnormalización · b) mejora de integridad mediante restricción referencial · c) 1FN · d) particionamiento físico</p>
+<p><strong>7.</strong> En JPA, la clase Cita que se mapea a la tabla CITA se anota con: a) <span class="citation" data-cites="Table">@Table</span> only · b) <span class="citation" data-cites="Entity">@Entity</span> · c) <span class="citation" data-cites="Servlet">@Servlet</span> · d) <span class="citation" data-cites="RestClient">@RestClient</span></p>
+<p><strong>8.</strong> El método Java <code>List&lt;Cita&gt; findByEstado(String estado)</code> devuelve las citas de un estado. Si <code>Cita</code> hereda de una clase <code>Registro</code> y ambas definen <code>toString()</code> con la misma firma, al imprimir una Cita se ejecuta el <code>toString()</code> de Cita. Esto es: a) sobrecarga · b) sobreescritura con enlace dinámico (polimorfismo) · c) encapsulación · d) herencia múltiple</p>
+<p><strong>9.</strong> Crear una cita nueva vía API REST: petición correcta: a) <code>GET /api/citas?crear=true</code> · b) <code>POST /api/citas</code> con la cita en JSON en el cuerpo · c) <code>PUT /api/citas</code> sin cuerpo · d) <code>DELETE /api/citas/nueva</code></p>
+<p><strong>10.</strong> Respuesta HTTP apropiada si la creación tiene éxito: a) 200 · b) 201 Created · c) 301 · d) 500</p>
+<p><strong>11.</strong> Un ciudadano consulta una cita que no existe: <code>GET /api/citas/99999</code>. Código correcto: a) 204 · b) 401 · c) 404 Not Found · d) 503</p>
+<p><strong>12.</strong> La cabecera de la respuesta JSON debe declarar: a) <code>Content-Type: application/json</code> · b) <code>Content-Type: text/html</code> · c) <code>Accept: SQL</code> · d) <code>Authorization: JSON</code></p>
+<p><strong>13.</strong> Que la API sea stateless implica: a) que no usa PostgreSQL · b) que cada petición lleva todo lo necesario (p. ej., el token) y el servidor no guarda sesión entre peticiones · c) que no puede haber autenticación · d) que las citas no se persisten</p>
+<p><strong>14.</strong> El formulario de alta valida el email con JavaScript en el navegador. Para la seguridad del sistema esto es: a) suficiente · b) insuficiente: toda entrada debe validarse también en el servidor, pues el cliente es manipulable · c) innecesario si hay HTTPS · d) equivalente a usar consultas parametrizadas</p>
+<p><strong>15.</strong> El servicio construye una consulta así: <code>"SELECT * FROM CITA WHERE dni='" + dniRecibido + "'"</code>. El riesgo y su corrección son: a) XSS; usar CSS · b) inyección SQL; usar consultas parametrizadas (PreparedStatement/parámetros JPA) · c) desbordamiento; usar float · d) ninguno si el DNI es corto</p>
+<p><strong>16.</strong> Para que el portal cumpla el RD 1112/2018 debe ajustarse a: a) WCAG nivel A · b) la norma EN 301 549 (WCAG nivel AA) y publicar declaración de accesibilidad · c) solo usabilidad de Nielsen · d) ISO 9001</p>
+<p><strong>17.</strong> Las imágenes del portal (logotipos informativos) deben llevar: a) title vacío · b) atributo alt descriptivo · c) width fijo · d) formato BMP</p>
+<p><strong>18.</strong> Para que el front se adapte al móvil se usan principalmente: a) tablas anidadas · b) media queries y unidades relativas (diseño responsive) · c) Java applets · d) frames</p>
+<p><strong>19.</strong> Un desarrollador termina la funcionalidad «cancelar cita» en la rama <code>feature/cancelar</code>. El paso correcto para integrarla en <code>main</code> con revisión es: a) push directo a main · b) abrir una merge request en GitLab y esperar revisión y pipeline verde · c) enviar el código por correo · d) git rebase en main sin revisión</p>
+<p><strong>20.</strong> El pipeline ejecuta primero las pruebas que verifican métodos aislados de la clase <code>CitaService</code> con JUnit. Son pruebas: a) de aceptación · b) unitarias · c) de carga · d) manuales</p>
+<h2 id="soluciones-razonadas-del-supuesto">Soluciones razonadas del supuesto</h2>
+<p><strong>1 b.</strong> Las reglas de negocio van en la capa intermedia: ni en la presentación (duplicaría lógica y es manipulable) ni en la de datos (aunque una restricción UNIQUE pueda reforzarla). Pregunta de arquitectura pura del tema 6.</p>
+<p><strong>2 b.</strong> Definición exacta de integridad referencial (tema 1 y Bloque II): la FK debe referenciar una PK existente (o ser NULL si el diseño lo permite — por eso la c) es falsa como absoluto: aquí el modelo exige dni, pero la integridad referencial en sí no lo impone).</p>
+<p><strong>3 a.</strong> Filtro de filas → WHERE con AND; ordenación → ORDER BY. La b) usa HAVING sin GROUP BY y la c) agrupa sin sentido. En los supuestos reales las opciones incorrectas suelen ser SQL sintácticamente plausible pero semánticamente absurdo: léelas ejecutándolas mentalmente.</p>
+<p><strong>4 a.</strong> provincia está en OFICINA, no en CITA: hace falta <code>JOIN OFICINA ON CITA.ofi_id = OFICINA.ofi_id</code> y <code>GROUP BY provincia</code>. La b) agruparía por oficina, no por provincia — distractor fino: agrupar por la columna equivocada.</p>
+<p><strong>5 b.</strong> El patrón «los que NO tienen» de la Serie A: LEFT JOIN conservando CIUDADANO y filtrando los no casados con IS NULL. También válido NOT EXISTS / NOT IN (con cuidado de NULL en NOT IN).</p>
+<p><strong>6 b.</strong> Sustituir texto libre por catálogo con FK añade una restricción referencial que impide estados inválidos. No es desnormalizar (al contrario) ni tiene que ver con 1FN (el atributo ya era atómico).</p>
+<p><strong>7 b.</strong> <span class="citation" data-cites="Entity">@Entity</span> marca la clase como entidad persistente JPA (con <span class="citation" data-cites="Id">@Id</span> en la clave; <span class="citation" data-cites="Table">@Table</span> es opcional para personalizar el nombre). <span class="citation" data-cites="Servlet">@Servlet</span> no existe como tal y los servlets son otra cosa (tema 5).</p>
+<p><strong>8 b.</strong> Misma firma redefinida en la subclase + decisión en tiempo de ejecución = sobreescritura con enlace dinámico, el corazón del polimorfismo. Si fueran distintas firmas en la misma clase, sería sobrecarga.</p>
+<p><strong>9 b.</strong> POST al recurso colección para crear; el representación va en el cuerpo en JSON. PUT sería reemplazar una cita concreta (<code>PUT /api/citas/123</code>) y GET jamás modifica (método «seguro»).</p>
+<p><strong>10 b.</strong> 201 Created, idealmente con cabecera Location apuntando al nuevo recurso. 200 sería aceptable pero 201 es el específico — y el tribunal pregunta el específico.</p>
+<p><strong>11 c.</strong> 404: el recurso no existe. 401 sería sin autenticar, 204 éxito sin contenido, 503 servicio no disponible. La familia 4xx = error del cliente; 5xx = del servidor.</p>
+<p><strong>12 a.</strong> application/json es el MIME de JSON (test, pregunta 30). Accept es cabecera de petición (lo que el cliente quiere recibir), no de respuesta.</p>
+<p><strong>13 b.</strong> Stateless: sin estado de sesión en servidor; la autenticación viaja en cada petición (token JWT en Authorization: Bearer). No impide persistir datos de negocio — distractor d).</p>
+<p><strong>14 b.</strong> Regla de oro de seguridad del tema 8: nunca confiar en el cliente. La validación en navegador es usabilidad (feedback rápido); la de servidor es seguridad. HTTPS cifra el canal pero no valida nada.</p>
+<p><strong>15 b.</strong> Concatenar entrada del usuario en SQL = inyección (un dni como <code>' OR '1'='1</code> alteraría la consulta). Prevención: consultas parametrizadas, que separan código de datos. El ejemplo es casi literal de exámenes recientes.</p>
+<p><strong>16 b.</strong> El trío del RD 1112/2018: EN 301 549 → WCAG AA + declaración de accesibilidad + vía de quejas. Nivel A se queda corto y AAA no es exigible con carácter general.</p>
+<p><strong>17 b.</strong> alt descriptivo (criterio 1.1.1, nivel A). Matiz: si la imagen fuera puramente decorativa, alt="" vacío para que el lector de pantalla la salte.</p>
+<p><strong>18 b.</strong> Media queries + viewport + unidades relativas = responsive (tema 7). Tablas para maquetar y frames son prácticas obsoletas y contrarias a accesibilidad.</p>
+<p><strong>19 b.</strong> El flujo colaborativo del tema 9: rama de funcionalidad → merge request → revisión por pares + pipeline CI verde → merge. Push directo a main es exactamente lo que ese flujo prohíbe.</p>
+<p><strong>20 b.</strong> Métodos aislados de una clase + JUnit + automatizadas en el pipeline = unitarias, la base de la pirámide de pruebas.</p>
+<p><strong>Cómo puntuarte:</strong> neta = 4·aciertos − 1,33·fallos. ≥48 puntos (12 netas): excelente primer contacto. 25-47: normal en primera vuelta; repite en el mes 3 con cronómetro. &lt;25: rehaz las fichas de los temas 3, 6 y 8, que concentran el supuesto.</p>
+<h1 id="ficha-bloque-i-fase-2-temas-2-3-las-cortes-generales-y-el-gobierno">Ficha Bloque I (fase 2) · Temas 2-3: Las Cortes Generales y el Gobierno</h1>
+<p><strong>Las Cortes Generales (Título III, arts. 66-96).</strong> Representan al pueblo español; bicameralismo <strong>asimétrico</strong> (predominio del Congreso). Inviolables. Funciones (66.2): potestad legislativa, presupuestos, control del Gobierno.</p>
+<ul>
+<li><strong>Congreso:</strong> entre <strong>300 y 400 diputados</strong> (la LOREG fija <strong>350</strong>), elegidos por 4 años, circunscripción provincial, representación <strong>proporcional</strong> (D’Hondt).</li>
+<li><strong>Senado</strong> (69): «cámara de <strong>representación territorial</strong>». Elección: <strong>4 por provincia</strong>; 3 por isla mayor (Gran Canaria, Mallorca, Tenerife); 1 por isla menor/agrupación; <strong>2 Ceuta y 2 Melilla</strong>; + designados autonómicos: <strong>1 + 1 por millón de habitantes</strong>. Sistema mayoritario.</li>
+<li>Periodos de sesiones (73): <strong>septiembre-diciembre y febrero-junio</strong>. <strong>Diputación Permanente</strong> (78): mínimo <strong>21 miembros</strong> por Cámara; vela por los poderes de la Cámara entre periodos y disuelta la Cámara.</li>
+<li>Prerrogativas (71): <strong>inviolabilidad</strong> (opiniones en el ejercicio), <strong>inmunidad</strong> (detención solo en flagrante delito; procesamiento con <strong>suplicatorio</strong>), aforamiento (Sala de lo Penal del TS).</li>
+<li><strong>Procedimiento legislativo:</strong> iniciativa (Gobierno = proyectos; Cámaras = proposiciones; CCAA; <strong>popular: 500.000 firmas</strong>, excluidas LO, tributarias, internacionales, gracia). El Senado, en <strong>2 meses</strong> (20 días naturales en urgencia), veta por mayoría absoluta o enmienda; el Congreso levanta el veto por <strong>mayoría absoluta</strong> (o simple pasados 2 meses) y resuelve enmiendas por mayoría simple.</li>
+<li><strong>Decreto-ley (86):</strong> «extraordinaria y urgente necesidad»; límites (no afecta a instituciones básicas, Título I, CCAA, derecho electoral); <strong>convalidación por el Congreso en 30 días</strong>. <strong>Decreto legislativo (82-85):</strong> delegación previa por <strong>ley de bases</strong> (texto articulado) o ley ordinaria (texto refundido).</li>
+</ul>
+<p><strong>El Gobierno (Título IV, arts. 97-107 y Ley 50/1997).</strong></p>
+<ul>
+<li><strong>Composición (98):</strong> Presidente, vicepresidente(s) <em>en su caso</em>, ministros y demás miembros que establezca la ley. Los Secretarios de Estado NO son miembros del Gobierno.</li>
+<li><strong>Funciones (97, literal):</strong> dirige la política interior y exterior, la Administración civil y militar y la defensa; ejerce la <strong>función ejecutiva</strong> y la <strong>potestad reglamentaria</strong> de acuerdo con la Constitución y las leyes.</li>
+<li><strong>Investidura (99):</strong> propuesta del Rey (refrendo del Presidente del Congreso) → <strong>mayoría absoluta</strong>; si no, <strong>simple a las 48 h</strong>; si ningún candidato en <strong>2 meses</strong> desde la primera votación → disolución automática y elecciones.</li>
+<li><strong>Cese (101):</strong> elecciones, pérdida de confianza parlamentaria, dimisión o fallecimiento del Presidente. <strong>Gobierno en funciones</strong> (Ley 50/1997): gestión ordinaria; no puede disolver Cámaras, plantear cuestión de confianza ni convocar referéndum.</li>
+<li><strong>Control y responsabilidad:</strong> responsabilidad <strong>solidaria ante el Congreso</strong> (108). <strong>Cuestión de confianza (112):</strong> la plantea el Presidente (previa deliberación del Consejo de Ministros) sobre programa o declaración de política general; se otorga por <strong>mayoría simple</strong>. <strong>Moción de censura (113):</strong> <strong>constructiva</strong> — 1/10 de diputados, con candidato; votación no antes de <strong>5 días</strong>; exige <strong>mayoría absoluta</strong>; si prospera, el candidato queda investido; si fracasa, sus firmantes no pueden repetir en el mismo periodo de sesiones. <strong>Disolución (115):</strong> el Presidente, bajo su exclusiva responsabilidad, previa deliberación del Consejo de Ministros; no cabe con moción de censura en trámite.</li>
+<li>Responsabilidad penal del Presidente y ministros (102): Sala de lo Penal del <strong>Tribunal Supremo</strong>.</li>
+</ul>
+<h1 id="test-del-bloque-i-fase-2-15-preguntas-cortes-y-gobierno">Test del Bloque I (fase 2) — 15 preguntas (Cortes y Gobierno)</h1>
+<p>Condiciones: 15 preguntas, <strong>18 minutos</strong>. Objetivo: ≥ 9 netas. Mayorías, plazos y números: todo lo que falles va directo a Anki.</p>
+<p><strong>Tema 2 · Cortes Generales</strong></p>
+<p><strong>1.</strong> El Congreso de los Diputados se compone, según el art. 68 CE, de:</p>
+<p>   a) 350 diputados fijos</p>
+<p>   b) Un mínimo de 300 y un máximo de 400 diputados</p>
+<p>   c) Entre 250 y 350 diputados</p>
+<p>   d) 400 diputados fijos</p>
+<p><strong>2.</strong> ¿Cuántos senadores elige cada provincia peninsular?</p>
+<p>   a) 2</p>
+<p>   b) 3</p>
+<p>   c) 4</p>
+<p>   d) Depende de su población</p>
+<p><strong>3.</strong> La legislatura de ambas Cámaras dura:</p>
+<p>   a) 5 años</p>
+<p>   b) 4 años, sin perjuicio de disolución anticipada</p>
+<p>   c) 3 años</p>
+<p>   d) 4 años improrrogables en todo caso</p>
+<p><strong>4.</strong> Fuera de los periodos de sesiones, la continuidad de cada Cámara la garantiza:</p>
+<p>   a) La Mesa</p>
+<p>   b) La Junta de Portavoces</p>
+<p>   c) La Diputación Permanente</p>
+<p>   d) La Comisión Constitucional</p>
+<p><strong>5.</strong> Las prerrogativas parlamentarias de inviolabilidad e inmunidad significan que los diputados y senadores:</p>
+<p>   a) No pagan impuestos</p>
+<p>   b) No responden por las opiniones manifestadas en el ejercicio de sus funciones y no pueden ser inculpados ni procesados sin autorización de su Cámara (suplicatorio)</p>
+<p>   c) No pueden ser detenidos en ningún caso</p>
+<p>   d) Tienen fuero ante cualquier juzgado</p>
+<p><strong>6.</strong> Si el Senado veta un proyecto de ley, el Congreso puede levantarlo:</p>
+<p>   a) Por mayoría de 2/3</p>
+<p>   b) Por mayoría absoluta, o por mayoría simple una vez transcurridos dos meses</p>
+<p>   c) Solo convocando referéndum</p>
+<p>   d) No puede levantarlo</p>
+<p><strong>7.</strong> El decreto-ley (art. 86) requiere:</p>
+<p>   a) Delegación previa de las Cortes</p>
+<p>   b) Extraordinaria y urgente necesidad, y convalidación o derogación por el Congreso en 30 días</p>
+<p>   c) Aprobación del Senado</p>
+<p>   d) Referéndum posterior</p>
+<p><strong>8.</strong> La iniciativa legislativa popular (art. 87.3) exige:</p>
+<p>   a) 100.000 firmas</p>
+<p>   b) 250.000 firmas</p>
+<p>   c) 500.000 firmas acreditadas</p>
+<p>   d) 1.000.000 de firmas</p>
+<p><strong>Tema 3 · Gobierno</strong></p>
+<p><strong>9.</strong> Según el art. 98 CE, el Gobierno se compone de:</p>
+<p>   a) Presidente y ministros exclusivamente</p>
+<p>   b) Presidente, vicepresidentes en su caso, ministros y demás miembros que establezca la ley</p>
+<p>   c) Presidente, ministros y secretarios de Estado</p>
+<p>   d) Presidente y su gabinete</p>
+<p><strong>10.</strong> En la investidura del Presidente del Gobierno (art. 99), la primera votación exige:</p>
+<p>   a) Mayoría simple</p>
+<p>   b) Mayoría absoluta del Congreso; si no se alcanza, mayoría simple 48 horas después</p>
+<p>   c) Mayoría de 3/5</p>
+<p>   d) Mayoría absoluta de ambas Cámaras</p>
+<p><strong>11.</strong> La moción de censura (art. 113) se caracteriza por:</p>
+<p>   a) Poder presentarla cualquier diputado</p>
+<p>   b) Ser constructiva: la propone al menos 1/10 de los diputados con candidato incluido y exige mayoría absoluta</p>
+<p>   c) Aprobarse por mayoría simple</p>
+<p>   d) Requerir también al Senado</p>
+<p><strong>12.</strong> La cuestión de confianza (art. 112) la plantea el Presidente del Gobierno sobre:</p>
+<p>   a) Cualquier proyecto de ley</p>
+<p>   b) Su programa o una declaración de política general, y se entiende otorgada por mayoría simple</p>
+<p>   c) Los Presupuestos, por mayoría absoluta</p>
+<p>   d) Una reforma constitucional</p>
+<p><strong>13.</strong> Según el art. 97 CE, corresponde al Gobierno:</p>
+<p>   a) Aprobar las leyes</p>
+<p>   b) Dirigir la política interior y exterior, la Administración civil y militar y la defensa del Estado; ejercer la función ejecutiva y la potestad reglamentaria</p>
+<p>   c) Nombrar al Defensor del Pueblo</p>
+<p>   d) Controlar al Poder Judicial</p>
+<p><strong>14.</strong> Un Gobierno en funciones NO puede:</p>
+<p>   a) Despachar asuntos ordinarios</p>
+<p>   b) Disolver las Cámaras, plantear cuestión de confianza ni proponer referéndum</p>
+<p>   c) Reunir al Consejo de Ministros</p>
+<p>   d) Aprobar reales decretos de gestión ordinaria</p>
+<p><strong>15.</strong> La responsabilidad política del Gobierno es:</p>
+<p>   a) Individual de cada ministro ante el Rey</p>
+<p>   b) Solidaria de todo el Gobierno ante el Congreso de los Diputados (art. 108)</p>
+<p>   c) Ante ambas Cámaras por igual</p>
+<p>   d) Ante el Tribunal Constitucional</p>
+<h2 id="soluciones-razonadas-1">Soluciones razonadas</h2>
+<p>Lee la justificación completa de CADA pregunta, también de las acertadas.</p>
+<p><strong>1. Respuesta correcta: b) Un mínimo de 300 y un máximo de 400 diputados.</strong> La CE fija una horquilla de 300-400; es la LOREG (LO 5/1985) la que concreta 350. Elegidos por 4 años, por sufragio universal, libre, igual, directo y secreto, con circunscripción provincial y criterios de representación proporcional (fórmula D’Hondt). La pareja «CE dice horquilla / LOREG dice 350» es trampa clásica.</p>
+<p><strong>2. Respuesta correcta: c) 4.</strong> Art. 69: 4 por provincia peninsular; islas mayores (Gran Canaria, Mallorca, Tenerife) 3; islas menores/agrupaciones 1; Ceuta y Melilla 2 cada una. Además, las CCAA designan 1 senador + 1 por cada millón de habitantes. El Senado es la «cámara de representación territorial» (69.1) — literal muy preguntado.</p>
+<p><strong>3. Respuesta correcta: b) 4 años, sin perjuicio de disolución anticipada.</strong> 4 años tanto Congreso como Senado, pero el Presidente del Gobierno puede disolver anticipadamente (art. 115). Las Cámaras se reúnen en dos periodos ordinarios de sesiones: septiembre-diciembre y febrero-junio (art. 73) — otro dato numérico rentable.</p>
+<p><strong>4. Respuesta correcta: c) La Diputación Permanente.</strong> La Diputación Permanente (art. 78): mínimo 21 miembros por Cámara en proporción a los grupos, presidida por el Presidente de la Cámara; vela por los poderes de la Cámara entre periodos y cuando está disuelta. La Mesa es el órgano de gobierno interior y la Junta de Portavoces fija el orden del día con el Presidente.</p>
+<p><strong>5. Respuesta correcta: b) No responden por las opiniones manifestadas en el ejercicio de sus funciones y no pueden ser inculpados ni procesados sin autorización de su Cámara (suplicatorio).</strong> Art. 71: inviolabilidad (por opiniones en ejercicio del cargo, permanente) + inmunidad (solo detenibles en flagrante delito; procesamiento previa autorización de la Cámara = suplicatorio) + aforamiento ante la Sala de lo Penal del Tribunal Supremo. Tres piezas distintas que los test mezclan deliberadamente.</p>
+<p><strong>6. Respuesta correcta: b) Por mayoría absoluta, o por mayoría simple una vez transcurridos dos meses.</strong> Art. 90: el Senado dispone de 2 meses para vetar (mayoría absoluta) o enmendar. El Congreso levanta el veto por mayoría absoluta inmediata, o simple pasados 2 meses; las enmiendas se aceptan o rechazan por mayoría simple. Muestra la posición subordinada del Senado en nuestro bicameralismo asimétrico.</p>
+<p><strong>7. Respuesta correcta: b) Extraordinaria y urgente necesidad, y convalidación o derogación por el Congreso en 30 días.</strong> El decreto-ley es norma provisional del Gobierno; NO puede afectar a las instituciones básicas del Estado, derechos del Título I, régimen de las CCAA ni derecho electoral general. Solo el CONGRESO convalida (el Senado no interviene) en 30 días, pudiendo tramitarlo después como ley. No confundir con el decreto legislativo (art. 82-85), que SÍ exige delegación previa mediante ley de bases o ley ordinaria.</p>
+<p><strong>8. Respuesta correcta: c) 500.000 firmas acreditadas.</strong> 500.000 firmas, y está excluida en materias propias de ley orgánica, tributarias, internacionales y prerrogativa de gracia. La iniciativa legislativa corresponde al Gobierno (proyectos de ley), al Congreso y Senado (proposiciones), a las Asambleas de las CCAA y a la iniciativa popular.</p>
+<p><strong>9. Respuesta correcta: b) Presidente, vicepresidentes en su caso, ministros y demás miembros que establezca la ley.</strong> Fórmula literal del 98.1 — «en su caso» indica que los vicepresidentes son potestativos. Los Secretarios de Estado NO son miembros del Gobierno (son órganos superiores de los departamentos, Ley 50/1997 y Ley 40/2015): distractor preferido del tribunal.</p>
+<p><strong>10. Respuesta correcta: b) Mayoría absoluta del Congreso; si no se alcanza, mayoría simple 48 horas después.</strong> El Rey propone candidato (previa consulta a los grupos, con refrendo del Presidente del Congreso); mayoría absoluta en primera votación o simple a las 48 h. Si en DOS MESES desde la primera votación ningún candidato obtiene confianza, el Rey disuelve las Cámaras y convoca elecciones. Solo interviene el Congreso, nunca el Senado.</p>
+<p><strong>11. Respuesta correcta: b) Ser constructiva: la propone al menos 1/10 de los diputados con candidato incluido y exige mayoría absoluta.</strong> «Constructiva» = incluye candidato alternativo que queda investido si prospera: garantiza que nunca haya vacío de gobierno. 1/10 de diputados (35), votación no antes de 5 días, mociones alternativas en los 2 primeros; si fracasa, sus firmantes no pueden presentar otra en el mismo periodo de sesiones. Compárala con la cuestión de confianza: la plantea el Presidente y basta mayoría SIMPLE.</p>
+<p><strong>12. Respuesta correcta: b) Su programa o una declaración de política general, y se entiende otorgada por mayoría simple.</strong> Requiere deliberación previa del Consejo de Ministros y se plantea ante el Congreso sobre programa o declaración de política general (no sobre un proyecto de ley concreto, a diferencia de otros países). Mayoría SIMPLE. Si se pierde, el Gobierno presenta su dimisión y se abre el proceso del art. 99.</p>
+<p><strong>13. Respuesta correcta: b) Dirigir la política interior y exterior, la Administración civil y militar y la defensa del Estado; ejercer la función ejecutiva y la potestad reglamentaria.</strong> Artículo de cita literal casi garantizada. La potestad reglamentaria se ejerce «de acuerdo con la Constitución y las leyes»: los reglamentos están subordinados a la ley (jerarquía normativa del 9.3, que ya conoces). Las leyes las aprueban las Cortes; el Gobierno solo tiene iniciativa (proyectos de ley).</p>
+<p><strong>14. Respuesta correcta: b) Disolver las Cámaras, plantear cuestión de confianza ni proponer referéndum.</strong> Ley 50/1997 (art. 21): el Gobierno cesante continúa en funciones limitado a la gestión ordinaria y a casos de urgencia o interés general acreditado. Prohibiciones expresas: disolución, cuestión de confianza, referéndum; tampoco presentar Presupuestos ni el Presidente proponer… El Gobierno cesa por elecciones, pérdida de confianza parlamentaria, dimisión o fallecimiento de su Presidente (art. 101).</p>
+<p><strong>15. Respuesta correcta: b) Solidaria de todo el Gobierno ante el Congreso de los Diputados (art. 108).</strong> «El Gobierno responde solidariamente en su gestión política ante el Congreso de los Diputados»: todos caen juntos (por eso la censura derriba al Gobierno entero). El Senado NO exige responsabilidad política — solo controla (preguntas, interpelaciones). La responsabilidad PENAL del Presidente y ministros se exige ante la Sala de lo Penal del TS (art. 102).</p>
+<h1 id="protocolo-de-cierre-y-siguiente-paso">Protocolo de cierre y siguiente paso</h1>
+<ol type="1">
+<li>Test del Bloque III: neta = aciertos − fallos/3 sobre 45. <strong>≥ 29 netas (65 %)</strong> = superado en primera vuelta. Entre 22 y 28: repite los temas con más fallos en 3-4 días. &lt;22: segunda pasada de fichas antes de reintentar.</li>
+<li>Supuesto: ≥ 12 netas sobre 20. Apunta en el cuaderno de fallos el TEMA de cada pregunta fallada: el supuesto te dice qué fichas releer mejor que cualquier sensación.</li>
+<li>Test Bloque I (15 preguntas, 18 min): ≥ 9 netas. Las Cortes y el Gobierno son los temas más «tabulares» del bloque jurídico: mayorías, plazos y números van TODOS a Anki (el mazo nuevo de esta entrega ya los trae).</li>
+<li>En la app interactiva tienes ambos tests para repetir barajados a los 7 días.</li>
+<li><strong>Siguiente entrega:</strong> dossier del Bloque IV (Sistemas y Comunicaciones) con laboratorio de subnetting y su supuesto práctico. Pídelo al cerrar este módulo. Cuando tengas los dos supuestos hechos (III y IV), montaremos la semana de la decisión del mes 6.</li>
+</ol>
+</body>
+</html>
