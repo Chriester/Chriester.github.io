@@ -1,14 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark: #000000;
-  --color-dark-light: #14213d;
+  --color-dark: var(--c-bg);
+  --color-dark-light: var(--c-bg-alt);
   --color-dark-bars: #588157;
-  --color-accent: #ffffff;
-  --color-text: #e5e5e5;
+  --color-accent: var(--c-fg);
+  --color-text: var(--c-text);
+  --color-muted: var(--c-muted);
+  --color-line: var(--c-line);
+  --color-brand: var(--c-brand);
   --color-blue-400: #38bdf8;
   --color-blue-500: #0ea5e9;
   --color-blue-600: #0284c7;
+}
+
+:root {
+  --c-bg: #000000;
+  --c-bg-alt: #14213d;
+  --c-fg: #ffffff;
+  --c-text: #e5e5e5;
+  --c-muted: #9ca3af;
+  --c-line: #374151;
+  --c-brand: #38bdf8;
+}
+
+:root[data-theme='light'] {
+  --c-bg: #ffffff;
+  --c-bg-alt: #f1f5f9;
+  --c-fg: #0f172a;
+  --c-text: #334155;
+  --c-muted: #64748b;
+  --c-line: #e2e8f0;
+  --c-brand: #0284c7;
 }
 
 html {
@@ -18,6 +41,7 @@ html {
 body {
   background-color: var(--color-dark);
   color: var(--color-text);
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .section {

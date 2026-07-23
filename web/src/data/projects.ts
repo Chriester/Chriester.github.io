@@ -13,4 +13,11 @@ export const projects: Project[] = [
     href: `${import.meta.env.BASE_URL}tai/`,
     external: true,
   },
+  {
+    title: 'PKWorld (prototipo)',
+    description:
+      'Prototipo de un fangame MMO-lite de Pokémon, desarrollado como proyecto indie por afición.',
+    href: 'https://pkworld-prototipo.surge.sh/',
+    external: true,
+  },
 ];
