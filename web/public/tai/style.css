@@ -39,7 +39,7 @@ th,td{border:1px solid var(--borde);padding:8px 10px;text-align:left;}
 th{background:var(--bg-table-th);color:var(--azul);}
 code,pre{background:var(--bg-code);border-radius:6px;}
 pre{padding:12px;overflow:auto;margin:12px 16px;}
-#TOC{background:var(--bg-toc);border:1px solid var(--borde);border-radius:10px;margin:18px 16px;padding:12px 20px;}
+#TOC{background:var(--bg-toc);border:1px solid var(--borde);border-radius:10px;margin:18px auto;padding:12px 20px;}
 #TOC ul{margin:4px 0;padding-left:18px;}
 #TOC a{color:var(--azul2);text-decoration:none;}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;padding:16px;}
