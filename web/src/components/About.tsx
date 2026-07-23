@@ -6,9 +6,15 @@ export default function About() {
   return (
     <section id="about" className="section py-20 bg-dark-light text-accent px-4">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
+        <h2 className="reveal text-3xl md:text-4xl font-bold text-center mb-4">About Me</h2>
 
-        <div className="flex justify-center">
+        <div className="reveal flex justify-center mb-8">
+          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-mauve flex items-center justify-center text-4xl shadow-lg">
+            🧑‍💻
+          </div>
+        </div>
+
+        <div className="reveal flex justify-center">
           <button
             type="button"
             className="perspective w-full max-w-md h-80 cursor-pointer"

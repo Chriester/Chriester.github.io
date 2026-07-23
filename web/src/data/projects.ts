@@ -3,6 +3,7 @@ export interface Project {
   description: string;
   href: string;
   external: boolean;
+  discord?: string;
 }
 
 export const projects: Project[] = [
@@ -19,5 +20,6 @@ export const projects: Project[] = [
       'Prototipo de un fangame MMO-lite de Pokémon, desarrollado como proyecto indie por afición.',
     href: 'https://pkworld-prototipo.surge.sh/',
     external: true,
+    discord: 'https://discord.gg/MaKUcqFCQG',
   },
 ];

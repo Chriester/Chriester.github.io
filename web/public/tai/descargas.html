@@ -3,13 +3,36 @@
 <div class="links">
 <a href="index.html">Inicio</a>
 <a href="plan.html">Plan</a>
-<a href="bloque2.html">Bloque II</a>
-<a href="bloque3.html">Bloque III</a>
-<a href="bloque4.html">Bloque IV</a>
-<a href="bloque1-admin.html">Bloque I</a>
-<a href="tests.html" class="destacado">Tests</a>
+<div class="dropdown">
+<button type="button" class="dropbtn">Bloques ▾</button>
+<div class="dropdown-menu">
+<a href="bloque1-admin.html">Bloque I · Administración electrónica</a>
+<a href="bloque2.html">Bloque II · Tecnología Básica</a>
+<a href="bloque3.html">Bloque III · Desarrollo de Sistemas</a>
+<a href="bloque4.html">Bloque IV · Sistemas y Comunicaciones</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="tests.html" class="dropbtn destacado">Tests ▾</a>
+<div class="dropdown-menu">
+<a class="ver-todos" href="tests.html">Ver todos los tests</a>
+<a href="tests.html?test=diagnostico">Diagnóstico inicial</a>
+<a href="tests.html?test=bloque1">Bloque I · Constitución</a>
+<a href="tests.html?test=bloque1b">Bloque I · Cortes y Gobierno</a>
+<a href="tests.html?test=bloque1c">Bloque I · EBEP, igualdad y datos</a>
+<a href="tests.html?test=bloque1d">Bloque I · Admón. electrónica</a>
+<a href="tests.html?test=bloque2">Bloque II · Tecnología Básica</a>
+<a href="tests.html?test=bloque3">Bloque III · Desarrollo de Sistemas</a>
+<a href="tests.html?test=bloque4">Bloque IV · Sistemas y Comunicaciones</a>
+<a href="tests.html?test=simulacro">Simulacro (test)</a>
+<a href="tests.html?test=repesca">Repesca avanzada</a>
+<a href="tests.html?test=bloque2v2">Reexamen Bloque II</a>
+<a href="tests.html?test=bloque3v2">Reexamen Bloque III</a>
+</div>
+</div>
 <a href="simulacro.html">Simulacro</a>
 <a href="extras.html">Extras</a>
 <a href="descargas.html">Descargas</a>
 </div><button id="theme-toggle" type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar modo claro/oscuro">🌙 Modo noche</button><script>document.getElementById('theme-toggle').textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️ Modo día':'🌙 Modo noche';</script>
+<script>(function(){function closeAllExcept(keep){document.querySelectorAll('.dropdown.open').forEach(function(o){if(o!==keep)o.classList.remove('open');});}document.querySelectorAll('.dropdown').forEach(function(dd){var btn=dd.querySelector('.dropbtn');if(!btn)return;var isLink=btn.tagName==='A';btn.addEventListener('click',function(e){if(isLink){var hasHover=window.matchMedia('(hover: hover)').matches;if(hasHover)return;if(!dd.classList.contains('open')){e.preventDefault();closeAllExcept(dd);dd.classList.add('open');}}else{e.preventDefault();var wasOpen=dd.classList.contains('open');closeAllExcept(dd);dd.classList.toggle('open',!wasOpen);}});});document.addEventListener('click',function(e){document.querySelectorAll('.dropdown.open').forEach(function(dd){if(!dd.contains(e.target))dd.classList.remove('open');});});})();</script>
 </nav><h1>Descargas</h1><div class="aviso">Los mazos Anki (.txt) no deben abrirse con Word ni Excel antes de importarlos: romperían los tabuladores. Descarga → Anki → Archivo → Importar.</div><h2>Documentos del plan</h2><table class="dl-tabla"><tr><th>Archivo</th><th>Contenido</th></tr><tr><td><a href="descargas/Plan_Maestro_TAI_9_meses.docx" download>Plan_Maestro_TAI_9_meses.docx</a></td><td>Plan maestro de 9 meses</td></tr><tr><td><a href="descargas/Guia_Anki_Plan_TAI.docx" download>Guia_Anki_Plan_TAI.docx</a></td><td>Guía de configuración de Anki</td></tr><tr><td><a href="descargas/Guia_Fase_Final_TAI.docx" download>Guia_Fase_Final_TAI.docx</a></td><td>Fase final y semana de la decisión</td></tr></table><h2>Dossieres del temario (imprimibles)</h2><table class="dl-tabla"><tr><th>Archivo</th><th>Contenido</th></tr><tr><td><a href="descargas/Dossier_Bloque_II_Tecnologia_Basica.docx" download>Dossier_Bloque_II_Tecnologia_Basica.docx</a></td><td>Bloque II · Mes 1</td></tr><tr><td><a href="descargas/Dossier_Bloque_III_Desarrollo_de_Sistemas.docx" download>Dossier_Bloque_III_Desarrollo_de_Sistemas.docx</a></td><td>Bloque III · Meses 2-3</td></tr><tr><td><a href="descargas/Dossier_Bloque_IV_Sistemas_y_Comunicaciones.docx" download>Dossier_Bloque_IV_Sistemas_y_Comunicaciones.docx</a></td><td>Bloque IV · Meses 4-5</td></tr><tr><td><a href="descargas/Dossier_Bloque_I_Administracion_Electronica.docx" download>Dossier_Bloque_I_Administracion_Electronica.docx</a></td><td>Bloque I final · Mes 6</td></tr></table><h2>Evaluación y repaso</h2><table class="dl-tabla"><tr><th>Archivo</th><th>Contenido</th></tr><tr><td><a href="descargas/Simulacro_Examen_Completo_TAI.docx" download>Simulacro_Examen_Completo_TAI.docx</a></td><td>Simulacro completo (mes 7)</td></tr><tr><td><a href="descargas/Reexamen_Bloques_II_y_III_TAI.docx" download>Reexamen_Bloques_II_y_III_TAI.docx</a></td><td>Reexámenes v2</td></tr><tr><td><a href="descargas/Banco_Repesca_Avanzado_TAI.docx" download>Banco_Repesca_Avanzado_TAI.docx</a></td><td>Repesca avanzada (mes 8)</td></tr><tr><td><a href="descargas/Chuletario_Referencia_Rapida_TAI.docx" download>Chuletario_Referencia_Rapida_TAI.docx</a></td><td>Chuletario de tablas</td></tr><tr><td><a href="descargas/Cuaderno_Practica_Calculo_TAI.docx" download>Cuaderno_Practica_Calculo_TAI.docx</a></td><td>Cuaderno de cálculo</td></tr><tr><td><a href="descargas/Cuaderno_Seguimiento_TAI.xlsx" download>Cuaderno_Seguimiento_TAI.xlsx</a></td><td>Excel de fallos, simulacros y KPIs</td></tr></table><h2>Mazos Anki (importar con Archivo → Importar)</h2><table class="dl-tabla"><tr><th>Archivo</th><th>Contenido</th></tr><tr><td><a href="descargas/Anki_TAI_Bloque_II.txt" download>Anki_TAI_Bloque_II.txt</a></td><td>Bloque II · 59 tarjetas · Semana 1</td></tr><tr><td><a href="descargas/Anki_TAI_Bloque_I.txt" download>Anki_TAI_Bloque_I.txt</a></td><td>Constitución · 30 tarjetas · Semana 1</td></tr><tr><td><a href="descargas/Anki_TAI_Bloque_III.txt" download>Anki_TAI_Bloque_III.txt</a></td><td>Bloque III · 44 tarjetas · Mes 2</td></tr><tr><td><a href="descargas/Anki_TAI_Bloque_I_Cortes_Gobierno.txt" download>Anki_TAI_Bloque_I_Cortes_Gobierno.txt</a></td><td>Cortes y Gobierno · 20 · Mes 2</td></tr><tr><td><a href="descargas/Anki_TAI_Bloque_IV.txt" download>Anki_TAI_Bloque_IV.txt</a></td><td>Bloque IV · 46 tarjetas · Mes 4</td></tr><tr><td><a href="descargas/Anki_TAI_Bloque_I_EBEP_Igualdad_Datos.txt" download>Anki_TAI_Bloque_I_EBEP_Igualdad_Datos.txt</a></td><td>EBEP/igualdad/datos · 20 · Mes 4</td></tr><tr><td><a href="descargas/Anki_TAI_Bloque_I_AdminElectronica.txt" download>Anki_TAI_Bloque_I_AdminElectronica.txt</a></td><td>Admin electrónica · 20 · Mes 6</td></tr></table><footer>Curso de preparación TAI</footer></body></html>

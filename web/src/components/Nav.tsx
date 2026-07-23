@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 const links = [
   { href: '#about', label: 'About' },
-  { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
   { href: '#contact', label: 'Contact' },
 ];
@@ -39,12 +38,12 @@ export default function Nav() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-dark-light/95 backdrop-blur-sm border-b border-line">
-      <div className="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#hero" className="text-xl font-bold text-accent">
+      <div className="container mx-auto grid grid-cols-[1fr_auto_1fr] items-center px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#hero" className="justify-self-start text-xl font-bold text-accent">
           Chris
         </a>
 
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-6 justify-self-center">
           {links.map((link) => (
             <li key={link.href}>
               <a
@@ -57,7 +56,7 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 justify-self-end">
           <ThemeToggle />
 
           <button

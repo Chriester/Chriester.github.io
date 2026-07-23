@@ -21,15 +21,38 @@
 <div class="links">
 <a href="index.html">Inicio</a>
 <a href="plan.html">Plan</a>
-<a href="bloque2.html">Bloque II</a>
-<a href="bloque3.html">Bloque III</a>
-<a href="bloque4.html">Bloque IV</a>
-<a href="bloque1-admin.html">Bloque I</a>
-<a href="tests.html" class="destacado">Tests</a>
+<div class="dropdown">
+<button type="button" class="dropbtn">Bloques ▾</button>
+<div class="dropdown-menu">
+<a href="bloque1-admin.html">Bloque I · Administración electrónica</a>
+<a href="bloque2.html">Bloque II · Tecnología Básica</a>
+<a href="bloque3.html">Bloque III · Desarrollo de Sistemas</a>
+<a href="bloque4.html">Bloque IV · Sistemas y Comunicaciones</a>
+</div>
+</div>
+<div class="dropdown">
+<a href="tests.html" class="dropbtn destacado">Tests ▾</a>
+<div class="dropdown-menu">
+<a class="ver-todos" href="tests.html">Ver todos los tests</a>
+<a href="tests.html?test=diagnostico">Diagnóstico inicial</a>
+<a href="tests.html?test=bloque1">Bloque I · Constitución</a>
+<a href="tests.html?test=bloque1b">Bloque I · Cortes y Gobierno</a>
+<a href="tests.html?test=bloque1c">Bloque I · EBEP, igualdad y datos</a>
+<a href="tests.html?test=bloque1d">Bloque I · Admón. electrónica</a>
+<a href="tests.html?test=bloque2">Bloque II · Tecnología Básica</a>
+<a href="tests.html?test=bloque3">Bloque III · Desarrollo de Sistemas</a>
+<a href="tests.html?test=bloque4">Bloque IV · Sistemas y Comunicaciones</a>
+<a href="tests.html?test=simulacro">Simulacro (test)</a>
+<a href="tests.html?test=repesca">Repesca avanzada</a>
+<a href="tests.html?test=bloque2v2">Reexamen Bloque II</a>
+<a href="tests.html?test=bloque3v2">Reexamen Bloque III</a>
+</div>
+</div>
 <a href="simulacro.html">Simulacro</a>
 <a href="extras.html">Extras</a>
 <a href="descargas.html">Descargas</a>
 </div><button id="theme-toggle" type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar modo claro/oscuro">🌙 Modo noche</button><script>document.getElementById('theme-toggle').textContent=document.documentElement.getAttribute('data-theme')==='dark'?'☀️ Modo día':'🌙 Modo noche';</script>
+<script>(function(){function closeAllExcept(keep){document.querySelectorAll('.dropdown.open').forEach(function(o){if(o!==keep)o.classList.remove('open');});}document.querySelectorAll('.dropdown').forEach(function(dd){var btn=dd.querySelector('.dropbtn');if(!btn)return;var isLink=btn.tagName==='A';btn.addEventListener('click',function(e){if(isLink){var hasHover=window.matchMedia('(hover: hover)').matches;if(hasHover)return;if(!dd.classList.contains('open')){e.preventDefault();closeAllExcept(dd);dd.classList.add('open');}}else{e.preventDefault();var wasOpen=dd.classList.contains('open');closeAllExcept(dd);dd.classList.toggle('open',!wasOpen);}});});document.addEventListener('click',function(e){document.querySelectorAll('.dropdown.open').forEach(function(dd){if(!dd.contains(e.target))dd.classList.remove('open');});});})();</script>
 </nav>
 <header id="title-block-header">
 <h1 class="title">Chuletario</h1>

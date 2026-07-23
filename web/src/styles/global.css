@@ -1,37 +1,49 @@
 @import "tailwindcss";
 
+/*
+ * Catppuccin palette (https://catppuccin.com) — Mocha for dark mode,
+ * Latte for light mode. The two flavors are designed to pair together,
+ * so every token below has a matching light/dark value.
+ */
 @theme {
   --color-dark: var(--c-bg);
   --color-dark-light: var(--c-bg-alt);
-  --color-dark-bars: #588157;
+  --color-dark-bars: var(--c-green);
   --color-accent: var(--c-fg);
   --color-text: var(--c-text);
   --color-muted: var(--c-muted);
   --color-line: var(--c-line);
   --color-brand: var(--c-brand);
-  --color-blue-400: #38bdf8;
-  --color-blue-500: #0ea5e9;
-  --color-blue-600: #0284c7;
+  --color-mauve: var(--c-mauve);
+  --color-blue-400: #89b4fa;
+  --color-blue-500: #1e66f5;
+  --color-blue-600: #0a4fd6;
 }
 
 :root {
-  --c-bg: #000000;
-  --c-bg-alt: #14213d;
-  --c-fg: #ffffff;
-  --c-text: #e5e5e5;
-  --c-muted: #9ca3af;
-  --c-line: #374151;
-  --c-brand: #38bdf8;
+  /* Catppuccin Mocha */
+  --c-bg: #1e1e2e;
+  --c-bg-alt: #313244;
+  --c-fg: #cdd6f4;
+  --c-text: #bac2de;
+  --c-muted: #a6adc8;
+  --c-line: #45475a;
+  --c-brand: #89b4fa;
+  --c-mauve: #cba6f7;
+  --c-green: #a6e3a1;
 }
 
 :root[data-theme='light'] {
-  --c-bg: #ffffff;
-  --c-bg-alt: #f1f5f9;
-  --c-fg: #0f172a;
-  --c-text: #334155;
-  --c-muted: #64748b;
-  --c-line: #e2e8f0;
-  --c-brand: #0284c7;
+  /* Catppuccin Latte */
+  --c-bg: #eff1f5;
+  --c-bg-alt: #ffffff;
+  --c-fg: #4c4f69;
+  --c-text: #5c5f77;
+  --c-muted: #6c6f85;
+  --c-line: #ccd0da;
+  --c-brand: #1e66f5;
+  --c-mauve: #8839ef;
+  --c-green: #40a02b;
 }
 
 html {
@@ -62,4 +74,35 @@ body {
 
 .rotate-x-180 {
   transform: rotateX(180deg);
+}
+
+/* Decorative background blobs */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: blob-float 14s ease-in-out infinite;
+}
+
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -30px) scale(1.08);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
